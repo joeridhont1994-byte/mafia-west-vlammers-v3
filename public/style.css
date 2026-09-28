@@ -277,3 +277,26 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .garage-info b{font-size:20px!important}.garage-info strong{font-size:18px!important}
 .garage-actions button{background:linear-gradient(#ffd85d,#dca313 70%,#a87508)!important;border-color:#ffe991!important}
 @media(max-width:650px){.garage-showcar{height:178px!important}.garage-info b{font-size:18px!important}}
+
+
+/* Uniform premium showroom look for every garage car */
+.garage-showcar{
+ background-color:#0b0e12!important;
+ border:1px solid #d6a514!important;
+ border-radius:10px!important;
+}
+.garage-showcar.golf{background-position:center 58%!important}
+.garage-showcar.bmw{background-position:center 55%!important}
+.garage-showcar.lambo{background-position:center 58%!important}
+.garage-showcar.corsa{background-position:center 55%!important;background-size:cover!important}
+.garage-showcar:before{
+ content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+ background:linear-gradient(180deg,rgba(8,11,15,.08),rgba(8,11,15,.08) 45%,rgba(3,5,8,.62) 100%);
+}
+.garage-showcar:after{
+ background:linear-gradient(90deg,rgba(2,4,7,.92) 0%,rgba(2,4,7,.56) 32%,rgba(2,4,7,.08) 62%,rgba(2,4,7,.28) 100%)!important;
+}
+.garage-info,.garage-actions{z-index:3!important}
+.garage-info b{color:#fff!important;text-shadow:0 2px 8px #000!important}
+.garage-info span{color:#f0f2f4!important}
+.garage-section{padding-left:2px!important;letter-spacing:.6px!important}
