@@ -140,3 +140,31 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .nav button:active:before,.nav button.nav-active:before{content:"";position:absolute;top:0;left:20%;right:20%;height:2px;background:#efbd43;box-shadow:0 0 13px #e2a91f}
 .nav button:active small,.nav button.nav-active small{color:#efc14f}
 @media(max-width:650px){.nav{height:72px}.nav button{font-size:22px;padding-top:8px}.nav small{font-size:9px!important}.panel{padding-bottom:88px}}
+
+
+/* Step 5 - cinematic missions screen */
+#panelBody>.mission{min-height:112px;position:relative;overflow:hidden;padding:18px 16px;background:linear-gradient(105deg,#1c232c 0%,#10151b 60%,#090c10 100%);border-color:#3b4652}
+#panelBody>.mission:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 0,rgba(216,170,54,.10),transparent 35%)}
+#panelBody>.mission>div{position:relative;z-index:1}
+#panelBody>.mission b{font-size:20px;text-shadow:0 3px 8px #000}
+#panelBody>.mission .small{font-size:13px;margin-top:4px}
+#panelBody>.mission>button{position:relative;z-index:1;min-width:150px;min-height:62px;padding:10px 16px;font-size:17px;line-height:1.25;background:linear-gradient(180deg,#f2cd67 0%,#d5a52f 58%,#987013 100%);border:1px solid #ffe08a;border-radius:7px;box-shadow:0 5px 0 #624707,0 10px 20px rgba(0,0,0,.38)}
+#panelBody>.mission>button small{display:block;margin-top:3px;color:#101010;font-size:12px;font-weight:900;letter-spacing:.5px}
+#panelBody>hr{border:0;height:1px;background:linear-gradient(90deg,transparent,#b88c28,transparent);margin:24px 0 20px}
+#panelBody>hr+p{font-size:21px;letter-spacing:1px;text-transform:uppercase;margin:0 0 8px;color:#f0f2f5}
+#panelBody>.mission:nth-of-type(1){background:radial-gradient(circle at 8% 15%,rgba(205,157,35,.22),transparent 32%),linear-gradient(105deg,#25251e,#11161c 65%,#080b0f)}
+#panelBody>.mission:nth-of-type(2){background:radial-gradient(circle at 8% 15%,rgba(110,126,140,.18),transparent 32%),linear-gradient(105deg,#202832,#11161c 65%,#080b0f)}
+#panelBody>.mission:nth-of-type(3){background:radial-gradient(circle at 8% 15%,rgba(58,100,130,.22),transparent 32%),linear-gradient(105deg,#1a2832,#10151b 65%,#080b0f)}
+#panelBody>.mission:nth-of-type(4){background:radial-gradient(circle at 8% 15%,rgba(58,126,150,.22),transparent 32%),linear-gradient(105deg,#192932,#10151b 65%,#080b0f)}
+@media(max-width:650px){
+ #panelBody>.mission{min-height:104px;padding:14px 12px}
+ #panelBody>.mission b{font-size:18px}
+ #panelBody>.mission .small{font-size:12px}
+ #panelBody>.mission>button{min-width:132px;min-height:60px;padding:9px 11px;font-size:15px}
+ #panelBody>.mission>button small{font-size:11px}
+}
+@media(max-width:380px){
+ #panelBody>.mission{gap:7px}
+ #panelBody>.mission>button{min-width:118px;font-size:14px;padding:8px}
+ #panelBody>.mission b{font-size:17px}
+}
