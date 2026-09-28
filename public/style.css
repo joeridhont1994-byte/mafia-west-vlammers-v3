@@ -320,3 +320,13 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
  background-position:center 56%!important;
  background-repeat:no-repeat!important;
 }
+
+
+/* Audi RS3 local artwork - no external hotlink */
+.garage-showcar.audi{
+ background-image:url('/file_00000000c5a0821080827a7a0f379dff.png')!important;
+ background-color:#0b0e12!important;
+ background-size:cover!important;
+ background-position:center!important;
+ background-repeat:no-repeat!important;
+}
