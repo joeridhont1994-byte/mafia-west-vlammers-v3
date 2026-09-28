@@ -129,3 +129,14 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
  .brand b{font-size:16px}.brand small{font-size:6px}
  .topstats>span{padding:4px;font-size:9px}.topstats>span b{font-size:12px}
 }
+
+
+/* Step 4 - premium bottom navigation */
+.nav{height:78px;padding:0 max(8px,calc((100vw - 720px)/2));gap:0;background:linear-gradient(180deg,rgba(18,23,30,.99),rgba(5,7,10,.995));border-top:1px solid #9a741d;box-shadow:0 -10px 30px rgba(0,0,0,.65);backdrop-filter:blur(12px)}
+.nav button{position:relative;min-width:0;flex:1;height:100%;padding:9px 3px 7px;color:#d9dde3;font-size:23px;border-left:1px solid rgba(255,255,255,.035);transition:.12s}
+.nav button:first-child{border-left:0}
+.nav button small{display:block;margin-top:4px;color:#a7adb7;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.nav button:active,.nav button.nav-active{color:#efc14f;background:linear-gradient(180deg,rgba(216,170,54,.13),rgba(216,170,54,.025))}
+.nav button:active:before,.nav button.nav-active:before{content:"";position:absolute;top:0;left:20%;right:20%;height:2px;background:#efbd43;box-shadow:0 0 13px #e2a91f}
+.nav button:active small,.nav button.nav-active small{color:#efc14f}
+@media(max-width:650px){.nav{height:72px}.nav button{font-size:22px;padding-top:8px}.nav small{font-size:9px!important}.panel{padding-bottom:88px}}
