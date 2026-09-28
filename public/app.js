@@ -26,12 +26,12 @@ function chatBadge(){
  if(chatUnread>0){if(!badge){badge=document.createElement("span");badge.className="chat-badge";badge.style.cssText="position:absolute;top:6px;right:8px;background:#e31b23;color:white;border-radius:999px;min-width:22px;height:22px;padding:0 6px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;box-shadow:0 2px 8px #0008";b.style.position="relative";b.appendChild(badge)}badge.textContent=chatUnread>99?"99+":chatUnread}else if(badge)badge.remove()
 }
 async function checkChatNotifications(){
- if(!state.username)return;
+ if(!state.name)return;
  try{const r=await fetch("/api/chat");const d=await r.json();if(!r.ok||!d.messages)return;
  const newestId=d.messages.reduce((mx,m)=>Math.max(mx,Number(m.id||0)),0);
  const panelOpen=document.getElementById("panel")?.classList.contains("open")&&document.getElementById("panelTitle")?.textContent.includes("Algemene chat");
  if(panelOpen){chatLastSeenId=newestId;localStorage.setItem("chatLastSeenId",chatLastSeenId);chatUnread=0}
- else{const previous=chatUnread;chatUnread=d.messages.filter(m=>Number(m.id||0)>chatLastSeenId&&String(m.username).toLowerCase()!==String(state.username).toLowerCase()).length;if(chatUnread>previous)playChatSound()}
+ else{const previous=chatUnread;chatUnread=d.messages.filter(m=>Number(m.id||0)>chatLastSeenId&&String(m.username).toLowerCase()!==String(state.name).toLowerCase()).length;if(chatUnread>previous)playChatSound()}
  chatBadge()}catch(e){console.warn("Chat melding:",e)}
 }
 setInterval(checkChatNotifications,5000);
