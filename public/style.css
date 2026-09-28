@@ -168,3 +168,16 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
  #panelBody>.mission>button{min-width:118px;font-size:14px;padding:8px}
  #panelBody>.mission b{font-size:17px}
 }
+
+
+/* Step 6 - cinematic mission artwork + bottom clearance */
+#panelBody>.mission{background-position:center!important;background-size:cover!important}
+#panelBody>.mission:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(5,8,11,.93) 0%,rgba(5,8,11,.78) 43%,rgba(5,8,11,.48) 70%,rgba(5,8,11,.70) 100%)}
+#panelBody>.mission>div,#panelBody>.mission>button{z-index:2}
+#panelBody>.mission:nth-of-type(1){background-image:url('https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1000&q=82')!important}
+#panelBody>.mission:nth-of-type(2){background-image:url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=82')!important}
+#panelBody>.mission:nth-of-type(3){background-image:url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=82')!important}
+#panelBody>.mission:nth-of-type(4){background-image:url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1000&q=82')!important}
+#panelBody{padding-bottom:105px}
+#panelBody>hr+p{position:relative;z-index:1;padding-top:4px}
+@media(max-width:650px){#panelBody{padding-bottom:125px}#panelBody>.mission:after{background:linear-gradient(90deg,rgba(5,8,11,.92),rgba(5,8,11,.67) 64%,rgba(5,8,11,.72))}}
