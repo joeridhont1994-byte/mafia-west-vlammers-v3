@@ -260,3 +260,20 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
  background-position:center!important;
  background-repeat:no-repeat!important;
 }
+
+
+/* Garage final cinematic pass */
+.garage-showcar.lambo{
+ background-image:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Green%202018%20Lamborghini%20Huracan.jpg?width=1280')!important;
+ background-color:#11161c!important;background-size:cover!important;background-position:center 58%!important;background-repeat:no-repeat!important;
+}
+.garage-showcar.golf{
+ background-image:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Volkswagen%20Golf%20GTI%20Mk7%20Deep%20Black%20Pearl%20(1).jpg?width=1280')!important;
+ background-color:#11161c!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;
+}
+.garage-feature,.garage-showcar{border-color:#d5a517!important;box-shadow:inset 0 -75px 95px rgba(0,0,0,.5),0 7px 18px rgba(0,0,0,.42)!important}
+.garage-showcar{height:190px!important}
+.garage-showcar:after{background:linear-gradient(90deg,rgba(2,4,7,.94) 0%,rgba(2,4,7,.54) 38%,rgba(2,4,7,.16) 66%,rgba(2,4,7,.35) 100%)!important}
+.garage-info b{font-size:20px!important}.garage-info strong{font-size:18px!important}
+.garage-actions button{background:linear-gradient(#ffd85d,#dca313 70%,#a87508)!important;border-color:#ffe991!important}
+@media(max-width:650px){.garage-showcar{height:178px!important}.garage-info b{font-size:18px!important}}
