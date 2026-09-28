@@ -181,3 +181,12 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 #panelBody{padding-bottom:105px}
 #panelBody>hr+p{position:relative;z-index:1;padding-top:4px}
 @media(max-width:650px){#panelBody{padding-bottom:125px}#panelBody>.mission:after{background:linear-gradient(90deg,rgba(5,8,11,.92),rgba(5,8,11,.67) 64%,rgba(5,8,11,.72))}}
+
+
+/* Definitive mobile panel header fix: header stays above scrolling content */
+@media(max-width:650px){
+ .panel{inset:82px 0 72px 0!important;padding:0 11px 18px!important;overflow-y:auto!important;scroll-padding-top:92px}
+ .panel-head{position:sticky!important;top:0!important;z-index:50!important;min-height:82px;margin:0 -11px 12px;padding:18px 20px 14px!important;background:#0b0e14!important;border-bottom:1px solid #5b4618!important;box-shadow:0 10px 18px rgba(0,0,0,.55)}
+ .panel-head h3{margin:0!important}
+ .panel-body{position:relative;z-index:1;padding-bottom:105px}
+}
