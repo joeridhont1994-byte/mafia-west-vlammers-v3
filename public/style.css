@@ -40,3 +40,23 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .nav button{position:relative;text-shadow:0 2px 5px #000}.nav button:active{background:#252014;color:#f0c85d}.nav small{text-transform:uppercase;letter-spacing:.4px}
 .logout{border-radius:4px;background:#11151a}
 @media(max-width:650px){.screen{padding-left:10px;padding-right:10px}.city{padding:12px}.buildings{gap:8px}.building{min-height:112px;padding:12px}.building span{font-size:29px;margin-bottom:9px}.building b{font-size:12px}.building small{font-size:10px}.topbar{box-shadow:0 5px 18px #000}.panel{padding-left:11px;padding-right:11px}}
+
+
+/* Location cards: more realistic city-dashboard presentation */
+.building{isolation:isolate;padding-top:58px;background-color:#11161d;background-position:center;background-size:cover}
+.building:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,8,11,.18) 0%,rgba(7,10,14,.70) 48%,rgba(7,9,12,.97) 100%);transition:.15s}
+.building:hover:before,.building:active:before{background:linear-gradient(180deg,rgba(5,8,11,.08),rgba(7,10,14,.62) 46%,rgba(7,9,12,.95))}
+.building>span{position:absolute;top:12px;left:14px;width:40px;height:40px;display:grid;place-items:center;margin:0;border-radius:6px;background:rgba(7,10,14,.82);border:1px solid rgba(216,170,54,.45);font-size:23px;backdrop-filter:blur(5px)}
+.building>b,.building>small{position:relative;z-index:1}
+.building[data-action="missions"]{background-image:linear-gradient(125deg,rgba(0,0,0,.12),rgba(0,0,0,.35)),url('/file_00000000f40082108a7d4bcd252f8106.png')}
+.building[data-action="bank"]{background-image:radial-gradient(circle at 70% 15%,rgba(216,170,54,.22),transparent 32%),linear-gradient(145deg,#303842,#0b1015 70%)}
+.building[data-action="garage"]{background-image:radial-gradient(circle at 25% 20%,rgba(104,125,145,.28),transparent 34%),linear-gradient(145deg,#27313a,#080c10 72%)}
+.building[data-action="shop"]{background-image:radial-gradient(circle at 75% 20%,rgba(137,93,48,.25),transparent 35%),linear-gradient(145deg,#2a2927,#0b0e11 72%)}
+.building[data-action="weapons"]{background-image:radial-gradient(circle at 25% 18%,rgba(180,139,38,.24),transparent 35%),linear-gradient(145deg,#292b2c,#080a0d 72%)}
+.building[data-action="profile"]{background-image:radial-gradient(circle at 75% 18%,rgba(87,101,118,.3),transparent 34%),linear-gradient(145deg,#242a31,#090c10 72%)}
+.building[data-action="leaderboard"]{background-image:radial-gradient(circle at 30% 20%,rgba(216,170,54,.26),transparent 34%),linear-gradient(145deg,#302b1e,#090c10 72%)}
+.building[data-action="players"]{background-image:radial-gradient(circle at 70% 18%,rgba(93,110,130,.27),transparent 34%),linear-gradient(145deg,#242b32,#090c10 72%)}
+.building[data-action="clan"]{background-image:radial-gradient(circle at 30% 18%,rgba(110,72,72,.28),transparent 34%),linear-gradient(145deg,#2a2425,#090c10 72%)}
+.building[data-action="chat"]{background-image:radial-gradient(circle at 75% 18%,rgba(73,105,120,.28),transparent 34%),linear-gradient(145deg,#222b31,#090c10 72%)}
+.building[data-action="admin"]{background-image:radial-gradient(circle at 50% 15%,rgba(216,170,54,.3),transparent 40%),linear-gradient(145deg,#302918,#090c10 72%)}
+@media(max-width:650px){.building{padding-top:54px}.building>span{top:10px;left:11px;width:36px;height:36px;font-size:21px}}
