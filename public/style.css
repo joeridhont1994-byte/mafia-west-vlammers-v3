@@ -83,3 +83,16 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .building[data-action="admin"]{background-image:linear-gradient(120deg,rgba(7,9,11,.08),rgba(7,9,11,.42)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80')}
 .building[data-action="weapons"]{background-image:radial-gradient(circle at 65% 20%,#4b4030 0,#202327 33%,#090b0e 78%)}
 @media(max-width:650px){.city{padding:8px}.city-title{margin:-8px -8px 10px;min-height:72px;padding:13px}.buildings{gap:7px}.building{min-height:142px;padding:78px 10px 11px}.building>span{bottom:48px;left:10px;width:34px;height:34px;font-size:19px}.building>b,.building>small{padding-left:43px}.building>b{font-size:14px}.building>small{font-size:10px}}
+
+
+/* Step 2 - premium cinematic card treatment */
+.building{min-height:172px;border:1px solid #a47b20!important;border-radius:10px!important;box-shadow:0 10px 26px rgba(0,0,0,.48),inset 0 0 0 1px rgba(255,213,100,.06)!important}
+.building:before{background:linear-gradient(180deg,rgba(0,0,0,.03) 0%,rgba(0,0,0,.10) 32%,rgba(4,6,8,.70) 62%,rgba(4,6,8,.98) 100%)!important}
+.building:after{height:2px!important;background:linear-gradient(90deg,#4e3709,#e2b43e,#4e3709)!important;opacity:.8!important}
+.building>span{bottom:57px!important;background:linear-gradient(145deg,rgba(23,27,31,.94),rgba(5,7,9,.96))!important;border:1px solid #a47b20!important;box-shadow:0 4px 14px rgba(0,0,0,.55)!important}
+.building>b{font-size:16px!important;letter-spacing:.9px!important;text-shadow:0 3px 8px #000,0 1px 1px #000}
+.building>small{font-size:12px!important;color:#c0c5cd!important;text-shadow:0 2px 5px #000}
+.building[data-action="weapons"]{background-image:linear-gradient(120deg,rgba(5,6,7,.05),rgba(5,6,7,.35)),url('https://images.unsplash.com/photo-1595590424283-b8f17842773f?auto=format&fit=crop&w=900&q=82')!important}
+.city-title{position:relative;overflow:hidden;text-shadow:0 3px 10px #000}
+.city-title:after{content:"WEST-VLAANDEREN · UNDERWORLD";position:absolute;right:15px;bottom:16px;color:#c8b06b;font-size:8px;letter-spacing:1.7px;opacity:.78}
+@media(max-width:650px){.building{min-height:154px!important;padding-top:86px!important}.building>span{bottom:51px!important}.building>b{font-size:13px!important}.building>small{font-size:10px!important}.city-title:after{right:10px;bottom:10px;font-size:6px;letter-spacing:1px}}
