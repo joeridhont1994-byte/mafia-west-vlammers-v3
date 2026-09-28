@@ -250,3 +250,13 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
  background-position:center!important;
  background-repeat:no-repeat!important;
 }
+
+
+/* Golf GTI image fix - verified exact Wikimedia file path */
+.garage-showcar.golf{
+ background-image:url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Volkswagen_Golf_GTI_MkV.jpg')!important;
+ background-color:#11161c!important;
+ background-size:cover!important;
+ background-position:center!important;
+ background-repeat:no-repeat!important;
+}
