@@ -300,3 +300,13 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .garage-info b{color:#fff!important;text-shadow:0 2px 8px #000!important}
 .garage-info span{color:#f0f2f4!important}
 .garage-section{padding-left:2px!important;letter-spacing:.6px!important}
+
+
+/* Audi RS3 - matched model artwork */
+.garage-showcar.audi{
+ background-image:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Audi%20RS3%20Sportback%20(8V)%20IMG%204245.jpg?width=1280')!important;
+ background-color:#0b0e12!important;
+ background-size:cover!important;
+ background-position:center 58%!important;
+ background-repeat:no-repeat!important;
+}
