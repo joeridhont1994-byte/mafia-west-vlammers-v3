@@ -60,3 +60,26 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .building[data-action="chat"]{background-image:radial-gradient(circle at 75% 18%,rgba(73,105,120,.28),transparent 34%),linear-gradient(145deg,#222b31,#090c10 72%)}
 .building[data-action="admin"]{background-image:radial-gradient(circle at 50% 15%,rgba(216,170,54,.3),transparent 40%),linear-gradient(145deg,#302918,#090c10 72%)}
 @media(max-width:650px){.building{padding-top:54px}.building>span{top:10px;left:11px;width:36px;height:36px;font-size:21px}}
+
+
+/* Step 1 - cinematic DE STAD location cards */
+.city{padding:16px;background:linear-gradient(180deg,rgba(7,10,14,.74),rgba(4,6,8,.97)),url('/file_00000000d9708210ad67cda5f6bb1b20.png') center 42%/cover;border-color:#80621c}
+.city-title{min-height:82px;display:flex;align-items:flex-end;padding:16px 18px;margin:-16px -16px 14px;background:linear-gradient(90deg,rgba(4,7,10,.96),rgba(4,7,10,.48)),url('/file_00000000d9708210ad67cda5f6bb1b20.png') center 48%/cover;border-bottom:1px solid #a17a20;font-size:20px;letter-spacing:4px}
+.buildings{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.building{min-height:160px;padding:92px 14px 14px;border-color:#89691d;background-position:center!important;background-size:cover!important}
+.building:before{background:linear-gradient(180deg,rgba(3,5,7,.05) 0%,rgba(4,6,8,.2) 38%,rgba(4,6,8,.94) 76%,#050709 100%)}
+.building>b{font-size:17px}.building>small{font-size:12px;color:#b7bec8}
+.building>span{top:auto;bottom:54px;left:14px;width:38px;height:38px;font-size:21px}
+.building>b,.building>small{padding-left:50px}
+.building[data-action="missions"]{background-image:url('/file_00000000f40082108a7d4bcd252f8106.png')}
+.building[data-action="bank"]{background-image:linear-gradient(120deg,rgba(7,9,11,.08),rgba(7,9,11,.35)),url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80')}
+.building[data-action="garage"]{background-image:linear-gradient(120deg,rgba(7,9,11,.08),rgba(7,9,11,.35)),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80')}
+.building[data-action="shop"]{background-image:linear-gradient(120deg,rgba(7,9,11,.08),rgba(7,9,11,.35)),url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80')}
+.building[data-action="profile"]{background-image:linear-gradient(120deg,rgba(7,9,11,.1),rgba(7,9,11,.45)),url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80')}
+.building[data-action="leaderboard"]{background-image:linear-gradient(120deg,rgba(7,9,11,.1),rgba(7,9,11,.45)),url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=900&q=80')}
+.building[data-action="players"]{background-image:linear-gradient(120deg,rgba(7,9,11,.1),rgba(7,9,11,.45)),url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80')}
+.building[data-action="clan"]{background-image:linear-gradient(120deg,rgba(7,9,11,.1),rgba(7,9,11,.45)),url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80')}
+.building[data-action="chat"]{background-image:linear-gradient(120deg,rgba(7,9,11,.1),rgba(7,9,11,.45)),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80')}
+.building[data-action="admin"]{background-image:linear-gradient(120deg,rgba(7,9,11,.08),rgba(7,9,11,.42)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80')}
+.building[data-action="weapons"]{background-image:radial-gradient(circle at 65% 20%,#4b4030 0,#202327 33%,#090b0e 78%)}
+@media(max-width:650px){.city{padding:8px}.city-title{margin:-8px -8px 10px;min-height:72px;padding:13px}.buildings{gap:7px}.building{min-height:142px;padding:78px 10px 11px}.building>span{bottom:48px;left:10px;width:34px;height:34px;font-size:19px}.building>b,.building>small{padding-left:43px}.building>b{font-size:14px}.building>small{font-size:10px}}
