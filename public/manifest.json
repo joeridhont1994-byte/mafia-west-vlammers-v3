@@ -1,1 +1,1 @@
-{"name":"Mafia West-Vlammers","short_name":"Mafia WV","start_url":".","display":"standalone","background_color":"#080a0f","theme_color":"#0b0d12","icons":[]}
+{"name":"Mafia West-Vlammers","short_name":"Mafia WV","start_url":"/","scope":"/","display":"standalone","orientation":"any","background_color":"#080a0f","theme_color":"#0b0d12","icons":[{"src":"/file_00000000db0c81f4b5d21d20a4c341ea.png","sizes":"1024x1024","type":"image/png","purpose":"any maskable"}]}
