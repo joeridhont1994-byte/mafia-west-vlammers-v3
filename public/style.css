@@ -2,3 +2,6 @@
 .auth-box{flex-direction:column}.auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.secondary{border:1px solid #e0a321;background:transparent;color:#e0a321;font-weight:900;padding:14px 22px;border-radius:10px}.auth-message{min-height:20px;color:#ff8b8b;font-size:13px}.logout{margin-top:7px;background:transparent;border:1px solid #39404c;color:#aeb4bf;border-radius:7px;padding:5px 8px;font-size:11px}@media(max-width:650px){.auth-actions{grid-template-columns:1fr}}
 /* Full-screen game sections */
 .panel{position:fixed;inset:68px 0 68px 0;margin:0;border:0;border-radius:0;padding:20px max(16px,calc((100vw - 1050px)/2));background:#0b0e14;z-index:15;overflow-y:auto}.panel.open{display:block}.panel-head{position:sticky;top:-20px;background:#0b0e14;padding:12px 0 14px;z-index:2;border-bottom:1px solid #292f3b}.panel-head h3{font-size:24px}.panel-head button{font-size:34px;padding:0 8px}.panel-body{max-width:1050px;margin:auto}@media(max-width:650px){.panel{inset:68px 0 68px 0;padding:14px}.panel-head{top:-14px}.panel-head h3{font-size:21px}}
+
+/* Mobile app: use the full visible screen above the bottom navigation */
+@media(max-width:650px){.panel{inset:68px 0 0 0;padding-bottom:82px}.nav{height:64px}.nav button{min-width:0;flex:1;padding:4px 2px;font-size:18px}.nav small{font-size:10px}}
