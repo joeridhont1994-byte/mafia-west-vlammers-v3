@@ -205,3 +205,17 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
  #panelBody>hr+p~.mission b{font-size:17px!important}
  #panelBody>hr+p~.mission .small{font-size:10px!important;padding:4px 6px}
 }
+
+
+/* Step 8 - premium garage */
+#panelBody .garage-hero{position:relative;overflow:hidden;min-height:120px;margin-bottom:16px;padding:18px;border:1px solid #8a691c;border-radius:12px;background:linear-gradient(90deg,rgba(5,8,12,.95),rgba(5,8,12,.56)),url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1100&q=82') center/cover;box-shadow:0 10px 28px rgba(0,0,0,.45)}
+#panelBody .garage-hero b{font-size:24px;letter-spacing:1px;text-shadow:0 3px 8px #000}
+#panelBody .garage-section{margin:24px 0 10px;padding-bottom:7px;border-bottom:1px solid #80631b;color:#f1c552;letter-spacing:1px}
+#panelBody .garage-car{position:relative;overflow:hidden;min-height:130px!important;border-color:#735a20!important;background-position:center!important;background-size:cover!important}
+#panelBody .garage-car:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,7,10,.94),rgba(4,7,10,.70) 55%,rgba(4,7,10,.52));z-index:0}
+#panelBody .garage-car>div,#panelBody .garage-car>button{position:relative;z-index:2}
+#panelBody .garage-car.golf{background-image:url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=82')!important}
+#panelBody .garage-car.bmw{background-image:url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=82')!important}
+#panelBody .garage-car.lambo{background-image:url('https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=82')!important}
+#panelBody .garage-car .small{display:inline-block;margin-top:7px;padding:4px 7px;background:rgba(0,0,0,.64);border:1px solid rgba(213,169,40,.28);border-radius:5px}
+@media(max-width:650px){#panelBody .garage-hero{min-height:105px}#panelBody .garage-car{min-height:118px!important}}
