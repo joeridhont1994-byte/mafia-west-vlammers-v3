@@ -240,3 +240,13 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .garage-showcar.bmw{background-image:url('https://uploads.builtforbackroads.com/uploads/2025/02/2025.02.26-BMW-E92-M3-2012_1.jpg')!important}
 .garage-showcar.lambo{background-image:url('https://images.autotrader.com/hn/c/0613b2c138cc4aa58d55bd90c8d25c42.jpg')!important}
 .garage-showcar.corsa{background-image:url('https://t3api.autohaus-koenig.de/fileadmin/bilder/fahrzeuge_relaunch/opel/corsa-2023/corsa/felgen-schwarz/freigestellt/opel-corsa-2023-corsa-kristall-silber-grey.png')!important;background-color:#171b20!important;background-size:72% auto!important;background-repeat:no-repeat!important;background-position:center right!important}
+
+
+/* Golf GTI fallback - stable Wikimedia-hosted image */
+.garage-showcar.golf{
+ background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/2017_Volkswagen_Golf_GTI_TSi_2.0_Front.jpg/1280px-2017_Volkswagen_Golf_GTI_TSi_2.0_Front.jpg')!important;
+ background-color:#11161c!important;
+ background-size:cover!important;
+ background-position:center!important;
+ background-repeat:no-repeat!important;
+}
