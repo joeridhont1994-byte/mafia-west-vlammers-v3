@@ -310,3 +310,13 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
  background-position:center 58%!important;
  background-repeat:no-repeat!important;
 }
+
+
+/* Audi RS3 verified working Commons image */
+.garage-showcar.audi{
+ background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Audi_RS3_Sportback_%2825938770998%29.jpg/1280px-Audi_RS3_Sportback_%2825938770998%29.jpg')!important;
+ background-color:#0b0e12!important;
+ background-size:cover!important;
+ background-position:center 56%!important;
+ background-repeat:no-repeat!important;
+}
