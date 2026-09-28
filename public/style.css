@@ -107,3 +107,25 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .welcome .muted{font-size:15px;color:#aeb5bf}.welcome h2{font-size:38px;letter-spacing:2px;margin-top:5px;color:#fff;text-shadow:0 3px 14px #000}.online{font-size:15px;font-weight:700;text-shadow:0 2px 7px #000}.logout{padding:8px 13px;border:1px solid #596370;background:linear-gradient(#1a2028,#0d1116);font-size:12px}
 .panel{inset:86px 0 68px 0}
 @media(max-width:650px){.topbar{height:86px;padding:0 10px}.brand{gap:9px}.brand-mark{width:52px;height:52px}.brand b{font-size:21px;letter-spacing:2px}.brand small{font-size:8px;letter-spacing:2px}.topstats{gap:4px}.topstats>span{min-height:46px;padding:6px 8px;font-size:12px;border-radius:10px}.topstats>span b{font-size:15px}.welcome{min-height:124px;margin:0 -10px 16px;padding:24px 18px}.welcome h2{font-size:34px}.panel{inset:86px 0 0 0}}
+
+
+/* HUD mobile fit fix */
+@media(max-width:650px){
+ .topbar{height:82px;padding:0 8px;gap:6px}
+ .brand{gap:7px;min-width:0;flex:0 1 auto}
+ .brand-mark{width:46px;height:46px;flex:0 0 46px;font-size:18px}
+ .brand b{font-size:18px;letter-spacing:1.5px;white-space:nowrap}
+ .brand small{font-size:7px;letter-spacing:1.5px}
+ .topstats{gap:3px;flex:1;min-width:0;justify-content:flex-end}
+ .topstats>span{min-width:0;min-height:43px;padding:5px 6px;gap:3px;font-size:10px;white-space:nowrap}
+ .topstats>span b{font-size:13px}
+ .topstats>span:nth-child(1){flex:1 1 78px}
+ .topstats>span:nth-child(2){flex:1 1 82px}
+ .topstats>span:nth-child(3){flex:0 1 50px}
+ .panel{inset:82px 0 0 0}
+}
+@media(max-width:390px){
+ .brand-mark{width:42px;height:42px;flex-basis:42px}
+ .brand b{font-size:16px}.brand small{font-size:6px}
+ .topstats>span{padding:4px;font-size:9px}.topstats>span b{font-size:12px}
+}
