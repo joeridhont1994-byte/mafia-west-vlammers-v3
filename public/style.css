@@ -872,3 +872,28 @@ html,body{
 .buildings .building[data-action="missions"] .mission-icon img{
   display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;
 }
+
+/* MISSIES: restore large card artwork + keep Top Secret as a small icon */
+.buildings .building[data-action="missions"]{
+  background-image:
+    linear-gradient(180deg,rgba(4,7,10,.12) 0%,rgba(4,7,10,.32) 48%,rgba(4,7,10,.94) 100%),
+    url('/assets/mafia/file_0000000005e7881f48befeeaa9b7bd0a7c.png') !important;
+  background-size:cover!important;
+  background-position:center!important;
+  position:relative!important;
+}
+.buildings .building[data-action="missions"] .mission-icon{
+  width:66px!important;height:66px!important;
+  position:absolute!important;left:20px!important;bottom:22px!important;
+  border-radius:15px!important;z-index:2!important;
+}
+.buildings .building[data-action="missions"] .mission-icon img{
+  width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;
+}
+.buildings .building[data-action="missions"] > b{
+  position:absolute!important;left:102px!important;bottom:61px!important;z-index:2!important;
+  margin:0!important;text-transform:uppercase!important;
+}
+.buildings .building[data-action="missions"] > small{
+  position:absolute!important;left:102px!important;bottom:28px!important;z-index:2!important;margin:0!important;
+}
