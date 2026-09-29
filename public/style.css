@@ -597,3 +597,8 @@ html,body{
  .city-edit-help{margin-top:10px!important}
  .city-build-menu.live{display:flex!important;margin-bottom:90px!important}
 }
+
+/* City-builder build mode */
+.city-build-slot.ready{cursor:pointer;animation:slotPulse .7s infinite alternate!important}
+.city-build-slot.occupied{opacity:.32!important;pointer-events:none!important;border-color:#7b838b!important;color:#7b838b!important;background:#101419aa!important;animation:none!important}
+.city-shop-item.building-choice{border-color:#ffd34e!important;box-shadow:0 0 18px #ffd34e55!important}
