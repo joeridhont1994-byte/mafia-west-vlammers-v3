@@ -358,3 +358,13 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .heist-van{position:absolute;left:50%;top:43%;transform:translate(-50%,-50%);font-size:86px;filter:drop-shadow(0 8px 8px #000)}
 .heist-guard{display:none;position:absolute;top:42%;transform:translateY(-50%);font-size:52px;flex-direction:column;align-items:center;text-shadow:0 3px 8px #000}.heist-guard.left{left:8%}.heist-guard.right{right:8%}.heist-guard span{font-size:11px;font-weight:900;color:#ffdf67;background:#111b;padding:3px 6px;border-radius:5px}
 .heist-road{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-size:16px;font-weight:900;color:#fff;text-shadow:0 2px 5px #000}
+
+/* Geldtransport scene v2: duidelijk links/rechts */
+.heist-scene{height:250px!important;background:linear-gradient(180deg,#171c23,#080a0e)!important;display:block}
+.heist-van{top:48%!important;font-size:82px!important;z-index:3}.heist-van span{display:block;font-size:12px;letter-spacing:1px;color:#ffd65a;background:#090b0ed9;padding:4px 8px;border-radius:6px;margin-top:-8px}
+.heist-side{position:absolute;top:0;bottom:0;width:50%;display:flex;align-items:flex-start;justify-content:center;padding-top:16px;font-size:18px;color:#fff;background:rgba(255,255,255,.025)}
+.heist-side.side-left{left:0;border-right:2px dashed #7c6428}.heist-side.side-right{right:0}
+.heist-side b{background:#191d24;border:1px solid #8d7129;border-radius:7px;padding:6px 12px;color:#ffd65a}
+.heist-guard{top:57%!important;font-size:62px!important;z-index:5}.heist-guard.left{left:13%!important}.heist-guard.right{right:13%!important}
+.heist-guard span{font-size:13px!important;background:#b51f1f!important;color:#fff!important;padding:5px 8px!important}
+.heist-help{font-size:17px!important;line-height:1.55!important;background:#151920;border-left:4px solid #e2b42c;padding:12px 14px;text-align:left;border-radius:5px}
