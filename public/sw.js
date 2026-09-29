@@ -1,4 +1,4 @@
-const CACHE="mafia-wv-v8-121";
+const CACHE="mafia-wv-v9-240";
 const ASSETS=["/","/style.css?v=20260929-121","/app.js?v=20260929-121","/manifest.json"];
 
 self.addEventListener("install",event=>{
