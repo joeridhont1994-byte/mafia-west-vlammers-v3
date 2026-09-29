@@ -225,3 +225,35 @@ function setupV5(){
  async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({x:me.x/S*100,y:me.y/S*100})});let r=await fetch("/api/world/players"),d=await r.json();others=(d.players||[]).filter(v=>String(v.user_id)!==String(d.selfId)).map(v=>({x:+v.pos_x/100*S,y:+v.pos_y/100*S,username:v.username}))}catch(e){}}
  resize();walk();draw();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
 }
+
+/* ===== WORLD V6 DENSE ISOMETRIC DISTRICT ===== */
+async function showMyCity(){
+ openPanel("🏙️ WEST-VLAMMERS V6","<p>V6 laden...</p>");
+ try{let r=await fetch("/api/my-city");if(!r.ok)throw Error("Wereld laden mislukt");
+ openPanel("🏙️ WEST-VLAMMERS V6",`<div class="v6game"><div class="v6head"><b>WEST-VLAMMERS</b><span>● ONLINE</span></div><canvas id="v6c"></canvas><div class="v6help">Tik om te lopen · deuren openen locaties</div></div>`);setupV6()}catch(e){openPanel("WORLD V6","<p>"+escapeHtml(e.message)+"</p>")}
+}
+function setupV6(){
+ const C=$("v6c"),G=C.getContext("2d"),R=devicePixelRatio||1,TW=56,TH=28,N=28;let W,H,t=0,me={x:13,y:14,tx:13,ty:14},others=[];
+ const B=[{x:3,y:3,w:4,h:4,z:78,n:"MAFFIA HQ",go:"missions",c:"#273746"},{x:10,y:2,w:4,h:4,z:68,n:"NIGHT CLUB",go:"chat",c:"#62316e"},{x:18,y:3,w:5,h:4,z:100,n:"APPARTEMENTEN",go:"properties",c:"#426b80"},{x:3,y:17,w:5,h:4,z:88,n:"ZIEKENHUIS",go:"hospital",c:"#b7cfd2"},{x:18,y:17,w:4,h:4,z:72,n:"POLITIE",go:"players",c:"#315c83"},{x:11,y:20,w:5,h:3,z:55,n:"GARAGE",go:"garage",c:"#514052"},{x:22,y:10,w:3,h:3,z:58,n:"CASINO",go:"missions",c:"#764329"}];
+ function size(){let q=C.parentElement.getBoundingClientRect();W=q.width;H=Math.max(590,Math.min(730,innerHeight*.72));C.style.height=H+"px";C.width=W*R;C.height=H*R;G.setTransform(R,0,0,R,0,0)}
+ const raw=(a,b)=>({x:(a-b)*TW/2,y:(a+b)*TH/2}),camera=()=>{let p=raw(me.x,me.y);return{x:W/2-p.x,y:H*.57-p.y}},iso=(a,b)=>{let p=raw(a,b),q=camera();return{x:p.x+q.x,y:p.y+q.y}};
+ function path(a,c,s){G.beginPath();G.moveTo(a[0].x,a[0].y);a.slice(1).forEach(p=>G.lineTo(p.x,p.y));G.closePath();G.fillStyle=c;G.fill();if(s){G.strokeStyle=s;G.stroke()}}
+ function tile(i,j){let p=iso(i,j),road=i===13||i===14||j===13||j===14,walk=i===12||i===15||j===12||j===15;path([{x:p.x,y:p.y-TH/2},{x:p.x+TW/2,y:p.y},{x:p.x,y:p.y+TH/2},{x:p.x-TW/2,y:p.y}],road?"#333b41":walk?"#9b9b8e":((i+j)%2?"#47785b":"#4e8061"),road?"#596064":"#41694f");if(road){G.strokeStyle="#dbc55e";G.setLineDash([5,7]);G.beginPath();G.moveTo(p.x-TW*.3,p.y);G.lineTo(p.x+TW*.3,p.y);G.stroke();G.setLineDash([])}}
+ function building(b){let p=iso(b.x,b.y),rx=b.w*TW/2,ry=b.w*TH/2,lx=b.h*TW/2,ly=b.h*TH/2,z=b.z,A={x:p.x,y:p.y-z},D={x:p.x-lx,y:p.y+ly-z},Q={x:p.x+rx-lx,y:p.y+ry+ly-z},E={x:p.x+rx,y:p.y+ry-z};path([A,E,Q,D],light(b.c,25),"#87b9c5");path([E,{x:E.x,y:E.y+z},{x:Q.x,y:Q.y+z},Q],b.c);path([Q,{x:Q.x,y:Q.y+z},{x:D.x,y:D.y+z},D],light(b.c,-22));
+ for(let row=0;row<2;row++)for(let col=0;col<3;col++){G.fillStyle="#69cce3";G.fillRect(Q.x+8+col*15,Q.y+13+row*24,9,13)}
+ G.fillStyle="#171c21";G.fillRect(Q.x+23,Q.y+z-24,15,24);G.fillStyle=b.n==="ZIEKENHUIS"?"#182126":"#fff";G.font="bold 8px sans-serif";G.textAlign="center";G.fillText(b.n,p.x+(rx-lx)/2,p.y+(ry+ly)/2+10)}
+ function light(hex,n){let v=parseInt(hex.slice(1),16),r=Math.max(0,Math.min(255,(v>>16)+n)),g=Math.max(0,Math.min(255,((v>>8)&255)+n)),b=Math.max(0,Math.min(255,(v&255)+n));return"#"+[r,g,b].map(x=>x.toString(16).padStart(2,"0")).join("")}
+ function tree(a,b){let p=iso(a,b);G.fillStyle="#5d3b25";G.fillRect(p.x-3,p.y-18,6,20);G.fillStyle="#246c3d";G.beginPath();G.arc(p.x,p.y-27,13,0,7);G.fill();G.fillStyle="#48a35f";G.beginPath();G.arc(p.x-5,p.y-32,7,0,7);G.fill()}
+ function lamp(a,b){let p=iso(a,b);G.strokeStyle="#20272b";G.lineWidth=3;G.beginPath();G.moveTo(p.x,p.y);G.lineTo(p.x,p.y-30);G.stroke();G.fillStyle="#ffe58a";G.fillRect(p.x-4,p.y-34,8,6)}
+ function human(o,n,you){let p=iso(o.x,o.y),walk=Math.sin(t*.18)*2;G.fillStyle="#0007";G.beginPath();G.ellipse(p.x,p.y+4,8,3,0,0,7);G.fill();G.fillStyle="#25282c";G.fillRect(p.x-6,p.y-7,4,10+walk);G.fillRect(p.x+2,p.y-7,4,10-walk);G.fillStyle=you?"#d6aa2e":"#397aa5";G.fillRect(p.x-7,p.y-26,14,19);G.fillStyle="#d89d77";G.fillRect(p.x-6,p.y-36,12,11);G.fillStyle="#28201d";G.fillRect(p.x-6,p.y-38,12,4);G.fillStyle="#091018e8";G.fillRect(p.x-24,p.y-51,48,12);G.fillStyle="#fff";G.font="8px sans-serif";G.textAlign="center";G.fillText(n,p.x,p.y-42)}
+ function car(a,b,c){let p=iso(a,b);G.fillStyle=c;path([{x:p.x-13,y:p.y},{x:p.x-8,y:p.y-8},{x:p.x+7,y:p.y-8},{x:p.x+14,y:p.y},{x:p.x+10,y:p.y+6},{x:p.x-11,y:p.y+6}],c);G.fillStyle="#9bd6e3";G.fillRect(p.x-6,p.y-7,11,5);G.fillStyle="#111";G.beginPath();G.arc(p.x-8,p.y+6,3,0,7);G.arc(p.x+8,p.y+6,3,0,7);G.fill()}
+ function occupied(x,y){return B.some(b=>x>b.x-.3&&x<b.x+b.w+.3&&y>b.y-.3&&y<b.y+b.h+.3)}
+ function draw(){t++;G.clearRect(0,0,W,H);let q=G.createLinearGradient(0,0,0,H);q.addColorStop(0,"#173247");q.addColorStop(.18,"#427b75");q.addColorStop(.181,"#315e49");q.addColorStop(1,"#17382e");G.fillStyle=q;G.fillRect(0,0,W,H);for(let s=0;s<N*2;s++)for(let i=0;i<N;i++){let j=s-i;if(j>=0&&j<N)tile(i,j)}
+ [[7,7],[8,18],[20,8],[21,20],[5,13],[17,24],[24,15],[9,23],[23,6]].forEach(v=>tree(...v));[[12,8],[15,9],[12,18],[15,19],[8,12],[20,15]].forEach(v=>lamp(...v));B.slice().sort((a,b)=>a.x+a.y-b.x-b.y).forEach(building);
+ let z=(t*.035)%30;car(z-1,13,"#d4a52d");car(14,(z+9)%30-1,"#397fac");car((z+16)%30-1,14,"#a54b51");
+ [{x:9+Math.sin(t/100)*1.7,y:10,n:"Rico"},{x:17,y:11+Math.cos(t/120)*1.8,n:"Luna"},{x:8,y:18+Math.sin(t/130)*1.5,n:"Vince"}].forEach(o=>human(o,o.n,false));others.forEach(o=>human(o,o.username,false));human(me,state.name||"RAMZY",true);requestAnimationFrame(draw)}
+ function move(){let dx=me.tx-me.x,dy=me.ty-me.y,d=Math.hypot(dx,dy);if(d>.06){let nx=me.x+dx/d*.07,ny=me.y+dy/d*.07;if(!occupied(nx,ny)){me.x=nx;me.y=ny}else{me.tx=me.x;me.ty=me.y}}requestAnimationFrame(move)}
+ C.onclick=e=>{let r=C.getBoundingClientRect(),q=camera(),sx=e.clientX-r.left-q.x,sy=e.clientY-r.top-q.y,gx=sy/TH+sx/TW,gy=sy/TH-sx/TW;for(let b of B)if(gx>=b.x&&gx<=b.x+b.w&&gy>=b.y&&gy<=b.y+b.h){worldV2Open(b.go);return}if(!occupied(gx,gy)){me.tx=Math.max(.5,Math.min(N-1,gx));me.ty=Math.max(.5,Math.min(N-1,gy))}};
+ async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({x:me.x/N*100,y:me.y/N*100})});let r=await fetch("/api/world/players"),d=await r.json();others=(d.players||[]).filter(v=>String(v.user_id)!==String(d.selfId)).map(v=>({x:+v.pos_x/100*N,y:+v.pos_y/100*N,username:v.username}))}catch(e){}}
+ size();draw();move();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
+}
