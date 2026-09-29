@@ -410,3 +410,6 @@ function openWXRoom(kind,name){
   s.insertBefore(deco,s.firstChild);
  }
 })();
+
+/* ORIGINAL WORLD ASSETS */
+(function(){const base=setupWorldX;setupWorldX=function(){base();let s=$("wxStage");if(!s)return;s.querySelectorAll(".wxPerson span,.wxNpc span").forEach(x=>x.innerHTML='<img src="/assets/world/avatar.svg" alt="">');s.querySelectorAll(".wxCar").forEach((x,i)=>{x.textContent="";x.innerHTML='<img src="/assets/world/car-red.svg" alt="">})}})();
