@@ -827,3 +827,13 @@ html,body{
 .topstats{gap:8px!important}.topstats span{height:50px!important;min-height:50px!important;border-radius:6px!important;background:#0c1117!important;border:1px solid #27313a!important;font-size:16px!important}
 .nav{height:78px!important;background:#080c10f7!important;border-top:1px solid #5b431c!important}.nav button span{font-size:21px!important}.nav button{font-size:9px!important}
 @media(max-width:420px){.building{height:168px!important;min-height:168px!important}.building span{width:55px!important;height:55px!important;bottom:13px!important;font-size:27px!important}.building b{left:77px!important;bottom:40px!important;font-size:16px!important;width:calc(100% - 84px)!important}.building small{left:77px!important;bottom:14px!important;font-size:11px!important;width:calc(100% - 84px)!important}.topstats span{font-size:14px!important}}
+
+/* STEP 1 — cinematic MISSIES artwork */
+.buildings .building:nth-child(1){
+ background-image:url("/assets/mafia/file_000000005e7881f48befeaa9b7bd0a7c.png")!important;
+ background-position:center!important;
+ background-size:cover!important;
+}
+.buildings .building:nth-child(1):before{
+ background:linear-gradient(180deg,rgba(0,0,0,.03) 0%,rgba(0,0,0,.10) 48%,rgba(2,3,5,.88) 82%,#020305 100%)!important;
+}
