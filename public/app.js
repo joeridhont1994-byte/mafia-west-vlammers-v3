@@ -413,3 +413,6 @@ function openWXRoom(kind,name){
 
 /* ORIGINAL WORLD ASSETS */
 (function(){const base=setupWorldX;setupWorldX=function(){base();let s=$("wxStage");if(!s)return;s.querySelectorAll(".wxPerson span,.wxNpc span").forEach(x=>x.innerHTML='<img src="/assets/world/avatar.svg" alt="">');s.querySelectorAll(".wxCar").forEach((x,i)=>{x.textContent="";x.innerHTML='<img src="/assets/world/car-red.svg" alt="">})}})();
+
+/* ORIGINAL BUILDING ASSETS */
+(function(){const base=setupWorldX;setupWorldX=function(){base();let s=$("wxStage");if(!s)return;let m={casino:"casino.svg",club:"club.svg",apartments:"apartments.svg",police:"police.svg",hospital:"hospital.svg",garage:"garage.svg",shop:"shop.svg",hq:"hq.svg"};Object.entries(m).forEach(([k,f])=>{let b=s.querySelector(".wxBuilding."+k);if(b){let label=b.innerHTML;b.innerHTML='<img class="wxBuildingArt" src="/assets/world/'+f+'" alt=""> <span class="wxBuildingHit">'+label+'</span>'}})}})();
