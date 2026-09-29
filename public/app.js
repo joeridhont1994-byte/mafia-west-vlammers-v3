@@ -289,3 +289,33 @@ function setupV7(){
  async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(p)});let r=await fetch("/api/world/players"),d=await r.json(),alive=new Set;for(let q of d.players||[]){if(String(q.user_id)===String(d.selfId))continue;let id="v7u"+q.user_id;alive.add(id);let el=$(id);if(!el){el=document.createElement("div");el.id=id;el.className="v7human other";el.innerHTML='<i class="head"></i><i class="body"></i><i class="leg a"></i><i class="leg b"></i><b></b>';map.appendChild(el)}el.style.left=q.pos_x+"%";el.style.top=q.pos_y+"%";el.querySelector("b").textContent=q.username}map.querySelectorAll(".other").forEach(e=>{if(!alive.has(e.id))e.remove()})}catch(e){}}
  draw();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
 }
+
+/* ===== WORLD V8 GAMEPLAY UPGRADE ===== */
+async function showMyCity(){
+ openPanel("🏙️ WEST-VLAMMERS V8","<p>V8 laden...</p>");
+ try{let r=await fetch("/api/my-city");if(!r.ok)throw Error("Wereld laden mislukt");
+ openPanel("🏙️ WEST-VLAMMERS V8",`<div class="v8game"><div class="v8bar"><b>WEST-VLAMMERS CITY</b><span>● ONLINE</span></div><div id="v8world" class="v8world"><div id="v8map" class="v8map">
+ <div class="v8block b1"></div><div class="v8block b2"></div><div class="v8road rh"></div><div class="v8road rv"></div><div class="v8square"></div>
+ <button class="v8place hq" data-go="missions"><i>MW</i><strong>MAFFIA HQ</strong><em>MISSIES</em></button>
+ <button class="v8place club" data-go="chat"><i>♫</i><strong>NEON CLUB</strong><em>CHAT</em></button>
+ <button class="v8place apt" data-go="properties"><i>▦</i><strong>APPARTEMENTEN</strong><em>IMMO</em></button>
+ <button class="v8place hosp" data-go="hospital"><i>✚</i><strong>ZIEKENHUIS</strong><em>ZORG</em></button>
+ <button class="v8place police" data-go="players"><i>★</i><strong>POLITIE</strong><em>SPELERS</em></button>
+ <button class="v8place garage" data-go="garage"><i>◆</i><strong>GARAGE</strong><em>AUTO'S</em></button>
+ <div class="v8park"><span>STADSPARK</span></div><div class="v8tree t1"></div><div class="v8tree t2"></div><div class="v8tree t3"></div><div class="v8lamp l1"></div><div class="v8lamp l2"></div>
+ <div class="v8car taxi"></div><div class="v8car sedan"></div><div class="v8car bus"></div>
+ <div class="v8npc n1"><span></span><b>Rico</b></div><div class="v8npc n2"><span></span><b>Luna</b></div>
+ <div id="v8me" class="v8avatar"><span></span><b>${escapeHtml(state.name||"RAMZY")}</b><em>JIJ</em></div>
+ </div><div class="v8mini"><i id="v8dot"></i></div></div><div class="v8help">Tik om te lopen · gebouwen openen je bestaande gamefuncties</div></div>`);setupV8()}catch(e){openPanel("WORLD V8","<p>"+escapeHtml(e.message)+"</p>")}
+}
+function setupV8(){
+ const view=$("v8world"),map=$("v8map"),me=$("v8me"),dot=$("v8dot");if(!view||!map)return;let p={x:49,y:56},target=null;
+ try{let z=JSON.parse(localStorage.getItem("v8pos")||"null");if(z)p=z}catch(e){}
+ const blocks=[{x:4,y:5,w:25,h:21},{x:70,y:5,w:25,h:21},{x:4,y:69,w:27,h:24},{x:69,y:68,w:27,h:25},{x:39,y:73,w:23,h:18},{x:73,y:36,w:20,h:20}];
+ const blocked=(x,y)=>blocks.some(b=>x>b.x&&x<b.x+b.w&&y>b.y&&y<b.y+b.h);
+ function draw(){me.style.left=p.x+"%";me.style.top=p.y+"%";dot.style.left=p.x+"%";dot.style.top=p.y+"%";map.style.transform="translate("+(50-p.x)*2.5+"px,"+(55-p.y)*1.9+"px)"}
+ function walk(){if(!target){me.classList.remove("walking");return}let dx=target.x-p.x,dy=target.y-p.y,d=Math.hypot(dx,dy);if(d<.45){p=target;target=null;localStorage.setItem("v8pos",JSON.stringify(p));draw();return}let nx=p.x+dx/d*.34,ny=p.y+dy/d*.34;if(blocked(nx,ny)){target=null;return}p.x=nx;p.y=ny;me.classList.add("walking");draw();requestAnimationFrame(walk)}
+ view.addEventListener("click",e=>{let b=e.target.closest(".v8place");if(b){worldV2Open(b.dataset.go);return}let r=view.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*100,y=(e.clientY-r.top)/r.height*100;if(!blocked(x,y)){target={x,y};requestAnimationFrame(walk)}});
+ async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(p)});let r=await fetch("/api/world/players"),d=await r.json(),alive=new Set;for(let q of d.players||[]){if(String(q.user_id)===String(d.selfId))continue;let id="v8u"+q.user_id;alive.add(id);let el=$(id);if(!el){el=document.createElement("div");el.id=id;el.className="v8avatar other";el.innerHTML="<span></span><b></b>";map.appendChild(el)}el.style.left=q.pos_x+"%";el.style.top=q.pos_y+"%";el.querySelector("b").textContent=q.username}map.querySelectorAll(".v8avatar.other").forEach(e=>{if(!alive.has(e.id))e.remove()})}catch(e){}}
+ draw();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
+}
