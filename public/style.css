@@ -671,3 +671,20 @@ html,body{
 .sim-zone-lock small{font-size:9px;letter-spacing:1px;margin-top:5px}.sim-zone-lock.zone2{left:5%;top:42%}.sim-zone-lock.zone3{right:6%;bottom:7%}.sim-zone-lock.unlocked{opacity:0;visibility:hidden}
 .sim-v4-progress{display:flex;flex-direction:column;gap:3px;margin:10px 0;padding:11px 13px;border:1px solid #65511f;border-radius:11px;background:#10151c}.sim-v4-progress b{color:#f0ca53;font-size:12px}.sim-v4-progress span{color:#adb5bf;font-size:10px}
 @media(max-width:650px){.panel-head{position:sticky!important;top:0!important;z-index:30}.sim-v2-economy{margin-top:0}.sim-v4{height:560px!important}.sim-stats{margin-bottom:9px}}
+
+/* Simulator V5 - living city */
+.sim-traffic{position:absolute;inset:0;z-index:6;pointer-events:none;overflow:hidden}
+.traffic-car,.traffic-bus,.sim-person{position:absolute;display:block;filter:drop-shadow(0 3px 3px #000a);will-change:transform}
+.traffic-car{font-size:23px}.traffic-bus{font-size:28px}
+.car1{top:39%;left:-12%;animation:driveEast 9s linear infinite}
+.car2{top:72%;left:-15%;animation:driveEast2 13s linear infinite 2s}
+.car3{top:-12%;left:39%;animation:driveSouth 11s linear infinite 1s}
+.bus1{top:37%;right:-18%;animation:driveWest 17s linear infinite 4s}
+.sim-person{font-size:17px;z-index:7}
+.p1{left:11%;top:32%;animation:walkA 12s ease-in-out infinite alternate}.p2{left:57%;top:31%;animation:walkB 15s ease-in-out infinite alternate}.p3{left:15%;top:67%;animation:walkC 10s ease-in-out infinite alternate}.p4{left:65%;top:62%;animation:walkD 14s ease-in-out infinite alternate}
+@keyframes driveEast{0%{transform:translateX(0) rotate(-8deg)}100%{transform:translateX(720px) rotate(-8deg)}}
+@keyframes driveEast2{0%{transform:translateX(0) rotate(7deg)}100%{transform:translateX(760px) rotate(7deg)}}
+@keyframes driveWest{0%{transform:translateX(0) rotate(172deg)}100%{transform:translateX(-760px) rotate(172deg)}}
+@keyframes driveSouth{0%{transform:translateY(0) rotate(95deg)}100%{transform:translateY(700px) rotate(95deg)}}
+@keyframes walkA{to{transform:translate(110px,45px)}}@keyframes walkB{to{transform:translate(-85px,70px)}}@keyframes walkC{to{transform:translate(120px,-35px)}}@keyframes walkD{to{transform:translate(-90px,55px)}}
+@media(prefers-reduced-motion:reduce){.traffic-car,.traffic-bus,.sim-person{animation-duration:30s!important}}
