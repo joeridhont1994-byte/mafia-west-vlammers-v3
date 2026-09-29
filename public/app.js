@@ -161,3 +161,33 @@ function setupWorldV3(){
  const sync=async()=>{if(!$("wv3world"))return;try{save();const r=await fetch("/api/world/players"),d=await r.json();if(!r.ok)return;const live=new Set;for(const q of d.players||[]){if(String(q.user_id)===String(d.selfId))continue;const id="wv3u"+q.user_id;live.add(id);let el=$(id);if(!el){el=document.createElement("div");el.id=id;el.className="wv3me other";el.innerHTML="<i>🕴️</i><b></b>";w.appendChild(el)}el.style.left=Number(q.pos_x)+"%";el.style.top=Number(q.pos_y)+"%";el.querySelector("b").textContent=q.username}w.querySelectorAll(".wv3me.other").forEach(x=>{if(!live.has(x.id))x.remove()})}catch(e){}};
  sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200);
 }
+
+/* ===== WORLD V4 CANVAS ENGINE ===== */
+async function showMyCity(){
+ openPanel("🌆 WEST-VLAMMERS WORLD","<div class='v4load'>Wereld laden...</div>");
+ try{const r=await fetch("/api/my-city"),d=await r.json();if(!r.ok)throw new Error(d.error||"Laden mislukt");
+ openPanel("🌆 WEST-VLAMMERS WORLD",`<div class="v4wrap"><div class="v4top"><b>WEST-VLAMMERS CITY</b><span>● ONLINE</span></div><canvas id="v4canvas"></canvas><div class="v4tip">Tik waar je wilt lopen · tik op een gebouw om binnen te gaan</div></div>`);setupWorldV4()}catch(e){openPanel("WORLD","<p>"+escapeHtml(e.message)+"</p>")}
+}
+function setupWorldV4(){
+ const cv=$("v4canvas");if(!cv)return;const x=cv.getContext("2d"),D=window.devicePixelRatio||1;
+ let W=0,H=0,me={x:7,y:8,tx:7,ty:8},cam={x:0,y:0},others=[],cars=[{x:1,y:6,t:0},{x:10,y:6,t:3},{x:6,y:1,t:7}],npcs=[{x:5,y:4,n:"Rico"},{x:10,y:9,n:"Luna"},{x:3,y:10,n:"Vince"}];
+ const buildings=[{x:2,y:2,w:3,h:3,n:"MAFFIA HQ",go:"missions",k:0},{x:9,y:2,w:3,h:2,n:"NIGHT CLUB",go:"chat",k:1},{x:1,y:9,w:3,h:3,n:"APPARTEMENTEN",go:"properties",k:2},{x:10,y:9,w:3,h:3,n:"ZIEKENHUIS",go:"hospital",k:3},{x:6,y:10,w:3,h:2,n:"GARAGE",go:"garage",k:4}];
+ const tw=72,th=36,N=15;
+ function resize(){const r=cv.getBoundingClientRect();W=r.width;H=Math.max(520,Math.min(680,innerHeight*.66));cv.style.height=H+"px";cv.width=W*D;cv.height=H*D;x.setTransform(D,0,0,D,0,0)}
+ function iso(gx,gy){return{x:(gx-gy)*tw/2+W/2+cam.x,y:(gx+gy)*th/2+95+cam.y}}
+ function poly(p,fill,stroke){x.beginPath();x.moveTo(p[0].x,p[0].y);for(let i=1;i<p.length;i++)x.lineTo(p[i].x,p[i].y);x.closePath();x.fillStyle=fill;x.fill();if(stroke){x.strokeStyle=stroke;x.stroke()}}
+ function tile(i,j,c){let p=iso(i,j);poly([{x:p.x,y:p.y-th/2},{x:p.x+tw/2,y:p.y},{x:p.x,y:p.y+th/2},{x:p.x-tw/2,y:p.y}],c,"#315846")}
+ function box(b){let p=iso(b.x,b.y),ww=b.w*tw/2,hh=b.h*th/2,z=68+b.h*7;let top=[{x:p.x,y:p.y-z},{x:p.x+ww,y:p.y+hh-z},{x:p.x+ww-b.h*tw/2,y:p.y+hh+b.h*th/2-z},{x:p.x-b.h*tw/2,y:p.y+b.h*th/2-z}];let cols=[["#273847","#17232e","#334b5d"],["#522660","#281631","#79338a"],["#355a70","#203746","#4c7890"],["#d7e2e2","#71878d","#eef5f3"],["#493b4b","#292430","#67556a"]][b.k];poly(top,cols[2],"#91d8e8");poly([top[1],{x:top[1].x,y:top[1].y+z},{x:top[2].x,y:top[2].y+z},top[2]],cols[0]);poly([top[2],{x:top[2].x,y:top[2].y+z},{x:top[3].x,y:top[3].y+z},top[3]],cols[1]);x.fillStyle=b.k===3?"#152027":"white";x.font="bold 10px sans-serif";x.textAlign="center";x.fillText(b.n,p.x,p.y+30)}
+ function person(o,name,you){let p=iso(o.x,o.y);x.fillStyle="#0008";x.beginPath();x.ellipse(p.x,p.y+4,10,5,0,0,7);x.fill();x.fillStyle=you?"#d2a52d":"#3f78a8";x.fillRect(p.x-6,p.y-24,12,19);x.fillStyle="#d59b76";x.beginPath();x.arc(p.x,p.y-30,7,0,7);x.fill();x.fillStyle="#0a1119dd";x.fillRect(p.x-25,p.y-48,50,13);x.fillStyle="#fff";x.font="9px sans-serif";x.textAlign="center";x.fillText(name,p.x,p.y-38)}
+ function road(i,j){let p=iso(i,j);tile(i,j,"#3b4246");x.strokeStyle="#e6c952";x.setLineDash([6,7]);x.beginPath();x.moveTo(p.x-tw/3,p.y);x.lineTo(p.x+tw/3,p.y);x.stroke();x.setLineDash([])}
+ function draw(){x.clearRect(0,0,W,H);let g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,"#172d42");g.addColorStop(.25,"#4f826b");g.addColorStop(1,"#294d42");x.fillStyle=g;x.fillRect(0,0,W,H);
+ for(let s=0;s<N*2;s++)for(let i=0;i<N;i++){let j=s-i;if(j>=0&&j<N){if(i===6||j===6)road(i,j);else tile(i,j,(i+j)%2?"#477861":"#4c8067")}}
+ buildings.slice().sort((a,b)=>(a.x+a.y)-(b.x+b.y)).forEach(box);
+ npcs.forEach((n,i)=>{n.x+=Math.sin(performance.now()/1600+i)*.002;person(n,n.n,false)});
+ cars.forEach((c,i)=>{c.t+=.018;if(i<2){c.x=(c.t%16)-1;c.y=6}else{c.x=6;c.y=(c.t%16)-1};let p=iso(c.x,c.y);x.fillStyle=i===2?"#d3a72f":"#397aa6";x.fillRect(p.x-12,p.y-9,24,12);x.fillStyle="#111";x.beginPath();x.arc(p.x-8,p.y+4,4,0,7);x.arc(p.x+8,p.y+4,4,0,7);x.fill()});
+ others.forEach(o=>person(o,o.username,false));person(me,state.name||"RAMZY",true);requestAnimationFrame(draw)}
+ function tick(){let dx=me.tx-me.x,dy=me.ty-me.y,d=Math.hypot(dx,dy);if(d>.04){me.x+=dx/d*.055;me.y+=dy/d*.055}setTimeout(tick,16)} 
+ cv.onclick=e=>{let r=cv.getBoundingClientRect(),sx=e.clientX-r.left-W/2-cam.x,sy=e.clientY-r.top-95-cam.y;let gx=sy/th+sx/tw,gy=sy/th-sx/tw;for(const b of buildings)if(gx>=b.x&&gx<=b.x+b.w&&gy>=b.y&&gy<=b.y+b.h){worldV2Open(b.go);return}me.tx=Math.max(0,Math.min(N-1,gx));me.ty=Math.max(0,Math.min(N-1,gy))};
+ async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({x:me.x/N*100,y:me.y/N*100})});let r=await fetch("/api/world/players"),d=await r.json();others=(d.players||[]).filter(q=>String(q.user_id)!==String(d.selfId)).map(q=>({x:Number(q.pos_x)/100*N,y:Number(q.pos_y)/100*N,username:q.username}))}catch(e){}}
+ resize();addEventListener("resize",resize,{once:true});tick();draw();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
+}
