@@ -480,3 +480,26 @@ html,body{
 }
 
 .beta-server-badge{display:inline-flex;align-items:center;gap:8px;margin:16px 0 13px;padding:9px 16px;border:1px solid #d8aa36;border-radius:999px;background:linear-gradient(180deg,#211b0c,#0d1015);box-shadow:0 0 20px #d8aa3626;color:#f3ce65;font-size:12px;font-weight:950;letter-spacing:2px}.beta-server-badge span{color:#62db91;font-size:13px;text-shadow:0 0 9px #62db91}
+
+
+/* Mafia login artwork */
+#loginScreen{max-width:none!important;padding:0!important;min-height:calc(100vh - 68px);background:#07090c}
+#loginScreen .hero-card{
+ min-height:calc(100vh - 68px)!important;
+ border-radius:0!important;
+ padding:36px 18px 48px!important;
+ background:
+  linear-gradient(180deg,rgba(5,7,10,.18) 0%,rgba(5,7,10,.46) 36%,rgba(5,7,10,.88) 78%,#07090c 100%),
+  url('/file_0000000070c881f4bea5f40558b8b0a4.png') center top/cover no-repeat!important;
+ background-attachment:scroll!important;
+}
+#loginScreen .hero-card>div,#loginScreen .hero-card>h1,#loginScreen .hero-card>p{position:relative;z-index:1}
+#loginScreen .login-box{padding:14px;border:1px solid #9c761f;border-radius:14px;background:rgba(5,8,12,.86);box-shadow:0 14px 38px #000b;backdrop-filter:blur(5px)}
+#loginScreen .eyebrow{padding:7px 12px;border-radius:20px;background:#080b0dcc;text-shadow:0 2px 8px #000}
+#loginScreen h1{text-shadow:0 4px 18px #000,0 0 18px #000}
+#loginScreen> .hero-card>p{text-shadow:0 2px 8px #000;color:#e0e3e8}
+@media(max-width:650px){
+ #loginScreen{min-height:calc(100vh - 68px - env(safe-area-inset-top))}
+ #loginScreen .hero-card{min-height:calc(100vh - 68px - env(safe-area-inset-top))!important;background-position:center top!important;padding:24px 14px 38px!important}
+ #loginScreen .install-box{background:rgba(8,11,15,.9)}
+}
