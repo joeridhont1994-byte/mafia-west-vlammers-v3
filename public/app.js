@@ -156,7 +156,7 @@ function setupWorldV3(){
  const draw=()=>{me.style.left=worldV3Pos.x+"%";me.style.top=worldV3Pos.y+"%"};
  const save=()=>{localStorage.setItem("worldV3Pos",JSON.stringify(worldV3Pos));fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(worldV3Pos)}).catch(()=>{})};
  const walk=()=>{if(!worldV3Target)return;let dx=worldV3Target.x-worldV3Pos.x,dy=worldV3Target.y-worldV3Pos.y,dist=Math.hypot(dx,dy);if(dist<1){worldV3Pos=worldV3Target;worldV3Target=null;draw();save();return}let s=Math.min(1.15,dist);worldV3Pos.x+=dx/dist*s;worldV3Pos.y+=dy/dist*s;draw();requestAnimationFrame(walk)};
- w.addEventListener("click",e=>{const b=e.target.closest(".wv3b");if(b){worldV2Open(b.dataset.go);return}const q=w.getBoundingClientRect();worldV3Target={x:Math.max(5,Math.min(95,(e.clientX-q.left)/q.width*100)),y:Math.max(28,Math.min(92,(e.clientY-q.top)/q.height*100))};requestAnimationFrame(walk)});
+ w.addEventListener("click",e=>{const b=e.target.closest(".wv3b");if(b){if(b.dataset.home){showHomes();return}worldV2Open(b.dataset.go);return}const q=w.getBoundingClientRect();worldV3Target={x:Math.max(5,Math.min(95,(e.clientX-q.left)/q.width*100)),y:Math.max(28,Math.min(92,(e.clientY-q.top)/q.height*100))};requestAnimationFrame(walk)});
  draw();
  const sync=async()=>{if(!$("wv3world"))return;try{save();const r=await fetch("/api/world/players"),d=await r.json();if(!r.ok)return;const live=new Set;for(const q of d.players||[]){if(String(q.user_id)===String(d.selfId))continue;const id="wv3u"+q.user_id;live.add(id);let el=$(id);if(!el){el=document.createElement("div");el.id=id;el.className="wv3me other";el.innerHTML="<i>🕴️</i><b></b>";w.appendChild(el)}el.style.left=Number(q.pos_x)+"%";el.style.top=Number(q.pos_y)+"%";el.querySelector("b").textContent=q.username}w.querySelectorAll(".wv3me.other").forEach(x=>{if(!live.has(x.id))x.remove()})}catch(e){}};
  sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200);
@@ -189,7 +189,7 @@ function setupWorldV4(){
  function tick(){let dx=me.tx-me.x,dy=me.ty-me.y,d=Math.hypot(dx,dy);if(d>.04){me.x+=dx/d*.055;me.y+=dy/d*.055}setTimeout(tick,16)} 
  cv.onclick=e=>{let r=cv.getBoundingClientRect(),sx=e.clientX-r.left-W/2-cam.x,sy=e.clientY-r.top-95-cam.y;let gx=sy/th+sx/tw,gy=sy/th-sx/tw;for(const b of buildings)if(gx>=b.x&&gx<=b.x+b.w&&gy>=b.y&&gy<=b.y+b.h){worldV2Open(b.go);return}me.tx=Math.max(0,Math.min(N-1,gx));me.ty=Math.max(0,Math.min(N-1,gy))};
  async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({x:me.x/N*100,y:me.y/N*100})});let r=await fetch("/api/world/players"),d=await r.json();others=(d.players||[]).filter(q=>String(q.user_id)!==String(d.selfId)).map(q=>({x:Number(q.pos_x)/100*N,y:Number(q.pos_y)/100*N,username:q.username}))}catch(e){}}
- resize();addEventListener("resize",resize,{once:true});tick();draw();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
+ resize();addEventListener("resize",resize,{once:true});tick();draw();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200);let form=$("v8chat"),input=$("v8chatInput");if(form)form.addEventListener("submit",async e=>{e.preventDefault();let message=(input.value||"").trim();if(!message)return;input.value="";try{await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message})});let old=me.querySelector(".v8bubble");if(old)old.remove();let bubble=document.createElement("i");bubble.className="v8bubble";bubble.textContent=message;me.appendChild(bubble);setTimeout(()=>bubble.remove(),5000)}catch(x){}})
 }
 
 /* ===== WORLD V5 PIXEL CITY ===== */
@@ -298,7 +298,7 @@ async function showMyCity(){
  <div class="v8block b1"></div><div class="v8block b2"></div><div class="v8road rh"></div><div class="v8road rv"></div><div class="v8square"></div>
  <button class="v8place hq" data-go="missions"><i>MW</i><strong>MAFFIA HQ</strong><em>MISSIES</em></button>
  <button class="v8place club" data-go="chat"><i>♫</i><strong>NEON CLUB</strong><em>CHAT</em></button>
- <button class="v8place apt" data-go="properties"><i>▦</i><strong>APPARTEMENTEN</strong><em>IMMO</em></button>
+ <button class="v8place apt" data-home="1"><i>▦</i><strong>APPARTEMENTEN</strong><em>BEZOEK & BOUW</em></button>
  <button class="v8place hosp" data-go="hospital"><i>✚</i><strong>ZIEKENHUIS</strong><em>ZORG</em></button>
  <button class="v8place police" data-go="players"><i>★</i><strong>POLITIE</strong><em>SPELERS</em></button>
  <button class="v8place garage" data-go="garage"><i>◆</i><strong>GARAGE</strong><em>AUTO'S</em></button>
@@ -306,7 +306,7 @@ async function showMyCity(){
  <div class="v8car taxi"></div><div class="v8car sedan"></div><div class="v8car bus"></div>
  <div class="v8npc n1"><span></span><b>Rico</b></div><div class="v8npc n2"><span></span><b>Luna</b></div>
  <div id="v8me" class="v8avatar"><span></span><b>${escapeHtml(state.name||"RAMZY")}</b><em>JIJ</em></div>
- </div><div class="v8mini"><i id="v8dot"></i></div></div><div class="v8help">Tik om te lopen · gebouwen openen je bestaande gamefuncties</div></div>`);setupV8()}catch(e){openPanel("WORLD V8","<p>"+escapeHtml(e.message)+"</p>")}
+ </div><div class="v8mini"><i id="v8dot"></i></div></div><form id="v8chat" class="v8chat"><input id="v8chatInput" maxlength="120" placeholder="Zeg iets in de stad..." autocomplete="off"><button>Stuur</button></form><div class="v8help">Tik om te lopen · bezoek spelers · chat live in de stad</div></div>`);setupV8()}catch(e){openPanel("WORLD V8","<p>"+escapeHtml(e.message)+"</p>")}
 }
 function setupV8(){
  const view=$("v8world"),map=$("v8map"),me=$("v8me"),dot=$("v8dot");if(!view||!map)return;let p={x:49,y:56},target=null;
