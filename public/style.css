@@ -368,3 +368,14 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .heist-guard{top:57%!important;font-size:62px!important;z-index:5}.heist-guard.left{left:13%!important}.heist-guard.right{right:13%!important}
 .heist-guard span{font-size:13px!important;background:#b51f1f!important;color:#fff!important;padding:5px 8px!important}
 .heist-help{font-size:17px!important;line-height:1.55!important;background:#151920;border-left:4px solid #e2b42c;padding:12px 14px;text-align:left;border-radius:5px}
+
+
+/* Geldtransport - nieuwe vaste lokale achtergrond */
+.heist-scene{
+ background-image:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.22)),url('/file_00000000aa9881f4aebb876d8c32ed1d.png')!important;
+ background-size:cover!important;
+ background-position:center 56%!important;
+ background-repeat:no-repeat!important;
+}
+.heist-side{background:transparent!important}
+.heist-van{display:none!important}
