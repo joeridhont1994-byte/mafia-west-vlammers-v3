@@ -353,3 +353,8 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
  .heist-box p{font-size:17px}
  .heist-choices button{font-size:19px!important;min-height:96px!important}
 }
+
+.heist-scene{height:210px;position:relative;overflow:hidden;margin:18px 0;border:2px solid #b98a16;border-radius:14px;background:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.55)),url('/file_00000000d9708210ad67cda5f6bb1b20.png') center/cover;box-shadow:inset 0 0 45px #000}
+.heist-van{position:absolute;left:50%;top:43%;transform:translate(-50%,-50%);font-size:86px;filter:drop-shadow(0 8px 8px #000)}
+.heist-guard{display:none;position:absolute;top:42%;transform:translateY(-50%);font-size:52px;flex-direction:column;align-items:center;text-shadow:0 3px 8px #000}.heist-guard.left{left:8%}.heist-guard.right{right:8%}.heist-guard span{font-size:11px;font-weight:900;color:#ffdf67;background:#111b;padding:3px 6px;border-radius:5px}
+.heist-road{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-size:16px;font-weight:900;color:#fff;text-shadow:0 2px 5px #000}
