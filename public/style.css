@@ -577,3 +577,14 @@ html,body{
 .city-build-menu.live .city-shop-scroll{display:flex!important;overflow-x:auto!important;min-width:0;flex:1}
 .city-build-menu.live .city-shop-item{display:block!important;pointer-events:auto!important}
 @media(max-width:650px){.city-build-slot{width:38px;height:38px;font-size:24px}.city-build-menu.live{min-height:112px!important}}
+
+/* Mobile city viewport fix */
+@media(max-width:650px){
+ #panelBody{padding-bottom:105px!important}
+ .city-map-window{height:650px!important;overflow:hidden!important}
+ .city-map-window .city-world.realistic.city-photo-map{height:650px!important;background-size:auto 650px!important;background-position:center top!important}
+ .city-build-slot{width:30px!important;height:30px!important;font-size:21px!important;line-height:24px!important;background:#111820dd!important;border:2px solid #f3d467!important}
+ .city-build-menu.live{margin-bottom:24px!important;min-height:122px!important}
+ .city-build-menu.live .city-shop-scroll{padding-bottom:8px!important}
+ .city-edit-help{position:relative;z-index:4}
+}
