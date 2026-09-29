@@ -862,3 +862,13 @@ html,body{
  background:linear-gradient(180deg,transparent 0%,transparent 52%,rgba(3,4,5,.12) 63%,rgba(3,4,5,.72) 86%,rgba(3,4,5,.92) 100%)!important;
  opacity:1!important;
 }
+
+/* Custom MISSIES mini icon */
+.buildings .building[data-action="missions"] .mission-icon{
+  width:74px!important;height:74px!important;padding:0!important;overflow:hidden!important;
+  border:2px solid #c99b3b!important;border-radius:17px!important;background:#080a0d!important;
+  box-shadow:0 5px 16px rgba(0,0,0,.55),0 0 12px rgba(201,155,59,.16)!important;
+}
+.buildings .building[data-action="missions"] .mission-icon img{
+  display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;
+}
