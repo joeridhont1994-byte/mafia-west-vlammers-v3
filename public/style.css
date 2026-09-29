@@ -525,3 +525,19 @@ html,body{
 .city-world.realistic.city-photo-map{background-image:linear-gradient(180deg,rgba(4,8,12,.02),rgba(4,8,12,.08)),url('/file_00000000b3588210888c68bdc0ed0462.png')!important;background-position:center center!important}
 .city-photo-map .city-zone,.city-photo-map .city-land,.city-photo-map .city-water,.city-photo-map .city-road{display:none!important}
 @media(max-width:650px){.city-world.realistic.city-photo-map{height:590px!important;background-size:auto 100%!important;background-position:center center!important}}
+
+/* Interactive map structures */
+.city-photo-map .city-building-piece{width:94px!important;height:96px!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;backdrop-filter:none!important;box-shadow:none!important;overflow:visible;text-shadow:0 2px 5px #000;transform:translate(-50%,-50%)}
+.city-building-piece .city-3d-building{position:relative;display:block;width:76px;height:58px;margin:0 auto 2px;filter:drop-shadow(0 10px 7px #000a)}
+.city-3d-building i{position:absolute;display:block}
+.city-3d-building i:nth-child(1){left:13px;bottom:3px;width:52px;height:42px;border:1px solid #c7b170;border-radius:3px 3px 1px 1px;background:repeating-linear-gradient(90deg,#18222c 0 7px,#d8ad47 8px 10px),linear-gradient(#343e47,#10161d);box-shadow:inset 0 0 12px #000}
+.city-3d-building i:nth-child(2){left:8px;bottom:42px;width:62px;height:10px;transform:skewX(-28deg);border:1px solid #b99843;background:linear-gradient(#4b5660,#171d23)}
+.city-3d-building i:nth-child(3){left:33px;bottom:3px;width:15px;height:22px;border:1px solid #d4b55a;background:linear-gradient(90deg,#080b0e,#44371c,#090c0f)}
+.city-building-piece.garage .city-3d-building i:nth-child(1){height:27px;bottom:4px;background:linear-gradient(#343b40 0 35%,#0b0e11 36% 70%,#6d7479 71%);border-color:#9b9b8c}.city-building-piece.garage .city-3d-building i:nth-child(2){bottom:30px}
+.city-building-piece.weapons .city-3d-building i:nth-child(1){background:repeating-linear-gradient(90deg,#171b1e 0 9px,#7b642b 10px 12px),#252b2d;border-color:#887126}
+.city-building-piece.nightclub .city-3d-building i:nth-child(1){background:repeating-linear-gradient(90deg,#161227 0 8px,#a832d7 9px 11px),linear-gradient(#432262,#111321);border-color:#b04ee2;box-shadow:0 0 13px #a226e488}
+.city-building-piece.casino .city-3d-building i:nth-child(1){background:repeating-linear-gradient(90deg,#27110e 0 8px,#e0a52e 9px 11px),linear-gradient(#7d201a,#180d0c);border-color:#e1ae38;box-shadow:0 0 13px #df342c66}
+.city-building-piece.villa .city-3d-building i:nth-child(1){height:30px;background:repeating-linear-gradient(90deg,#e2d5b4 0 8px,#594d3b 9px 10px),#c6b996;border-color:#eee0b9}.city-building-piece.villa .city-3d-building i:nth-child(2){bottom:32px;background:#544638}
+.city-photo-map .city-building-piece b{display:inline-block;padding:3px 6px;border-radius:5px;background:#080b0ddd;color:#f1d16d;font-size:10px}.city-photo-map .city-building-piece small{display:block;width:max-content;margin:2px auto 0;padding:2px 5px;border-radius:4px;background:#080b0dcc;color:#d4d8dc;font-size:8px}
+.city-photo-map .city-building-piece.selected .city-3d-building{filter:drop-shadow(0 0 8px #ffd64d) drop-shadow(0 9px 6px #000)}
+@media(max-width:650px){.city-photo-map .city-building-piece{width:82px!important;height:88px!important}.city-building-piece .city-3d-building{transform:scale(.88);transform-origin:center bottom}}
