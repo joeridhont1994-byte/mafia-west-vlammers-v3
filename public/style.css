@@ -588,3 +588,12 @@ html,body{
  .city-build-menu.live .city-shop-scroll{padding-bottom:8px!important}
  .city-edit-help{position:relative;z-index:4}
 }
+
+/* Hide baked-in lower UI and keep real controls usable */
+@media(max-width:650px){
+ .city-map-window{height:535px!important}
+ .city-map-window .city-world.realistic.city-photo-map{height:650px!important;background-size:auto 650px!important;background-position:center top!important}
+ .city-build-slot{width:28px!important;height:28px!important;font-size:19px!important;line-height:21px!important}
+ .city-edit-help{margin-top:10px!important}
+ .city-build-menu.live{display:flex!important;margin-bottom:90px!important}
+}
