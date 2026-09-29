@@ -1,5 +1,5 @@
-const CACHE="mafia-wv-v3";
-const ASSETS=["/","/style.css?v=20260929-60","/app.js?v=20260929-60","/manifest.json"];
+const CACHE="mafia-wv-v8-121";
+const ASSETS=["/","/style.css?v=20260929-121","/app.js?v=20260929-121","/manifest.json"];
 
 self.addEventListener("install",event=>{
   event.waitUntil(
