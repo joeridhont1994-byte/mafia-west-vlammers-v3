@@ -913,3 +913,23 @@ html,body{
   color:#fff!important;text-shadow:0 2px 5px #000,0 0 10px #000!important;white-space:nowrap!important;
 }
 .buildings .building[data-action="missions"] .mission-icon{z-index:3!important;}
+
+/* MISSIES mobile: keep all content inside its card */
+.buildings .building[data-action="missions"]{overflow:hidden!important;}
+.buildings .building[data-action="missions"]::after{
+ left:18px!important;right:18px!important;bottom:14px!important;height:104px!important;
+ background:linear-gradient(90deg,rgba(2,4,7,.90),rgba(2,4,7,.70),rgba(2,4,7,.28))!important;
+}
+.buildings .building[data-action="missions"] .mission-icon{
+ width:82px!important;height:82px!important;left:24px!important;bottom:22px!important;
+}
+.buildings .building[data-action="missions"] > b{
+ left:118px!important;right:12px!important;bottom:69px!important;
+ font-size:20px!important;line-height:1!important;white-space:nowrap!important;
+ overflow:hidden!important;text-overflow:ellipsis!important;
+}
+.buildings .building[data-action="missions"] > small{
+ left:118px!important;right:12px!important;bottom:36px!important;
+ font-size:15px!important;line-height:1!important;white-space:nowrap!important;
+ overflow:hidden!important;text-overflow:ellipsis!important;
+}
