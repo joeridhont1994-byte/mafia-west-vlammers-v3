@@ -568,3 +568,12 @@ html,body{
  .city-map-window{height:535px;margin-left:0;margin-right:0}
  .city-map-window .city-world.realistic.city-photo-map{height:720px!important;background-size:auto 720px!important;background-position:center -66px!important}
 }
+
+/* Functional build plots */
+.city-build-slot{position:absolute;z-index:9;width:42px;height:42px;transform:translate(-50%,-50%);border:2px solid #ffffff99;border-radius:50%;background:#071017a8;color:#fff;font-size:27px;font-weight:500;line-height:34px;box-shadow:0 4px 12px #0008}
+.city-build-slot.ready{border-color:#ffd34e;color:#ffd34e;box-shadow:0 0 18px #ffd34e99;background:#241c08d9;animation:slotPulse 1s infinite alternate}
+@keyframes slotPulse{to{transform:translate(-50%,-50%) scale(1.12)}}
+.city-build-menu.live{display:flex!important;visibility:visible!important;min-height:118px!important;overflow:visible!important}
+.city-build-menu.live .city-shop-scroll{display:flex!important;overflow-x:auto!important;min-width:0;flex:1}
+.city-build-menu.live .city-shop-item{display:block!important;pointer-events:auto!important}
+@media(max-width:650px){.city-build-slot{width:38px;height:38px;font-size:24px}.city-build-menu.live{min-height:112px!important}}
