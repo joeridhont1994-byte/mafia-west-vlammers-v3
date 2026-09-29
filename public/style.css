@@ -445,3 +445,5 @@ html,body{
    background:#0b0e14!important;
  }
 }
+
+.property-income{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:17px;margin-bottom:16px;border:1px solid #c79820;border-radius:10px;background:linear-gradient(135deg,#241b08,#0b0e13);box-shadow:0 8px 22px #0008}.property-income b{display:block;font-size:19px;color:#ffd45a}.property-income small{display:block;margin-top:5px;color:#c5c9cf}.property-income button{padding:12px 14px;border:1px solid #ffe584;border-radius:7px;background:linear-gradient(#f7d35c,#c88d09);color:#17120a;font-weight:900}
