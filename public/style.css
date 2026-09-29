@@ -416,3 +416,32 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
    transform:translateZ(0);
  }
 }
+
+
+/* Android/PWA white-flash hardening */
+html,body,#app,#gameScreen,.panel,#panelBody{
+ background-color:#080a0f!important;
+}
+html,body{
+ min-height:100%;
+ background:#080a0f!important;
+}
+@media(max-width:650px){
+ body:before{display:none!important}
+ .panel{
+   transform:none!important;
+   backface-visibility:visible!important;
+   contain:paint;
+   background:#080b10!important;
+ }
+ #panelBody{
+   transform:none!important;
+   -webkit-overflow-scrolling:auto!important;
+   background:#080b10!important;
+   will-change:auto!important;
+ }
+ .panel-head{
+   transform:none!important;
+   background:#0b0e14!important;
+ }
+}
