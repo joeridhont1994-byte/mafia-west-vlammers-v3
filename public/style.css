@@ -503,3 +503,5 @@ html,body{
  #loginScreen .hero-card{min-height:calc(100vh - 68px - env(safe-area-inset-top))!important;background-position:center top!important;padding:24px 14px 38px!important}
  #loginScreen .install-box{background:rgba(8,11,15,.9)}
 }
+
+.android-help{width:100%;margin-top:11px;padding:11px;border:1px solid #6c8f57;border-radius:7px;background:#101811;color:#eaf5e5;font-weight:900}.android-guide{text-align:left;margin-top:13px;padding:14px;border:1px solid #557443;border-radius:9px;background:#080d09}.android-guide>b{display:block;color:#9ee67d;font-size:18px;margin-bottom:11px}.android-guide .ios-step strong{background:#79bd5b;color:#081008}
