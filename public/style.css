@@ -897,3 +897,19 @@ html,body{
 .buildings .building[data-action="missions"] > small{
   position:absolute!important;left:102px!important;bottom:28px!important;z-index:2!important;margin:0!important;
 }
+
+/* MISSIES text readability */
+.buildings .building[data-action="missions"]::after{
+  content:"";position:absolute!important;left:88px!important;right:8px!important;bottom:12px!important;height:105px!important;
+  background:linear-gradient(90deg,rgba(2,4,7,.88),rgba(2,4,7,.72),rgba(2,4,7,.15))!important;
+  border-radius:18px!important;z-index:1!important;pointer-events:none!important;
+}
+.buildings .building[data-action="missions"] > b{
+  left:112px!important;bottom:68px!important;font-size:25px!important;line-height:1!important;
+  color:#f5c95b!important;text-shadow:0 2px 5px #000,0 0 12px #000!important;white-space:nowrap!important;
+}
+.buildings .building[data-action="missions"] > small{
+  left:112px!important;bottom:34px!important;font-size:17px!important;line-height:1.1!important;
+  color:#fff!important;text-shadow:0 2px 5px #000,0 0 10px #000!important;white-space:nowrap!important;
+}
+.buildings .building[data-action="missions"] .mission-icon{z-index:3!important;}
