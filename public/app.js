@@ -191,3 +191,37 @@ function setupWorldV4(){
  async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({x:me.x/N*100,y:me.y/N*100})});let r=await fetch("/api/world/players"),d=await r.json();others=(d.players||[]).filter(q=>String(q.user_id)!==String(d.selfId)).map(q=>({x:Number(q.pos_x)/100*N,y:Number(q.pos_y)/100*N,username:q.username}))}catch(e){}}
  resize();addEventListener("resize",resize,{once:true});tick();draw();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
 }
+
+/* ===== WORLD V5 PIXEL CITY ===== */
+async function showMyCity(){
+ openPanel("🌆 WEST-VLAMMERS V5","<div class='v5loading'>V5 laden...</div>");
+ try{let r=await fetch("/api/my-city"),d=await r.json();if(!r.ok)throw Error(d.error||"Laden mislukt");
+ openPanel("🌆 WEST-VLAMMERS V5",`<div class="v5shell"><div class="v5hud"><b>WEST-VLAMMERS CITY</b><span>● LIVE WORLD</span></div><div class="v5view"><canvas id="v5canvas"></canvas><div class="v5tag">WORLD V5</div></div><div class="v5hint">Tik om te lopen • gebouwen zijn interactief</div></div>`);setupV5()}catch(e){openPanel("WORLD V5","<p>"+escapeHtml(e.message)+"</p>")}
+}
+function setupV5(){
+ const cv=$("v5canvas");if(!cv)return;const g=cv.getContext("2d"),D=devicePixelRatio||1,TW=64,TH=32,S=24;
+ let W,H,me={x:12,y:14,tx:12,ty:14},others=[],time=0;
+ const bs=[{x:3,y:3,w:4,h:3,z:78,n:"MAFFIA HQ",go:"missions",c:["#293542","#18222c","#3c4b59"]},{x:15,y:3,w:4,h:3,z:66,n:"NIGHTCLUB",go:"chat",c:["#602873","#341642","#88369d"]},{x:2,y:15,w:4,h:4,z:92,n:"APPARTEMENTEN",go:"properties",c:["#31576c","#203846","#4e8096"]},{x:16,y:15,w:4,h:4,z:82,n:"ZIEKENHUIS",go:"hospital",c:["#b9d0d3","#70878b","#e3eeee"]},{x:9,y:17,w:4,h:3,z:58,n:"GARAGE",go:"garage",c:["#4e3b50","#2c2532","#735a76"]},{x:17,y:9,w:3,h:3,z:62,n:"POLITIE",go:"players",c:["#315c83","#19354f","#4d81aa"]}];
+ function resize(){let r=cv.parentElement.getBoundingClientRect();W=r.width;H=Math.max(570,Math.min(720,innerHeight*.7));cv.style.width=W+"px";cv.style.height=H+"px";cv.width=W*D;cv.height=H*D;g.setTransform(D,0,0,D,0,0)}
+ function cam(){let p=raw(me.x,me.y);return{x:W/2-p.x,y:H*.55-p.y}}
+ function raw(a,b){return{x:(a-b)*TW/2,y:(a+b)*TH/2}}
+ function iso(a,b){let p=raw(a,b),q=cam();return{x:p.x+q.x,y:p.y+q.y}}
+ function diamond(p,fill,stroke){g.beginPath();g.moveTo(p.x,p.y-TH/2);g.lineTo(p.x+TW/2,p.y);g.lineTo(p.x,p.y+TH/2);g.lineTo(p.x-TW/2,p.y);g.closePath();g.fillStyle=fill;g.fill();if(stroke){g.strokeStyle=stroke;g.stroke()}}
+ function tile(i,j){let road=i===11||i===12||j===11||j===12,p=iso(i,j);diamond(p,road?"#353d43":((i+j)%2?"#47765b":"#4c7d60"),road?"#555f63":"#3b694f");if(road){g.strokeStyle="#d6bc55";g.setLineDash([5,7]);g.beginPath();g.moveTo(p.x-TW/3,p.y);g.lineTo(p.x+TW/3,p.y);g.stroke();g.setLineDash([])}}
+ function building(b){let p=iso(b.x,b.y),rx=b.w*TW/2,ry=b.w*TH/2,lx=b.h*TW/2,ly=b.h*TH/2,z=b.z,A={x:p.x,y:p.y-z},B={x:p.x+rx,y:p.y+ry-z},C={x:p.x+rx-lx,y:p.y+ry+ly-z},D1={x:p.x-lx,y:p.y+ly-z};poly([A,B,C,D1],b.c[2],"#8bc4d3");poly([B,{x:B.x,y:B.y+z},{x:C.x,y:C.y+z},C],b.c[0]);poly([C,{x:C.x,y:C.y+z},{x:D1.x,y:D1.y+z},D1],b.c[1]);for(let q=0;q<3;q++){g.fillStyle="#70d2e7";g.fillRect(C.x+8+q*18,C.y+18,11,16)}g.fillStyle=b.n==="ZIEKENHUIS"?"#162329":"#f4f5f5";g.font="bold 9px sans-serif";g.textAlign="center";g.fillText(b.n,p.x+(rx-lx)/2,p.y+(ry+ly)/2+10)}
+ function poly(a,c,s){g.beginPath();g.moveTo(a[0].x,a[0].y);a.slice(1).forEach(p=>g.lineTo(p.x,p.y));g.closePath();g.fillStyle=c;g.fill();g.strokeStyle=s;g.stroke()}
+ function tree(i,j){let p=iso(i,j);g.fillStyle="#5a3924";g.fillRect(p.x-3,p.y-22,6,22);g.fillStyle="#1f6d3c";g.beginPath();g.arc(p.x,p.y-29,14,0,7);g.fill();g.fillStyle="#3e9958";g.beginPath();g.arc(p.x-5,p.y-34,8,0,7);g.fill()}
+ function avatar(o,n,you){let p=iso(o.x,o.y),bob=Math.sin(time*.012+(o.x||0))*.8;g.fillStyle="#0007";g.beginPath();g.ellipse(p.x,p.y+5,9,4,0,0,7);g.fill();g.fillStyle=you?"#d5a82e":"#376f99";g.fillRect(p.x-6,p.y-23+bob,12,18);g.fillStyle="#222";g.fillRect(p.x-6,p.y-5,5,9);g.fillRect(p.x+1,p.y-5,5,9);g.fillStyle="#d89c75";g.fillRect(p.x-6,p.y-32+bob,12,10);g.fillStyle="#24201e";g.fillRect(p.x-6,p.y-34+bob,12,4);g.fillStyle="#0b1119df";g.fillRect(p.x-23,p.y-48,46,12);g.fillStyle="#fff";g.font="8px sans-serif";g.textAlign="center";g.fillText(n,p.x,p.y-39)}
+ function car(a,b,dir,col){let p=iso(a,b);g.save();g.translate(p.x,p.y-6);g.fillStyle=col;g.beginPath();g.moveTo(-15,0);g.lineTo(-9,-9);g.lineTo(8,-9);g.lineTo(15,0);g.lineTo(11,7);g.lineTo(-12,7);g.closePath();g.fill();g.fillStyle="#9ad7e5";g.fillRect(-7,-7,12,5);g.fillStyle="#111";g.beginPath();g.arc(-9,6,4,0,7);g.arc(9,6,4,0,7);g.fill();g.restore()}
+ function draw(){time++;g.clearRect(0,0,W,H);let sky=g.createLinearGradient(0,0,0,H);sky.addColorStop(0,"#102438");sky.addColorStop(.22,"#326273");sky.addColorStop(.221,"#47745b");sky.addColorStop(1,"#1f4236");g.fillStyle=sky;g.fillRect(0,0,W,H);
+ for(let s=0;s<S*2;s++)for(let i=0;i<S;i++){let j=s-i;if(j>=0&&j<S)tile(i,j)}
+ [[6,6],[7,17],[18,7],[19,18],[4,11],[14,20],[20,13]].forEach(t=>tree(t[0],t[1]));
+ bs.slice().sort((a,b)=>a.x+a.y-b.x-b.y).forEach(building);
+ let z=(time*.025)%26;car(z-1,11,0,"#d4a72e");car(12,(z+8)%26-1,1,"#3d84b2");car((z+14)%26-1,12,0,"#a9454b");
+ [{x:8+Math.sin(time/90)*1.5,y:9,n:"Rico"},{x:15,y:13+Math.sin(time/110)*1.8,n:"Luna"},{x:6,y:16+Math.cos(time/100)*1.4,n:"Vince"}].forEach(o=>avatar(o,o.n,false));
+ others.forEach(o=>avatar(o,o.username,false));avatar(me,state.name||"RAMZY",true);requestAnimationFrame(draw)}
+ function walk(){let dx=me.tx-me.x,dy=me.ty-me.y,d=Math.hypot(dx,dy);if(d>.05){me.x+=dx/d*.065;me.y+=dy/d*.065}requestAnimationFrame(walk)}
+ cv.addEventListener("click",e=>{let r=cv.getBoundingClientRect(),q=cam(),sx=e.clientX-r.left-q.x,sy=e.clientY-r.top-q.y,gx=sy/TH+sx/TW,gy=sy/TH-sx/TW;for(let b of bs)if(gx>=b.x&&gx<=b.x+b.w&&gy>=b.y&&gy<=b.y+b.h){worldV2Open(b.go);return}me.tx=Math.max(.5,Math.min(S-1,gx));me.ty=Math.max(.5,Math.min(S-1,gy))});
+ async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({x:me.x/S*100,y:me.y/S*100})});let r=await fetch("/api/world/players"),d=await r.json();others=(d.players||[]).filter(v=>String(v.user_id)!==String(d.selfId)).map(v=>({x:+v.pos_x/100*S,y:+v.pos_y/100*S,username:v.username}))}catch(e){}}
+ resize();walk();draw();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
+}
