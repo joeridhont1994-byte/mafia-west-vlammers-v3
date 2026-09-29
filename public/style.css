@@ -454,3 +454,27 @@ html,body{
 .install-title{font-size:19px;font-weight:950;color:#ffd45a;letter-spacing:.5px}.install-sub{font-size:12px;color:#aeb5c0;margin:5px 0 13px}.install-main{width:100%;min-height:50px;font-size:15px!important}.iphone-help{width:100%;margin-top:11px;padding:11px;border:1px solid #4b5360;border-radius:7px;background:#11161d;color:#eef1f5;font-weight:800}.ios-guide{text-align:left;margin-top:13px;padding:14px;border:1px solid #66521e;border-radius:9px;background:#090c11}.ios-guide>b{display:block;color:#ffd45a;font-size:18px;margin-bottom:11px}.ios-step{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #ffffff10}.ios-step strong{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:50%;background:#d7a62b;color:#090b0e}.ios-step span{font-size:14px;line-height:1.35}.share-symbol{font-size:20px;color:#7eb8ff}.ios-done{margin-top:11px;color:#75d69b;font-size:13px;font-weight:800}.install-help{margin-top:9px!important}
 
 .feedback-box{padding:18px;border:1px solid #6c551c;border-radius:10px;background:linear-gradient(145deg,#171c23,#090c10)}.feedback-box h2{margin:0 0 8px;color:#ffd45a}.feedback-box textarea{width:100%;min-height:180px;resize:vertical;margin-top:12px;padding:14px;background:#080b0f;color:#fff;border:1px solid #414957;border-radius:8px;font:inherit;outline:none}.feedback-box textarea:focus{border-color:#d5a928}.feedback-message{margin:0 0 12px;padding:14px;border:1px solid #414957;border-left:4px solid #d5a928;border-radius:7px;background:#11161d}.feedback-message b{display:block;color:#ffd45a}.feedback-message small{display:block;color:#8f98a6;margin-top:3px}.feedback-message p{white-space:pre-wrap;line-height:1.45}
+
+
+/* iPhone safe-area HUD fix */
+@media(max-width:650px){
+ .topbar{
+   position:sticky!important;
+   top:0!important;
+   height:calc(68px + env(safe-area-inset-top))!important;
+   min-height:calc(68px + env(safe-area-inset-top))!important;
+   padding:env(safe-area-inset-top) 9px 0!important;
+   background:#0b0e14!important;
+   z-index:100!important;
+ }
+ .brand{min-width:0;flex:0 1 auto}
+ .brand-mark{width:34px;height:34px;font-size:12px}
+ .brand>div{display:none!important}
+ .topstats{margin-left:auto;display:flex!important;align-items:center;justify-content:flex-end;gap:4px!important;min-width:0}
+ .topstats span{display:block!important;white-space:nowrap;padding:6px 7px!important;font-size:11px!important;line-height:14px;background:#171c24!important}
+ #topEnergyTimer{font-size:8px!important;line-height:9px!important;margin-top:1px!important}
+ .screen{padding-top:16px!important}
+}
+@supports(padding:max(0px)){
+ .nav{padding-bottom:env(safe-area-inset-bottom);height:calc(64px + env(safe-area-inset-bottom))}
+}
