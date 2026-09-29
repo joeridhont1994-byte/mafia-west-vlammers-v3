@@ -394,3 +394,19 @@ function openWXRoom(kind,name){
  openPanel("🚪 "+name,'<div class="wxRoom '+kind+'"><div class="wxRoomBack wallA"></div><div class="wxRoomBack wallB"></div><div class="wxRoomSign">'+escapeHtml(name)+'</div><div class="wxFloorObj o1">'+({club:"🎧",garage:"🛠️",hospital:"🛏️",police:"🗄️",hq:"💼",shop:"🛒",casino:"🎰"}[kind]||"🪑")+'</div><div class="wxFloorObj o2">'+({club:"🔊",garage:"🚗",hospital:"➕",police:"💻",hq:"🗺️",shop:"📦",casino:"🎲"}[kind]||"🪴")+'</div><div class="wxRoomNpc">🧍<b>'+escapeHtml(name)+' medewerker</b></div><div class="wxRoomMe">🧍<b>'+escapeHtml(state.name||"Jij")+'</b></div></div><div class="wxRoomActions"><button id="wxRoomUse">Open '+escapeHtml(name)+'</button><button id="wxRoomExit">← Terug naar stad</button></div>');
  $("wxRoomExit").onclick=showWorldX;$("wxRoomUse").onclick=()=>worldV2Open(action)
 }
+
+/* ===== WORLD VISUAL DETAIL + STREET LIFE V2 ===== */
+(function(){
+ const base=setupWorldX;
+ setupWorldX=function(){
+  base();
+  const s=$("wxStage"); if(!s)return;
+  const deco=document.createElement("div");deco.className="wxDecor";deco.innerHTML=
+  '<div class="wxCrosswalk cw1"></div><div class="wxCrosswalk cw2"></div>'+
+  '<div class="wxLamp lp1"></div><div class="wxLamp lp2"></div><div class="wxLamp lp3"></div><div class="wxLamp lp4"></div>'+
+  '<div class="wxFlower fl1">✿</div><div class="wxFlower fl2">✿</div><div class="wxFlower fl3">✿</div>'+
+  '<div class="wxNpc np1"><span>🧍</span><b>Rico</b></div><div class="wxNpc np2"><span>🧍‍♀️</span><b>Luna</b></div><div class="wxNpc np3"><span>🧍</span><b>Kevin</b></div><div class="wxNpc np4"><span>🧍‍♀️</span><b>Sarah</b></div>'+
+  '<div class="wxKiosk">☕<b>COFFEE</b></div><div class="wxBusStop">▤<b>BUS</b></div>';
+  s.insertBefore(deco,s.firstChild);
+ }
+})();
