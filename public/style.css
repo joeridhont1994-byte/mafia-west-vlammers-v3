@@ -332,3 +332,24 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 }
 
 .heist-box{text-align:center;padding:8px 2px 25px}.heist-box h2{color:#f2c94c;letter-spacing:1px}.heist-progress{height:12px;background:#20242b;border:1px solid #735b1c;border-radius:8px;overflow:hidden;margin:18px 0}.heist-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b17b08,#ffd85a)}.heist-choices{display:flex;gap:12px;margin:25px 0}.heist-choices button{flex:1;min-height:70px;font-size:18px;font-weight:900;border:1px solid #ffe37d;border-radius:9px;background:linear-gradient(#f6cf57,#c9910c);color:#17120a}.heist-code{font-size:42px;font-weight:900;letter-spacing:12px;color:#ffd85a;background:#080a0d;border:1px solid #6d5318;border-radius:10px;padding:20px;margin:22px 0}
+
+
+/* Geldtransport: duidelijke mobiele spelknoppen */
+.heist-box{max-width:620px;margin:0 auto;padding:18px 8px 30px!important}
+.heist-box h2{font-size:30px!important;margin:10px 0 18px!important}
+.heist-box p{font-size:18px;line-height:1.45}
+.heist-choices{display:grid!important;grid-template-columns:1fr 1fr;gap:14px!important;margin:26px 0 18px!important}
+.heist-choices button{
+ min-height:92px!important;padding:14px 8px!important;
+ border:2px solid #ffe27a!important;border-radius:12px!important;
+ background:linear-gradient(180deg,#f8d35e 0%,#d39a0b 72%,#a56f05 100%)!important;
+ color:#111!important;font-size:21px!important;font-weight:900!important;
+ box-shadow:0 6px 0 #6f4900,0 10px 20px rgba(0,0,0,.45)!important;
+}
+.heist-choices button:first-child:before{content:"⬅️";display:block;font-size:34px;margin-bottom:5px}
+.heist-choices button:last-child:before{content:"➡️";display:block;font-size:34px;margin-bottom:5px}
+@media(max-width:650px){
+ .heist-box h2{font-size:28px!important}
+ .heist-box p{font-size:17px}
+ .heist-choices button{font-size:19px!important;min-height:96px!important}
+}
