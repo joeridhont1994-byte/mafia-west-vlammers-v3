@@ -367,3 +367,30 @@ showMyCity=showWorldX;
    use.onclick=()=>{let p=current(),near=[...stage.querySelectorAll(".wxBuilding")].map(el=>{let x=parseFloat(getComputedStyle(el).left)/stage.clientWidth*100,y=parseFloat(getComputedStyle(el).top)/stage.clientHeight*100;return {el,d:Math.hypot(p.x-x,p.y-y)}}).sort((a,b)=>a.d-b.d)[0];if(near&&near.d<35)near.el.click()};
  }
 })();
+
+/* ===== WORLD DISTRICTS + INTERIORS V1 ===== */
+(function(){
+ const base=setupWorldX;
+ setupWorldX=function(){
+  base();
+  const stage=$("wxStage"),me=$("wxMe");if(!stage||!me)return;
+  const doors=[
+   {sel:".wxBuilding.apartments",name:"Appartementen",kind:"homes"},
+   {sel:".wxBuilding.club",name:"Neon Club",kind:"club"},
+   {sel:".wxBuilding.garage",name:"Garage",kind:"garage"},
+   {sel:".wxBuilding.hospital",name:"Ziekenhuis",kind:"hospital"},
+   {sel:".wxBuilding.police",name:"Politiebureau",kind:"police"},
+   {sel:".wxBuilding.hq",name:"Maffia HQ",kind:"hq"},
+   {sel:".wxBuilding.shop",name:"Winkel",kind:"shop"},
+   {sel:".wxBuilding.casino",name:"Casino",kind:"casino"}];
+  doors.forEach(d=>{let el=stage.querySelector(d.sel);if(!el)return;el.dataset.room=d.kind;el.dataset.roomName=d.name});
+  stage.addEventListener("dblclick",e=>{let b=e.target.closest("[data-room]");if(b)openWXRoom(b.dataset.room,b.dataset.roomName)});
+  let act=stage.querySelector(".wxUse");if(act)act.onclick=()=>{let p={x:parseFloat(me.style.left)||49,y:parseFloat(me.style.top)||63},near=doors.map(d=>{let el=stage.querySelector(d.sel),x=parseFloat(getComputedStyle(el).left)/stage.clientWidth*100,y=parseFloat(getComputedStyle(el).top)/stage.clientHeight*100;return{d,dist:Math.hypot(p.x-x,p.y-y)}}).sort((x,y)=>x.dist-y.dist)[0];if(near&&near.dist<42)openWXRoom(near.d.kind,near.d.name)};
+ }
+})();
+function openWXRoom(kind,name){
+ if(kind==="homes"){showHomes();return}
+ const action={club:"chat",garage:"garage",hospital:"hospital",police:"players",hq:"missions",shop:"shop",casino:"casino"}[kind];
+ openPanel("🚪 "+name,'<div class="wxRoom '+kind+'"><div class="wxRoomBack wallA"></div><div class="wxRoomBack wallB"></div><div class="wxRoomSign">'+escapeHtml(name)+'</div><div class="wxFloorObj o1">'+({club:"🎧",garage:"🛠️",hospital:"🛏️",police:"🗄️",hq:"💼",shop:"🛒",casino:"🎰"}[kind]||"🪑")+'</div><div class="wxFloorObj o2">'+({club:"🔊",garage:"🚗",hospital:"➕",police:"💻",hq:"🗺️",shop:"📦",casino:"🎲"}[kind]||"🪴")+'</div><div class="wxRoomNpc">🧍<b>'+escapeHtml(name)+' medewerker</b></div><div class="wxRoomMe">🧍<b>'+escapeHtml(state.name||"Jij")+'</b></div></div><div class="wxRoomActions"><button id="wxRoomUse">Open '+escapeHtml(name)+'</button><button id="wxRoomExit">← Terug naar stad</button></div>');
+ $("wxRoomExit").onclick=showWorldX;$("wxRoomUse").onclick=()=>worldV2Open(action)
+}
