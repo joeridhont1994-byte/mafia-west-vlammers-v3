@@ -257,3 +257,35 @@ function setupV6(){
  async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({x:me.x/N*100,y:me.y/N*100})});let r=await fetch("/api/world/players"),d=await r.json();others=(d.players||[]).filter(v=>String(v.user_id)!==String(d.selfId)).map(v=>({x:+v.pos_x/100*N,y:+v.pos_y/100*N,username:v.username}))}catch(e){}}
  size();draw();move();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
 }
+
+/* ===== WORLD V7 SPRITE DISTRICT ===== */
+async function showMyCity(){
+ openPanel("🏙️ WEST-VLAMMERS V7","<p>Nieuwe wijk laden...</p>");
+ try{let r=await fetch("/api/my-city");if(!r.ok)throw Error("Wereld laden mislukt");
+ openPanel("🏙️ WEST-VLAMMERS V7",`<div class="v7game"><div class="v7bar"><b>WEST-VLAMMERS CITY</b><span>● MULTIPLAYER</span></div><div id="v7world" class="v7world"><div class="v7map">
+ <div class="v7road v7rh"></div><div class="v7road v7rv"></div><div class="v7walk w1"></div><div class="v7walk w2"></div>
+ <button class="v7building hq" data-go="missions"><span class="sign">MAFFIA HQ</span><i class="door"></i></button>
+ <button class="v7building club" data-go="chat"><span class="sign">NIGHT CLUB</span><i class="door"></i></button>
+ <button class="v7building flats" data-go="properties"><span class="sign">APPARTEMENTEN</span><i class="door"></i></button>
+ <button class="v7building hospital" data-go="hospital"><span class="sign">✚ ZIEKENHUIS</span><i class="door"></i></button>
+ <button class="v7building police" data-go="players"><span class="sign">POLITIE</span><i class="door"></i></button>
+ <button class="v7building garage" data-go="garage"><span class="sign">GARAGE</span><i class="door"></i></button>
+ <div class="v7tree t1"></div><div class="v7tree t2"></div><div class="v7tree t3"></div><div class="v7tree t4"></div><div class="v7bench"></div>
+ <div class="v7lamp l1"></div><div class="v7lamp l2"></div><div class="v7lamp l3"></div>
+ <div class="v7car taxi"><i></i></div><div class="v7car blue"><i></i></div>
+ <div class="v7human npc n1"><i class="head"></i><i class="body"></i><i class="leg a"></i><i class="leg b"></i><b>Rico</b></div>
+ <div class="v7human npc n2"><i class="head"></i><i class="body"></i><i class="leg a"></i><i class="leg b"></i><b>Luna</b></div>
+ <div id="v7me" class="v7human me"><i class="head"></i><i class="body"></i><i class="leg a"></i><i class="leg b"></i><b>${escapeHtml(state.name||"RAMZY")}</b><em>JIJ</em></div>
+ </div></div><div class="v7help">Tik op de grond om te lopen · tik op een gebouw om binnen te gaan</div></div>`);setupV7()}catch(e){openPanel("WORLD V7","<p>"+escapeHtml(e.message)+"</p>")}
+}
+function setupV7(){
+ const view=$("v7world"),map=view&&view.querySelector(".v7map"),me=$("v7me");if(!view||!map||!me)return;let p={x:50,y:55},target=null;
+ try{let q=JSON.parse(localStorage.getItem("v7pos")||"null");if(q)p=q}catch(e){}
+ const blocks=[{x:8,y:7,w:23,h:20},{x:67,y:7,w:24,h:19},{x:5,y:66,w:25,h:22},{x:68,y:65,w:26,h:23},{x:38,y:70,w:24,h:18},{x:72,y:35,w:20,h:19}];
+ const blocked=(x,y)=>blocks.some(b=>x>b.x&&x<b.x+b.w&&y>b.y&&y<b.y+b.h);
+ const draw=()=>{me.style.left=p.x+"%";me.style.top=p.y+"%";map.style.transform="translate("+(50-p.x)*2.2+"px,"+(55-p.y)*1.5+"px)"};
+ const walk=()=>{if(!target)return;let dx=target.x-p.x,dy=target.y-p.y,d=Math.hypot(dx,dy);if(d<.5){target=null;localStorage.setItem("v7pos",JSON.stringify(p));return}let nx=p.x+dx/d*.42,ny=p.y+dy/d*.42;if(blocked(nx,ny)){target=null;return}p.x=nx;p.y=ny;me.classList.add("walking");draw();requestAnimationFrame(walk)};
+ view.onclick=e=>{let b=e.target.closest(".v7building");if(b){worldV2Open(b.dataset.go);return}let r=view.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*100,y=(e.clientY-r.top)/r.height*100;if(!blocked(x,y)){target={x,y};requestAnimationFrame(walk)}};
+ async function sync(){try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(p)});let r=await fetch("/api/world/players"),d=await r.json(),alive=new Set;for(let q of d.players||[]){if(String(q.user_id)===String(d.selfId))continue;let id="v7u"+q.user_id;alive.add(id);let el=$(id);if(!el){el=document.createElement("div");el.id=id;el.className="v7human other";el.innerHTML='<i class="head"></i><i class="body"></i><i class="leg a"></i><i class="leg b"></i><b></b>';map.appendChild(el)}el.style.left=q.pos_x+"%";el.style.top=q.pos_y+"%";el.querySelector("b").textContent=q.username}map.querySelectorAll(".other").forEach(e=>{if(!alive.has(e.id))e.remove()})}catch(e){}}
+ draw();sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200)
+}
