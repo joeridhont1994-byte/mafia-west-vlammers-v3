@@ -688,3 +688,20 @@ html,body{
 @keyframes driveSouth{0%{transform:translateY(0) rotate(95deg)}100%{transform:translateY(700px) rotate(95deg)}}
 @keyframes walkA{to{transform:translate(110px,45px)}}@keyframes walkB{to{transform:translate(-85px,70px)}}@keyframes walkC{to{transform:translate(120px,-35px)}}@keyframes walkD{to{transform:translate(-90px,55px)}}
 @media(prefers-reduced-motion:reduce){.traffic-car,.traffic-bus,.sim-person{animation-duration:30s!important}}
+
+/* V5.1 traffic fix: animate with percentages so it works on every phone/PWA */
+.sim-traffic{z-index:7!important}
+.traffic-car,.traffic-bus,.sim-person{position:absolute!important;animation-fill-mode:both!important}
+.car1{left:-10%!important;top:39%!important;animation:v51RoadA 8s linear infinite!important}
+.bus1{left:105%!important;right:auto!important;top:42%!important;animation:v51RoadBack 14s linear infinite!important}
+.car2{left:-12%!important;top:73%!important;animation:v51RoadC 11s linear infinite 1.5s!important}
+.car3{left:40%!important;top:-8%!important;animation:v51RoadB 10s linear infinite .5s!important}
+.p1{left:12%!important;top:28%!important;animation:v51Walk1 7s ease-in-out infinite alternate!important}
+.p2{left:58%!important;top:31%!important;animation:v51Walk2 9s ease-in-out infinite alternate!important}
+.p3{left:14%!important;top:65%!important;animation:v51Walk3 8s ease-in-out infinite alternate!important}
+.p4{left:65%!important;top:60%!important;animation:v51Walk4 10s ease-in-out infinite alternate!important}
+@keyframes v51RoadA{0%{left:-10%;top:40%;transform:rotate(-8deg)}100%{left:108%;top:24%;transform:rotate(-8deg)}}
+@keyframes v51RoadBack{0%{left:108%;top:25%;transform:rotate(172deg)}100%{left:-15%;top:41%;transform:rotate(172deg)}}
+@keyframes v51RoadC{0%{left:-12%;top:70%;transform:rotate(7deg)}100%{left:108%;top:84%;transform:rotate(7deg)}}
+@keyframes v51RoadB{0%{left:40%;top:-8%;transform:rotate(95deg)}100%{left:47%;top:108%;transform:rotate(95deg)}}
+@keyframes v51Walk1{from{left:12%;top:28%}to{left:27%;top:35%}}@keyframes v51Walk2{from{left:58%;top:31%}to{left:48%;top:43%}}@keyframes v51Walk3{from{left:14%;top:65%}to{left:30%;top:61%}}@keyframes v51Walk4{from{left:65%;top:60%}to{left:54%;top:70%}}
