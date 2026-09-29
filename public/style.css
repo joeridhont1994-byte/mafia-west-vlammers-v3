@@ -602,3 +602,27 @@ html,body{
 .city-build-slot.ready{cursor:pointer;animation:slotPulse .7s infinite alternate!important}
 .city-build-slot.occupied{opacity:.32!important;pointer-events:none!important;border-color:#7b838b!important;color:#7b838b!important;background:#101419aa!important;animation:none!important}
 .city-shop-item.building-choice{border-color:#ffd34e!important;box-shadow:0 0 18px #ffd34e55!important}
+
+/* Keep city builder controls fully visible above mobile navigation */
+@media(max-width:650px){
+ #panelBody{padding-bottom:150px!important}
+ .city-map-window{height:500px!important}
+ .city-map-window .city-world.realistic.city-photo-map{height:650px!important;background-size:auto 650px!important}
+ .city-edit-help{margin-bottom:12px!important}
+ .city-build-menu.live{
+   display:flex!important;
+   position:relative!important;
+   z-index:12!important;
+   min-height:132px!important;
+   margin:0 10px 95px!important;
+   overflow:hidden!important;
+ }
+ .city-build-menu.live .city-shop-scroll{
+   display:flex!important;
+   overflow-x:auto!important;
+   overflow-y:hidden!important;
+   padding:10px 8px 14px!important;
+   min-height:118px!important;
+ }
+ .city-build-menu.live .city-shop-item{display:block!important;min-width:145px!important}
+}
