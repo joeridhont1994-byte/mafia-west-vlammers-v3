@@ -520,3 +520,8 @@ html,body{
 .city-world.realistic.city-photo-map{height:540px!important;background-image:linear-gradient(180deg,rgba(4,8,12,.03),rgba(4,8,12,.12)),url('/file_00000000eaf082108d8df2db50b5b68c.png')!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important}
 .city-photo-map:before,.city-photo-map:after{display:none!important}.city-photo-map .city-water,.city-photo-map .city-road{display:none!important}.city-photo-map .city-zone{background:#05080bd9!important;border-color:#79838b!important}.city-photo-map .city-land{background:#0b0f0a33!important;backdrop-filter:blur(1px);border-color:#f1cf45!important}.city-photo-map .city-building-piece{z-index:8!important;background:rgba(8,12,16,.9)!important;backdrop-filter:blur(3px)}
 @media(max-width:650px){.city-world.realistic.city-photo-map{height:560px!important;background-size:auto 100%!important;background-position:center center!important}}
+
+/* Clean city-builder artwork v2 */
+.city-world.realistic.city-photo-map{background-image:linear-gradient(180deg,rgba(4,8,12,.02),rgba(4,8,12,.08)),url('/file_00000000b3588210888c68bdc0ed0462.png')!important;background-position:center center!important}
+.city-photo-map .city-zone,.city-photo-map .city-land,.city-photo-map .city-water,.city-photo-map .city-road{display:none!important}
+@media(max-width:650px){.city-world.realistic.city-photo-map{height:590px!important;background-size:auto 100%!important;background-position:center center!important}}
