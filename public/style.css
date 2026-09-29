@@ -705,3 +705,9 @@ html,body{
 @keyframes v51RoadC{0%{left:-12%;top:70%;transform:rotate(7deg)}100%{left:108%;top:84%;transform:rotate(7deg)}}
 @keyframes v51RoadB{0%{left:40%;top:-8%;transform:rotate(95deg)}100%{left:47%;top:108%;transform:rotate(95deg)}}
 @keyframes v51Walk1{from{left:12%;top:28%}to{left:27%;top:35%}}@keyframes v51Walk2{from{left:58%;top:31%}to{left:48%;top:43%}}@keyframes v51Walk3{from{left:14%;top:65%}to{left:30%;top:61%}}@keyframes v51Walk4{from{left:65%;top:60%}to{left:54%;top:70%}}
+
+/* Simulator V6 - controllable world */
+.v6-player{position:absolute;z-index:20;transform:translate(-50%,-70%);text-align:center;transition:left .12s linear,top .12s linear;filter:drop-shadow(0 5px 5px #000)}
+.v6-player span{display:block;font-size:38px;line-height:38px}.v6-player b{display:block;max-width:90px;padding:3px 7px;border-radius:8px;background:#080b0ee8;border:1px solid #d4aa3b;color:#fff;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.v6-controls{display:grid;grid-template-columns:52px 52px 52px;grid-template-rows:48px 48px auto;justify-content:center;gap:5px;margin:10px 0;padding:10px;border:1px solid #57491f;border-radius:14px;background:#0d1219}
+.v6-controls button{border:1px solid #9c7d2d;border-radius:10px;background:linear-gradient(#252d38,#11161d);color:#f0cb59;font-size:21px;font-weight:900;touch-action:manipulation}.v6-controls button[data-dir="up"]{grid-column:2}.v6-controls button[data-dir="left"]{grid-column:1;grid-row:2}.v6-controls button[data-dir="down"]{grid-column:2;grid-row:2}.v6-controls button[data-dir="right"]{grid-column:3;grid-row:2}.v6-controls small{grid-column:1/4;text-align:center;color:#9fa8b3;font-size:9px;margin-top:4px}
