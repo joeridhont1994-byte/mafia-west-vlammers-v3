@@ -478,3 +478,5 @@ html,body{
 @supports(padding:max(0px)){
  .nav{padding-bottom:env(safe-area-inset-bottom);height:calc(64px + env(safe-area-inset-bottom))}
 }
+
+.beta-server-badge{display:inline-flex;align-items:center;gap:8px;margin:16px 0 13px;padding:9px 16px;border:1px solid #d8aa36;border-radius:999px;background:linear-gradient(180deg,#211b0c,#0d1015);box-shadow:0 0 20px #d8aa3626;color:#f3ce65;font-size:12px;font-weight:950;letter-spacing:2px}.beta-server-badge span{color:#62db91;font-size:13px;text-shadow:0 0 9px #62db91}
