@@ -74,3 +74,51 @@ async function collectCityIncome(){try{const r=await fetch("/api/my-city/collect
 
 let v6Pos={x:50,y:55};
 function setupV6Player(){const p=$("v6Player"),map=$("simMap");if(!p||!map)return;try{const q=JSON.parse(localStorage.getItem("v6Pos")||"null");if(q&&Number.isFinite(q.x)&&Number.isFinite(q.y))v6Pos=q}catch(e){}const draw=()=>{p.style.left=v6Pos.x+"%";p.style.top=v6Pos.y+"%"};const move=(dx,dy)=>{v6Pos.x=Math.max(4,Math.min(92,v6Pos.x+dx));v6Pos.y=Math.max(5,Math.min(92,v6Pos.y+dy));localStorage.setItem("v6Pos",JSON.stringify(v6Pos));draw()};draw();document.querySelectorAll(".v6-controls button").forEach(b=>{const go=()=>{const d=b.dataset.dir;if(d==="up")move(0,-3);if(d==="down")move(0,3);if(d==="left")move(-3,0);if(d==="right")move(3,0)};b.onclick=go});window._v6KeyHandler&&document.removeEventListener("keydown",window._v6KeyHandler);window._v6KeyHandler=e=>{const k=e.key.toLowerCase();if(["arrowup","w"].includes(k)){e.preventDefault();move(0,-2)}else if(["arrowdown","s"].includes(k)){e.preventDefault();move(0,2)}else if(["arrowleft","a"].includes(k)){e.preventDefault();move(-2,0)}else if(["arrowright","d"].includes(k)){e.preventDefault();move(2,0)}};document.addEventListener("keydown",window._v6KeyHandler)}
+
+
+/* ===== WORLD V2 HABBO STYLE ===== */
+let worldV2Pos={x:50,y:66},worldV2Anim=0;
+async function showMyCity(){
+  openPanel("🌃 WEST-VLAMMERS CITY","<p>Wereld laden...</p>");
+  try{
+    const r=await fetch("/api/my-city"),d=await r.json();
+    if(!r.ok)throw new Error(d.error||"Wereld laden mislukt.");
+    openPanel("🌃 WEST-VLAMMERS CITY",`
+      <div class="wv2-shell">
+        <div class="wv2-hud"><div><b>WEST-VLAMMERS CITY</b><small>ONLINE WORLD · V2</small></div><span class="wv2-live">● LIVE</span></div>
+        <div id="wv2World" class="wv2-world">
+          <div class="wv2-sky"></div><div class="wv2-water"></div>
+          <div class="wv2-ground"></div>
+          <div class="wv2-road road-a"><i></i></div><div class="wv2-road road-b"><i></i></div>
+          <div class="wv2-plaza"><i></i></div>
+          <button class="wv2-building club" onclick="worldV2Open('chat')"><span class="roof"></span><span class="face"><i></i><i></i><i></i></span><b>🎵 NIGHTCLUB</b></button>
+          <button class="wv2-building hq" onclick="worldV2Open('missions')"><span class="roof"></span><span class="face"><i></i><i></i><i></i></span><b>☠ MAFFIA HQ</b></button>
+          <button class="wv2-building hospital" onclick="worldV2Open('hospital')"><span class="roof"></span><span class="face"><i></i><i></i><i></i></span><b>✚ ZIEKENHUIS</b></button>
+          <button class="wv2-building apartments" onclick="worldV2Open('properties')"><span class="roof"></span><span class="face"><i></i><i></i><i></i></span><b>🏢 APPARTEMENTEN</b></button>
+          <button class="wv2-building police" onclick="worldV2Open('players')"><span class="roof"></span><span class="face"><i></i><i></i></span><b>🚔 POLITIE</b></button>
+          <button class="wv2-building garage" onclick="worldV2Open('garage')"><span class="roof"></span><span class="face"><i></i><i></i></span><b>🔧 GARAGE</b></button>
+          <button class="wv2-building casino" onclick="worldV2Open('missions')"><span class="roof"></span><span class="face"><i></i><i></i></span><b>♠ CASINO</b></button>
+          <div class="wv2-tree t1">♠</div><div class="wv2-tree t2">♠</div><div class="wv2-tree t3">♠</div><div class="wv2-tree t4">♠</div>
+          <div class="wv2-lamp l1">✦</div><div class="wv2-lamp l2">✦</div><div class="wv2-lamp l3">✦</div>
+          <div class="wv2-car car1">🚕</div><div class="wv2-car car2">🚙</div><div class="wv2-car car3">🚌</div>
+          <div class="wv2-npc n1"><span>🧍</span><b>Rico</b></div><div class="wv2-npc n2"><span>🧍‍♀️</span><b>Luna</b></div><div class="wv2-npc n3"><span>🧍</span><b>Vince</b></div>
+          <div id="worldV2Player" class="wv2-player"><span>🕴️</span><b>${escapeHtml(state.name||"RAMZY")}</b><em>JIJ</em></div>
+        </div>
+        <div class="wv2-controls"><button data-wv2="up">▲</button><button data-wv2="left">◀</button><button class="wv2-center">◆</button><button data-wv2="right">▶</button><button data-wv2="down">▼</button></div>
+        <div class="wv2-tip">Tik op gebouwen om ze binnen te gaan · beweeg met de pijlen</div>
+      </div>`);
+    setupWorldV2();
+  }catch(e){openPanel("🌃 WEST-VLAMMERS CITY","<p>"+escapeHtml(e.message)+"</p>")}
+}
+function worldV2Open(a){action(a)}
+function setupWorldV2(){
+ const p=$("worldV2Player"),map=$("wv2World");if(!p||!map)return;
+ try{const q=JSON.parse(localStorage.getItem("worldV2Pos")||"null");if(q)worldV2Pos=q}catch(e){}
+ const draw=()=>{p.style.left=worldV2Pos.x+"%";p.style.top=worldV2Pos.y+"%"};
+ const move=(dx,dy)=>{worldV2Pos.x=Math.max(7,Math.min(91,worldV2Pos.x+dx));worldV2Pos.y=Math.max(24,Math.min(89,worldV2Pos.y+dy));draw();localStorage.setItem("worldV2Pos",JSON.stringify(worldV2Pos));fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(worldV2Pos)}).catch(()=>{})};
+ document.querySelectorAll("[data-wv2]").forEach(b=>b.onclick=()=>{const d=b.dataset.wv2;if(d==="up")move(0,-3);if(d==="down")move(0,3);if(d==="left")move(-4,0);if(d==="right")move(4,0)});
+ map.onclick=e=>{if(e.target.closest(".wv2-building"))return;const r=map.getBoundingClientRect();worldV2Pos.x=Math.max(7,Math.min(91,(e.clientX-r.left)/r.width*100));worldV2Pos.y=Math.max(24,Math.min(89,(e.clientY-r.top)/r.height*100));draw()};
+ draw();
+ const sync=async()=>{if(!$("wv2World"))return;try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(worldV2Pos)});const r=await fetch("/api/world/players"),d=await r.json();if(!r.ok)return;const alive=new Set;for(const q of d.players||[]){if(String(q.user_id)===String(d.selfId))continue;const id="wv2Other_"+q.user_id;alive.add(id);let el=$(id);if(!el){el=document.createElement("div");el.id=id;el.className="wv2-player wv2-other";el.innerHTML="<span>🕴️</span><b></b>";map.appendChild(el)}el.style.left=Number(q.pos_x)+"%";el.style.top=Number(q.pos_y)+"%";el.querySelector("b").textContent=q.username}map.querySelectorAll(".wv2-other").forEach(x=>{if(!alive.has(x.id))x.remove()})}catch(e){}};
+ sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1500);
+}
