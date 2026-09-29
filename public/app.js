@@ -122,3 +122,42 @@ function setupWorldV2(){
  const sync=async()=>{if(!$("wv2World"))return;try{await fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(worldV2Pos)});const r=await fetch("/api/world/players"),d=await r.json();if(!r.ok)return;const alive=new Set;for(const q of d.players||[]){if(String(q.user_id)===String(d.selfId))continue;const id="wv2Other_"+q.user_id;alive.add(id);let el=$(id);if(!el){el=document.createElement("div");el.id=id;el.className="wv2-player wv2-other";el.innerHTML="<span>🕴️</span><b></b>";map.appendChild(el)}el.style.left=Number(q.pos_x)+"%";el.style.top=Number(q.pos_y)+"%";el.querySelector("b").textContent=q.username}map.querySelectorAll(".wv2-other").forEach(x=>{if(!alive.has(x.id))x.remove()})}catch(e){}};
  sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1500);
 }
+
+/* ===== WORLD V3 WALKABLE CITY ===== */
+let worldV3Pos={x:50,y:70},worldV3Target=null;
+async function showMyCity(){
+ openPanel("🌆 WEST-VLAMMERS ONLINE","<p>Stad laden...</p>");
+ try{
+  const r=await fetch("/api/my-city"),d=await r.json(); if(!r.ok)throw new Error(d.error||"Laden mislukt.");
+  openPanel("🌆 WEST-VLAMMERS ONLINE",`
+  <div class="wv3">
+   <div class="wv3bar"><b>WEST-VLAMMERS</b><span>● ONLINE</span></div>
+   <div id="wv3world" class="wv3world">
+    <div class="wv3tiles"></div><div class="wv3road r1"></div><div class="wv3road r2"></div><div class="wv3cross"></div>
+    <button class="wv3b b-hq" data-go="missions"><i>☠</i><b>MAFFIA HQ</b></button>
+    <button class="wv3b b-club" data-go="chat"><i>♫</i><b>CLUB</b></button>
+    <button class="wv3b b-flat" data-go="properties"><i>🏢</i><b>APPARTEMENTEN</b></button>
+    <button class="wv3b b-garage" data-go="garage"><i>🚗</i><b>GARAGE</b></button>
+    <button class="wv3b b-hosp" data-go="hospital"><i>✚</i><b>ZIEKENHUIS</b></button>
+    <button class="wv3b b-police" data-go="players"><i>★</i><b>POLITIE</b></button>
+    <div class="wv3park"><span>🌳</span><span>🌲</span><span>🌳</span><em>STADSPARK</em></div>
+    <div class="wv3car c1">🚕</div><div class="wv3car c2">🚙</div><div class="wv3car c3">🚌</div>
+    <div class="wv3npc p1"><i>🧍</i><small>Rico</small></div><div class="wv3npc p2"><i>🧍‍♀️</i><small>Luna</small></div>
+    <div id="wv3me" class="wv3me"><i>🕴️</i><b>${escapeHtml(state.name||"RAMZY")}</b><small>JIJ</small></div>
+   </div>
+   <div class="wv3help">Tik op de straat om te lopen · tik op een gebouw om binnen te gaan</div>
+  </div>`);
+  setupWorldV3();
+ }catch(e){openPanel("🌆 WEST-VLAMMERS ONLINE","<p>"+escapeHtml(e.message)+"</p>")}
+}
+function setupWorldV3(){
+ const w=$("wv3world"),me=$("wv3me"); if(!w||!me)return;
+ try{const p=JSON.parse(localStorage.getItem("worldV3Pos")||"null");if(p)worldV3Pos=p}catch(e){}
+ const draw=()=>{me.style.left=worldV3Pos.x+"%";me.style.top=worldV3Pos.y+"%"};
+ const save=()=>{localStorage.setItem("worldV3Pos",JSON.stringify(worldV3Pos));fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(worldV3Pos)}).catch(()=>{})};
+ const walk=()=>{if(!worldV3Target)return;let dx=worldV3Target.x-worldV3Pos.x,dy=worldV3Target.y-worldV3Pos.y,dist=Math.hypot(dx,dy);if(dist<1){worldV3Pos=worldV3Target;worldV3Target=null;draw();save();return}let s=Math.min(1.15,dist);worldV3Pos.x+=dx/dist*s;worldV3Pos.y+=dy/dist*s;draw();requestAnimationFrame(walk)};
+ w.addEventListener("click",e=>{const b=e.target.closest(".wv3b");if(b){worldV2Open(b.dataset.go);return}const q=w.getBoundingClientRect();worldV3Target={x:Math.max(5,Math.min(95,(e.clientX-q.left)/q.width*100)),y:Math.max(28,Math.min(92,(e.clientY-q.top)/q.height*100))};requestAnimationFrame(walk)});
+ draw();
+ const sync=async()=>{if(!$("wv3world"))return;try{save();const r=await fetch("/api/world/players"),d=await r.json();if(!r.ok)return;const live=new Set;for(const q of d.players||[]){if(String(q.user_id)===String(d.selfId))continue;const id="wv3u"+q.user_id;live.add(id);let el=$(id);if(!el){el=document.createElement("div");el.id=id;el.className="wv3me other";el.innerHTML="<i>🕴️</i><b></b>";w.appendChild(el)}el.style.left=Number(q.pos_x)+"%";el.style.top=Number(q.pos_y)+"%";el.querySelector("b").textContent=q.username}w.querySelectorAll(".wv3me.other").forEach(x=>{if(!live.has(x.id))x.remove()})}catch(e){}};
+ sync();window._worldSync&&clearInterval(window._worldSync);window._worldSync=setInterval(sync,1200);
+}
