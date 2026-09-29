@@ -737,3 +737,6 @@ html,body{
 .world-lamp{height:44px!important}.world-lamp:before{box-shadow:0 0 20px #ffd76baa!important}
 .world-player{z-index:40!important;filter:drop-shadow(3px 7px 3px #000a)!important}.world-player b{top:-20px!important;background:#090c10f2!important}
 .world-stick{opacity:.82;backdrop-filter:blur(3px)}.world-tip{font-size:8px!important}
+
+/* Mafia World V4 multiplayer */
+.world-other{transition:left .28s linear,top .28s linear!important}.world-other .world-body{background:linear-gradient(90deg,#26394e,#566b83)!important}.world-other .world-body i{background:#b9c7d8!important}.world-other b{border-color:#738ba7!important;color:#e7f1ff!important}
