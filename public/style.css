@@ -626,3 +626,16 @@ html,body{
  }
  .city-build-menu.live .city-shop-item{display:block!important;min-width:145px!important}
 }
+
+/* Exact city parcel overlay: one gold control per artwork plot */
+.city-build-slot{
+ width:50px!important;height:50px!important;
+ margin-left:-25px!important;margin-top:-25px!important;
+ border-radius:50%!important;
+ background:#10141a!important;
+ border:3px solid #f0c94d!important;
+ color:#fff!important;
+ font-size:34px!important;
+ line-height:42px!important;
+ z-index:8!important;
+}
