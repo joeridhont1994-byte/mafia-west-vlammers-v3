@@ -381,3 +381,38 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
 .heist-van{display:none!important}
 
 .property-intro{color:#b8bec8;margin:4px 0 18px}.property-card{min-height:145px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:0 0 13px;padding:18px;border:1px solid #b98a16;border-radius:12px;background:linear-gradient(110deg,#080a0ee8,#080a0e80),linear-gradient(145deg,#252b34,#0b0d11);box-shadow:0 8px 20px #0007}.property-card>div,.property-card>button,.property-card>strong{position:relative;z-index:2}.property-icon{display:block;font-size:38px}.property-card b{display:block;font-size:23px;color:#fff}.property-card small{display:block;margin-top:6px;color:#d5d8dc}.property-card strong{color:#ffd45a;font-size:16px}.property-card button{min-width:125px;padding:12px;border:1px solid #ffe584;border-radius:8px;background:linear-gradient(#f7d35c,#c88d09);font-weight:900;color:#17120a;font-size:14px}
+
+
+/* Mobile panel scroll fix - voorkomt flikkeren/verspringen */
+@media(max-width:650px){
+ html,body{overscroll-behavior:none}
+ .panel{
+   position:fixed!important;
+   inset:82px 0 72px 0!important;
+   height:auto!important;
+   max-height:none!important;
+   overflow:hidden!important;
+   padding:0 11px!important;
+   transform:translateZ(0);
+   backface-visibility:hidden;
+ }
+ .panel-head{
+   position:absolute!important;
+   top:0!important;left:0!important;right:0!important;
+   height:82px!important;min-height:82px!important;
+   margin:0!important;padding:18px 20px 14px!important;
+   z-index:60!important;background:#0b0e14!important;
+   border-bottom:1px solid #5b4618!important;
+   box-shadow:0 8px 16px rgba(0,0,0,.5)!important;
+ }
+ #panelBody{
+   position:absolute!important;
+   top:82px!important;left:0!important;right:0!important;bottom:0!important;
+   overflow-y:auto!important;
+   overflow-x:hidden!important;
+   -webkit-overflow-scrolling:touch;
+   overscroll-behavior:contain;
+   padding:12px 11px 105px!important;
+   transform:translateZ(0);
+ }
+}
