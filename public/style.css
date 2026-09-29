@@ -330,3 +330,5 @@ input,select{background:linear-gradient(180deg,#151a21,#0d1015)!important;border
  background-position:center!important;
  background-repeat:no-repeat!important;
 }
+
+.heist-box{text-align:center;padding:8px 2px 25px}.heist-box h2{color:#f2c94c;letter-spacing:1px}.heist-progress{height:12px;background:#20242b;border:1px solid #735b1c;border-radius:8px;overflow:hidden;margin:18px 0}.heist-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b17b08,#ffd85a)}.heist-choices{display:flex;gap:12px;margin:25px 0}.heist-choices button{flex:1;min-height:70px;font-size:18px;font-weight:900;border:1px solid #ffe37d;border-radius:9px;background:linear-gradient(#f6cf57,#c9910c);color:#17120a}.heist-code{font-size:42px;font-weight:900;letter-spacing:12px;color:#ffd85a;background:#080a0d;border:1px solid #6d5318;border-radius:10px;padding:20px;margin:22px 0}
