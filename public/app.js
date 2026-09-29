@@ -348,3 +348,22 @@ function setupWorldX(){
 }
 /* Make city button open the new client */
 showMyCity=showWorldX;
+
+/* ===== OPEN WORLD MOBILE CONTROLS V1 ===== */
+(function(){
+ const old=setupWorldX;
+ setupWorldX=function(){
+   old();
+   const stage=$("wxStage"), me=$("wxMe"); if(!stage||!me)return;
+   let joy=document.createElement("div"); joy.className="wxJoystick";joy.innerHTML='<i></i>';stage.appendChild(joy);
+   let use=document.createElement("button");use.className="wxUse";use.textContent="ACTIE";stage.appendChild(use);
+   let dx=0,dy=0,active=false,raf=0;
+   function current(){return {x:parseFloat(me.style.left)||49,y:parseFloat(me.style.top)||63}}
+   function loop(){if(!active)return;let p=current(),nx=Math.max(4,Math.min(96,p.x+dx*.28)),ny=Math.max(16,Math.min(91,p.y+dy*.28));me.style.left=nx+"%";me.style.top=ny+"%";me.classList.add("walking");raf=requestAnimationFrame(loop)}
+   function set(e){let r=joy.getBoundingClientRect(),t=e.touches?e.touches[0]:e,x=t.clientX-(r.left+r.width/2),y=t.clientY-(r.top+r.height/2),m=Math.max(1,Math.hypot(x,y)),lim=30,k=Math.min(lim,m)/m;joy.querySelector("i").style.transform="translate("+(x*k)+"px,"+(y*k)+"px)";dx=x/m;dy=y/m}
+   joy.addEventListener("touchstart",e=>{e.preventDefault();active=true;set(e);loop()},{passive:false});
+   joy.addEventListener("touchmove",e=>{e.preventDefault();set(e)},{passive:false});
+   joy.addEventListener("touchend",e=>{active=false;cancelAnimationFrame(raf);dx=dy=0;joy.querySelector("i").style.transform="";me.classList.remove("walking");let p=current();localStorage.setItem("wxpos",JSON.stringify(p));fetch("/api/world/position",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(p)}).catch(()=>{})});
+   use.onclick=()=>{let p=current(),near=[...stage.querySelectorAll(".wxBuilding")].map(el=>{let x=parseFloat(getComputedStyle(el).left)/stage.clientWidth*100,y=parseFloat(getComputedStyle(el).top)/stage.clientHeight*100;return {el,d:Math.hypot(p.x-x,p.y-y)}}).sort((a,b)=>a.d-b.d)[0];if(near&&near.d<35)near.el.click()};
+ }
+})();
