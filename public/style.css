@@ -837,3 +837,13 @@ html,body{
 .buildings .building:nth-child(1):before{
  background:linear-gradient(180deg,rgba(0,0,0,.03) 0%,rgba(0,0,0,.10) 48%,rgba(2,3,5,.88) 82%,#020305 100%)!important;
 }
+
+/* MISSIES artwork visibility fix */
+.buildings .building:nth-child(1){
+ background-image:url("/assets/mafia/file_000000005e7881f48befeaa9b7bd0a7c.png")!important;
+ background-position:center!important;
+ background-size:cover!important;
+}
+.buildings .building:nth-child(1):before{
+ background:linear-gradient(180deg,rgba(0,0,0,.00) 0%,rgba(0,0,0,.03) 48%,rgba(0,0,0,.42) 72%,rgba(2,3,5,.78) 100%)!important;
+}
