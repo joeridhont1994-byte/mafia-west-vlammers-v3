@@ -997,3 +997,9 @@ html,body{
     }
   }
 }
+
+/* Mafia Moto Club V1 */
+.building[data-action="motoclub"]{background-image:radial-gradient(circle at 70% 18%,rgba(190,120,35,.24),transparent 34%),linear-gradient(145deg,#2b2722,#080a0d 72%)!important}
+.mc-hero{min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;margin-bottom:12px;padding:18px;border:1px solid #a47b20;border-radius:10px;background:radial-gradient(circle at 78% 25%,rgba(216,170,54,.18),transparent 28%),linear-gradient(120deg,#1d2024,#090b0e 70%);box-shadow:0 10px 25px rgba(0,0,0,.45)}
+.mc-hero small{color:#d8aa36;letter-spacing:2px;font-weight:800}.mc-hero b{font-size:27px;margin:5px 0;text-transform:uppercase}.mc-hero span{color:#aeb5bf}
+.mc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 16px}.mc-stats div{text-align:center;padding:12px 6px;background:#12171d;border:1px solid #57451e;border-radius:8px}.mc-stats b{display:block;color:#efc14f;font-size:17px}.mc-stats small{font-size:9px;color:#9da5b0;letter-spacing:1px}
