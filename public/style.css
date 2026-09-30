@@ -1056,3 +1056,28 @@ button{touch-action:manipulation}
  .mafia-hero{min-height:150px!important}
 }
 .tap-pop{transform:scale(.96)!important}
+
+/* ===== MOBILE COMPACT HOME V3 ===== */
+@media(max-width:650px){
+ .topbar{height:calc(70px + env(safe-area-inset-top))!important;min-height:0!important;padding-top:env(safe-area-inset-top)!important}
+ .brand-mark{width:52px!important;height:52px!important;min-width:52px!important;border-radius:14px!important;font-size:16px!important}
+ .topstats{height:52px!important;gap:5px!important;flex:1}
+ .topstats span{height:52px!important;display:flex!important;align-items:center!important;padding:0 8px!important;font-size:12px!important;border-radius:7px!important}
+ .city{padding-top:8px!important}
+ .mafia-hero,.mafia-stats,.mafia-banner,.mafia-section-head{display:none!important}
+ .buildings{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;padding:0!important}
+ .building{min-height:142px!important;height:142px!important;padding:10px 8px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;border-radius:11px!important}
+ .building:after{display:none!important}
+ .building span{width:62px!important;height:62px!important;min-height:62px!important;margin:0 0 8px!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:29px!important;border:2px solid #b98d35!important;border-radius:16px!important;background:#11151bcc!important}
+ .building span img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:13px!important}
+ .building b{font-size:14px!important;line-height:1.05!important;margin:0!important}
+ .building small{font-size:10px!important;line-height:1.15!important;margin-top:5px!important}
+ .panel{inset:calc(70px + env(safe-area-inset-top)) 0 calc(64px + env(safe-area-inset-bottom)) 0!important}
+ .nav{height:calc(64px + env(safe-area-inset-bottom))!important;padding-bottom:env(safe-area-inset-bottom)!important}
+ .nav button{padding:5px 2px!important;font-size:17px!important}.nav small{font-size:7px!important;margin-top:2px!important}
+}
+@media(max-width:380px){
+ .building{height:132px!important;min-height:132px!important}
+ .building span{width:55px!important;height:55px!important;min-height:55px!important}
+ .building b{font-size:13px!important}
+}
