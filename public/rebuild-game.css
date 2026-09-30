@@ -111,3 +111,8 @@ html,body{max-width:100%;overflow-x:hidden}
 .city-chat form{display:flex!important;visibility:visible!important;opacity:1!important}
 .city-chat-feed{display:none!important}
 @media(max-width:500px){.city-map{margin-bottom:96px}.city-chat{top:calc(100% + 7px)!important}}
+
+/* Keep recent city chat messages visible */
+.city-chat-feed{display:block!important;visibility:visible!important;opacity:1!important;max-width:100%!important;width:auto!important;max-height:72px!important;overflow-y:auto!important;margin:0 0 6px!important;padding:6px 8px!important;background:#0b0d11e8!important}
+.city-map{margin-bottom:168px}
+@media(max-width:500px){.city-map{margin-bottom:154px}.city-chat-feed{max-height:60px!important}}
