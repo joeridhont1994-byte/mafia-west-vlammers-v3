@@ -1291,3 +1291,28 @@ button{touch-action:manipulation}
  .buildings .building>b{font-size:12px!important}
  .buildings .building>small{font-size:8px!important}
 }
+
+/* ===== MISSIONS CARD TYPOGRAPHY FIX V7 ===== */
+@media(max-width:650px){
+ .buildings .building[data-action="missions"]>b{
+   font-size:13px!important;
+   line-height:22px!important;
+   height:22px!important;
+   min-height:22px!important;
+   font-weight:700!important;
+   letter-spacing:0!important;
+ }
+ .buildings .building[data-action="missions"]>small{
+   font-size:9px!important;
+   line-height:20px!important;
+   height:20px!important;
+   min-height:20px!important;
+   margin:2px 0 0!important;
+   font-weight:400!important;
+   letter-spacing:0!important;
+ }
+}
+@media(max-width:380px){
+ .buildings .building[data-action="missions"]>b{font-size:12px!important}
+ .buildings .building[data-action="missions"]>small{font-size:8px!important}
+}
