@@ -124,3 +124,11 @@ html,body{max-width:100%;overflow-x:hidden}
 .city-chat input{height:44px!important;font-size:15px!important}
 .city-chat form button{height:44px!important;min-width:78px!important;font-size:12px!important}
 @media(max-width:500px){.city-map{margin-bottom:210px}.city-chat-feed{max-height:110px!important;min-height:82px!important;font-size:10px!important}.city-chat input{height:42px!important}.city-chat form button{height:42px!important}}
+
+/* Improve city chat readability */
+.city-chat-feed{font-size:14px!important;line-height:1.55!important;background:#080a0df5!important;border:1px solid #555b66!important;color:#fff!important}
+.city-chat-feed div{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;padding:5px 3px!important;border-bottom:1px solid #ffffff12!important}
+.city-chat-feed div:last-child{border-bottom:0!important}
+.city-chat-feed b{font-size:14px!important;font-weight:900!important;color:#f0d16d!important;margin-right:4px!important}
+.city-chat input{font-size:16px!important;color:#fff!important}
+@media(max-width:500px){.city-chat-feed{font-size:13px!important;line-height:1.5!important}.city-chat-feed b{font-size:13px!important}}
