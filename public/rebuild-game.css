@@ -132,3 +132,7 @@ html,body{max-width:100%;overflow-x:hidden}
 .city-chat-feed b{font-size:14px!important;font-weight:900!important;color:#f0d16d!important;margin-right:4px!important}
 .city-chat input{font-size:16px!important;color:#fff!important}
 @media(max-width:500px){.city-chat-feed{font-size:13px!important;line-height:1.5!important}.city-chat-feed b{font-size:13px!important}}
+
+/* Fix touch scrolling inside city chat */
+.city-chat{pointer-events:auto!important}
+.city-chat-feed{overflow-y:scroll!important;overflow-x:hidden!important;touch-action:pan-y!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important;pointer-events:auto!important}
