@@ -85,3 +85,6 @@ html,body{max-width:100%;overflow-x:hidden}
 
 /* Step 10 vehicle enter/exit */
 .city-vehicle-toggle{position:absolute;z-index:8;left:50%;bottom:12px;transform:translateX(-50%);padding:9px 13px;border-radius:999px;border:1px solid #d0ad43;background:#211e16;color:#f1d36d;font-weight:900;font-size:11px;box-shadow:0 4px 12px #0008}.city-vehicle-toggle:active{transform:translateX(-50%) scale(.97)}
+
+/* Step 11 live players */
+.city-other-players{position:absolute;inset:0;pointer-events:none;z-index:5}.city-other-player{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;transition:left .45s ease,top .45s ease;filter:drop-shadow(0 3px 3px #000a)}.city-other-player span{font-size:27px}.city-other-player b{max-width:90px;overflow:hidden;text-overflow:ellipsis;font-size:9px;white-space:nowrap;background:#111d;color:#fff;border:1px solid #5558;border-radius:999px;padding:2px 6px}
