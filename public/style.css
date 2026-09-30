@@ -1015,3 +1015,44 @@ html,body{
 .cityv2-player{position:absolute;z-index:30;width:25px;height:35px;transform:translate(-50%,-50%);transition:.14s linear}.cityv2-player i{display:block;width:18px;height:27px;margin:auto;border-radius:45% 45% 25% 25%;background:linear-gradient(#d39a6f 0 35%,#252d3c 36%);border:2px solid #101317;box-shadow:0 6px 5px #0009}.cityv2-player b{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);padding:2px 4px;background:#07090ddd;border:1px solid #c99b34;border-radius:4px;color:#fff;font-size:7px;white-space:nowrap}.cityv2-other i{background:linear-gradient(#c98f67 0 35%,#633c70 36%)}
 .cityv2-controls{display:grid;grid-template-columns:46px 46px 46px;grid-template-rows:42px 42px;justify-content:center;gap:4px;margin:10px 0}.cityv2-controls button{background:#11171c;border:1px solid #8e6b27;color:#e8bd51;border-radius:7px}.cityv2-controls [data-move=up]{grid-column:2}.cityv2-controls [data-move=left]{grid-column:1;grid-row:2}.cityv2-controls [data-move=down]{grid-column:2;grid-row:2}.cityv2-controls [data-move=right]{grid-column:3;grid-row:2}.cityv2-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.cityv2-actions button{font-size:9px}.cityv2-detail{text-align:center;padding:20px}.cityv2-detail>span{display:block;font-size:60px}.cityv2-detail h2{color:#e3b84d}.cityv2-detail>b{color:#999}
 @media(max-width:380px){.cityv2-map{height:540px}.cityv2-building,.cv2-landmark{min-width:72px;min-height:64px}.cityv2-head b{font-size:18px}}
+
+/* ===== MOBILE EXPERIENCE V2 ===== */
+:root{--app-height:100dvh}
+html{-webkit-text-size-adjust:100%;touch-action:manipulation}
+button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+@media(max-width:650px){
+ body{overscroll-behavior-y:none}
+ #app{min-height:var(--app-height)}
+ .topbar{padding-left:max(10px,env(safe-area-inset-left))!important;padding-right:max(10px,env(safe-area-inset-right))!important}
+ .brand-title{font-size:12px!important}.brand-sub{font-size:7px!important}
+ .topstats{gap:4px!important}.topstats span{min-width:0!important;padding:5px 6px!important;font-size:9px!important}
+ .city{padding-left:max(9px,env(safe-area-inset-left))!important;padding-right:max(9px,env(safe-area-inset-right))!important}
+ .mafia-hero{min-height:205px!important;padding:17px 14px 13px!important}
+ .mafia-hero-copy strong{font-size:31px!important}
+ .mafia-player-card b{font-size:18px!important}
+ .mafia-stats{gap:5px!important}.mafia-stats>div{min-height:62px!important;padding:7px 4px!important}
+ .buildings{gap:7px!important}.building{min-height:98px!important;padding:10px!important}.building span{font-size:26px!important}.building b{font-size:11px!important}
+ .panel{width:100%!important;max-width:none!important;border-radius:0!important;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+ .panel-head{min-height:66px!important;padding:13px 14px!important}.panel-head h3{font-size:14px!important}.panel-head button{min-width:44px!important;min-height:44px!important;font-size:25px!important}
+ .panel button,.action{min-height:44px}
+ input,textarea,select{font-size:16px!important}
+ .nav{grid-template-columns:repeat(5,1fr)!important;padding-left:max(4px,env(safe-area-inset-left))!important;padding-right:max(4px,env(safe-area-inset-right))!important}
+ .nav button{min-width:0!important;padding:8px 2px!important;font-size:18px!important}.nav small{font-size:8px!important}
+ .cityv2-map{height:min(570px,calc(var(--app-height) - 230px))!important;min-height:430px}
+ .cityv2-controls button{min-width:46px;min-height:44px}
+ .cityv2-actions{position:sticky;bottom:calc(72px + env(safe-area-inset-bottom));z-index:40;padding:6px 0;background:linear-gradient(transparent,#090c0f 28%)}
+ .mission,.property-card{gap:8px}.mission button,.property-card button{min-width:78px}
+}
+@media(max-width:360px){
+ .topstats span:nth-child(2){display:none}
+ .building{min-height:92px!important}
+ .mafia-hero-copy strong{font-size:28px!important}
+}
+@media(orientation:landscape) and (max-height:500px){
+ .topbar{height:calc(58px + env(safe-area-inset-top))!important}
+ .panel{inset:calc(58px + env(safe-area-inset-top)) 0 calc(58px + env(safe-area-inset-bottom)) 0!important}
+ .nav{height:calc(58px + env(safe-area-inset-bottom))!important}
+ .mafia-hero{min-height:150px!important}
+}
+.tap-pop{transform:scale(.96)!important}
