@@ -1,18 +1,27 @@
-.cinema-scene{position:fixed!important;inset:0!important;z-index:-1!important;background-image:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,.04),rgba(0,0,0,.22)),url("/assets/file_0000000001f0821086097d95d5f435d3.png")!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;filter:none!important}.cinema-scene>*{display:none!important}.mafia-login{background:#07070a!important}.mafia-login:before,.mafia-login:after{display:none!important}.mafia-login .login{background:linear-gradient(180deg,rgba(7,7,9,.82),rgba(4,4,6,.94))!important;backdrop-filter:blur(3px);border-color:#e11d2e!important;box-shadow:0 28px 90px #000,0 0 38px rgba(225,29,46,.38)!important}@media(max-width:700px){.cinema-scene{background-position:center top!important}}
-/* real cinematic artwork */
-.cinema-scene{background-image:linear-gradient(90deg,rgba(0,0,0,.18),rgba(0,0,0,.02),rgba(0,0,0,.18)),url("/assets/file_0000000001f0821086097d95d5f435d3.png")!important;background-position:center center!important;background-size:cover!important}.cinema-scene>*{display:none!important}
+.cinema-scene{position:fixed!important;inset:0!important;z-index:-1!important;background-image:linear-gradient(90deg,rgba(0,0,0,.16),rgba(0,0,0,.01),rgba(0,0,0,.16)),url("/assets/file_0000000001f0821086097d95d5f435d3.png")!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;filter:none!important}.cinema-scene>*{display:none!important}.mafia-login{background:#07070a!important}.mafia-login:before,.mafia-login:after{display:none!important}.mafia-login .login{background:linear-gradient(180deg,rgba(7,7,9,.76),rgba(4,4,6,.88))!important;backdrop-filter:blur(2px);border-color:#e11d2e!important;box-shadow:0 22px 70px #000b,0 0 28px rgba(225,29,46,.30)!important}
 
-/* Mobile cinematic login tuning */
+@media(min-width:701px){
+ .mafia-login .login{width:min(440px,38vw)!important;padding:20px!important}
+}
+
 @media(max-width:700px){
- .mafia-login{min-height:100svh!important;padding:18px 12px 28px!important;align-items:center!important}
+ .mafia-login{min-height:100svh!important;padding:14px 10px 20px!important;align-items:center!important}
  .cinema-scene{background-position:center center!important;background-size:cover!important}
- .mafia-login .login{width:min(92vw,430px)!important;max-width:430px!important;padding:18px 16px!important;border-radius:24px!important;background:linear-gradient(180deg,rgba(7,7,9,.72),rgba(4,4,6,.86))!important;backdrop-filter:blur(2px)!important;box-shadow:0 18px 60px #000c,0 0 26px rgba(225,29,46,.28)!important}
- .mafia-login .login h1{font-size:clamp(34px,10vw,54px)!important;line-height:.92!important;margin:6px 0!important}
- .mafia-login .login h2{font-size:clamp(25px,7.6vw,40px)!important;line-height:1!important}
- .mafia-login .login input{min-height:54px!important;font-size:17px!important}
- .mafia-login .login button{min-height:50px!important}
- .mafia-login .login .beta-note{padding:10px!important;margin-top:10px!important}
+ .mafia-login .login{width:min(86vw,390px)!important;max-width:390px!important;padding:14px 13px!important;border-radius:22px!important;background:linear-gradient(180deg,rgba(7,7,9,.66),rgba(4,4,6,.82))!important;backdrop-filter:blur(1px)!important}
+ .beta-badge{margin-bottom:5px!important}
+ .mafia-art{margin:2px 0 5px!important}
+ .mafia-login .login h1{font-size:clamp(30px,8.8vw,46px)!important;line-height:.92!important;margin:2px 0!important}
+ .mafia-login .tagline{font-size:10px!important;letter-spacing:2px!important;margin:7px 0!important}
+ .mafia-login #subtitle{font-size:15px!important;margin:8px 0 10px!important}
+ .mafia-login .tabs{gap:8px!important;margin-bottom:9px!important}
+ .mafia-login .login input{min-height:49px!important;font-size:16px!important;margin-bottom:8px!important}
+ .mafia-login .login button{min-height:46px!important}
+ .mafia-login .beta-note{padding:8px!important;margin-top:8px!important}
+ .mafia-login .beta-note span{font-size:11px!important}
+ .mafia-login .features{margin-top:8px!important;gap:5px!important}
+ .mafia-login .features span{min-height:48px!important;padding:5px 2px!important}
+ .mafia-login .features b{font-size:9px!important}
 }
 @media(max-width:390px){
- .mafia-login .login{width:94vw!important;padding:14px 12px!important}
+ .mafia-login .login{width:84vw!important;padding:12px 11px!important}
 }
