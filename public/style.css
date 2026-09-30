@@ -978,3 +978,22 @@ html,body{
 }
 .buildings .building > b{font-size:19px!important;line-height:1.15!important;color:#f5c95b!important;}
 .buildings .building > small{font-size:14px!important;line-height:1.25!important;color:#fff!important;margin-top:5px!important;}
+
+
+/* iPhone safe-area HUD fix */
+@supports (padding-top: env(safe-area-inset-top)){
+  @media(max-width:650px){
+    .topbar{
+      height:calc(82px + env(safe-area-inset-top))!important;
+      padding-top:env(safe-area-inset-top)!important;
+      top:0!important;
+    }
+    .panel{
+      inset:calc(82px + env(safe-area-inset-top)) 0 calc(72px + env(safe-area-inset-bottom)) 0!important;
+    }
+    .nav{
+      height:calc(72px + env(safe-area-inset-bottom))!important;
+      padding-bottom:env(safe-area-inset-bottom)!important;
+    }
+  }
+}
