@@ -1081,3 +1081,52 @@ button{touch-action:manipulation}
  .building span{width:55px!important;height:55px!important;min-height:55px!important}
  .building b{font-size:13px!important}
 }
+
+/* ===== MOBILE CARD ALIGNMENT FIX V4 ===== */
+@media(max-width:650px){
+ .building{
+   position:relative!important;
+   height:142px!important;
+   min-height:142px!important;
+   padding:72px 8px 12px!important;
+   justify-content:flex-start!important;
+   overflow:hidden!important;
+ }
+ .building span{
+   position:absolute!important;
+   top:10px!important;
+   left:50%!important;
+   transform:translateX(-50%)!important;
+   width:56px!important;
+   height:56px!important;
+   min-height:56px!important;
+   margin:0!important;
+   box-sizing:border-box!important;
+   z-index:2!important;
+ }
+ .building span img{
+   display:block!important;
+   width:100%!important;
+   height:100%!important;
+   object-fit:cover!important;
+ }
+ .building b{
+   display:block!important;
+   width:100%!important;
+   min-height:18px!important;
+   margin:0!important;
+   line-height:18px!important;
+   text-align:center!important;
+ }
+ .building small{
+   display:block!important;
+   width:100%!important;
+   margin-top:5px!important;
+   line-height:14px!important;
+   text-align:center!important;
+ }
+}
+@media(max-width:380px){
+ .building{height:134px!important;min-height:134px!important;padding-top:67px!important}
+ .building span{top:9px!important;width:52px!important;height:52px!important;min-height:52px!important}
+}
