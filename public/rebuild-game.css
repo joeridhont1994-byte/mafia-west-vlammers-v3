@@ -136,3 +136,14 @@ html,body{max-width:100%;overflow-x:hidden}
 /* Fix touch scrolling inside city chat */
 .city-chat{pointer-events:auto!important}
 .city-chat-feed{overflow-y:scroll!important;overflow-x:hidden!important;touch-action:pan-y!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important;pointer-events:auto!important}
+
+/* Step 13 player interaction */
+.city-other-players{pointer-events:none}
+.city-other-player{pointer-events:auto;border:0;background:transparent;color:#fff;padding:0;cursor:pointer}
+.city-player-menu{position:absolute;z-index:150;left:50%;top:50%;transform:translate(-50%,-50%);width:min(270px,82%);padding:12px;background:#101218f7;border:1px solid #d0ad43;border-radius:15px;box-shadow:0 12px 35px #000d}
+.city-player-menu[hidden]{display:none!important}
+.city-player-menu-head{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:9px;border-bottom:1px solid #343842}
+.city-player-menu-head>span{font-size:28px}.city-player-menu-head>b{flex:1;font-size:16px;color:#f0d16d;overflow:hidden;text-overflow:ellipsis}
+.city-player-menu-head>button{width:32px;height:32px;border:0;border-radius:50%;background:#272a31;color:#fff;font-size:20px}
+.city-player-menu>button:not(.city-player-menu-head button){display:block;width:100%;margin-top:7px;padding:12px;border:1px solid #454a54;border-radius:10px;background:#1b1e25;color:#fff;font-weight:800;text-align:left}
+.city-player-menu>button:active{background:#292d35}
