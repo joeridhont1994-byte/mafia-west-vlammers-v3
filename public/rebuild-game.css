@@ -1,1 +1,38 @@
 *{box-sizing:border-box}.rebuild-game{min-height:100svh;background:radial-gradient(circle at 50% 0,#401015 0,#13080b 35%,#07080b 75%);color:#fff;padding:18px;font-family:Arial,sans-serif}.rebuild-game header{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1px solid #65232b;background:#0d0e12e8;border-radius:16px}.rebuild-game header div{display:grid}.rebuild-game header small{color:#d4a94c;letter-spacing:1.5px}.rebuild-game header b{font-size:22px}.rebuild-game header button{background:#24262d;color:#fff;border:1px solid #555;border-radius:10px;padding:10px 14px}.stats{max-width:1100px;margin:12px auto;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stats span{padding:13px;text-align:center;border:1px solid #542027;background:#111217;border-radius:12px}.city-hero{max-width:1100px;margin:12px auto;padding:28px;border:1px solid #792530;border-radius:18px;background:linear-gradient(90deg,#08090de8,#20090dc9),url('/assets/file_00000000a5f0821094b1e0cd6331ba07.png') center/cover}.city-hero small{color:#e4b94e;font-weight:800}.city-hero h2{font-size:32px;margin:8px 0}.city-hero p{max-width:600px;color:#ddd}.game-grid{max-width:1100px;margin:12px auto;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.game-grid button{min-height:105px;display:grid;place-items:center;gap:3px;background:linear-gradient(#17191f,#0c0d11);border:1px solid #6b252d;border-radius:14px;color:#fff;font-size:24px;padding:12px}.game-grid button b{font-size:15px;text-transform:uppercase}.game-grid button small{font-size:11px;color:#aaa}.game-grid button:active{transform:scale(.98);border-color:#e11d2e}.game-view{max-width:1100px;margin:12px auto;padding:20px;border:1px solid #552129;background:#0e0f14;border-radius:16px}.game-view h3{margin-top:0;color:#e8b94f}.game-view .row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid #292a31}.game-view button{background:#d71929;color:white;border:0;border-radius:9px;padding:10px 14px;font-weight:800}@media(max-width:700px){.rebuild-game{padding:8px}.stats{grid-template-columns:repeat(2,1fr)}.city-hero{padding:20px}.city-hero h2{font-size:25px}.game-grid{grid-template-columns:repeat(2,1fr)}.game-grid button{min-height:92px}}
+/* Mobile app layout fixes */
+html,body{max-width:100%;overflow-x:hidden}
+.rebuild-game{width:100%;padding-bottom:max(18px,env(safe-area-inset-bottom));overflow-x:hidden}
+.rebuild-game header,.stats,.city-hero,.game-grid,.game-view{width:100%;min-width:0}
+.rebuild-game header>*{min-width:0}
+.rebuild-game header div{overflow:hidden}
+.rebuild-game header small,.rebuild-game header b{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.city-hero{overflow:hidden}
+.city-hero h2,.city-hero p{overflow-wrap:anywhere}
+.game-grid button{width:100%;min-width:0;overflow:hidden}
+.game-grid button b,.game-grid button small{max-width:100%;text-align:center;overflow-wrap:anywhere}
+@media(max-width:700px){
+ .rebuild-game{padding:10px 14px 20px}
+ .rebuild-game header{padding:12px 14px;gap:10px}
+ .rebuild-game header small{font-size:11px;letter-spacing:1px}
+ .rebuild-game header b{font-size:20px}
+ .rebuild-game header button{flex:0 0 auto;padding:10px 12px;font-size:14px}
+ .stats{gap:8px;margin:10px auto}
+ .stats span{padding:12px 6px;font-size:15px;white-space:nowrap}
+ .city-hero{margin:10px auto;padding:18px 16px;min-height:170px;background-position:center}
+ .city-hero small{font-size:12px}
+ .city-hero h2{font-size:25px;line-height:1.12;margin:8px 0 10px}
+ .city-hero p{font-size:15px;line-height:1.4;margin:0}
+ .game-grid{gap:9px;margin:10px auto}
+ .game-grid button{min-height:112px;padding:12px 7px;font-size:27px}
+ .game-grid button b{font-size:14px;line-height:1.15}
+ .game-grid button small{font-size:11px;line-height:1.2}
+ .game-view{padding:16px;margin:10px auto}
+}
+@media(max-width:380px){
+ .rebuild-game{padding-left:9px;padding-right:9px}
+ .rebuild-game header small{font-size:10px}
+ .rebuild-game header b{font-size:18px}
+ .stats span{font-size:14px}
+ .city-hero h2{font-size:22px}
+ .game-grid button{min-height:104px}
+}
