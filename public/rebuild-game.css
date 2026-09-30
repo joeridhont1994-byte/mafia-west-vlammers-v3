@@ -165,3 +165,6 @@ html,body{max-width:100%;overflow-x:hidden}
 .place-mc{left:50%!important;top:35%!important;transform:translate(-50%,-50%)!important;width:104px!important;min-height:72px!important;padding:7px 5px!important;z-index:4!important;background:#15171bf2!important;border-color:#8e7130!important}
 .place-mc span{font-size:25px!important}.place-mc b{font-size:13px!important}.place-mc small{font-size:9px!important}
 @media(max-width:500px){.place-mc{width:88px!important;min-height:66px!important;top:35%!important}.place-mc span{font-size:22px!important}.place-mc b{font-size:12px!important}}
+
+/* Motorclub selectors + join requests */
+.mc-panel select{width:100%;box-sizing:border-box;margin:7px 0;padding:11px;border:1px solid #4d5159;border-radius:9px;background:#090b0f;color:#fff;font-size:16px}.mc-join{margin-top:12px;padding-top:10px;border-top:1px solid #3d3829}.mc-join>b{display:block;font-size:11px;color:#d9c47f;margin-bottom:2px}
