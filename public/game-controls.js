@@ -15,7 +15,6 @@ weapons:()=>{try{panel("🔫 Wapenwinkel",typeof window.weaponShopHtml==="functi
 leaderboard:()=>call("showLeaderboard",null,"🏆 Ranglijst"),players:()=>call("showPlayers",null,"👥 Spelers"),notifications:()=>call("showNotifications",null,"🔔 Meldingen"),clan:()=>call("showFamily",null,"🏴 Familie"),chat:()=>call("showChat",null,"💬 Chat"),feedback:()=>call("showFeedback",null,"📝 Feedback"),mycity:()=>call("showMyCity",null,"🏙️ Mijn Stad"),admin:()=>call("adminPanel",null,"👑 Admin"),
 profile:()=>{if(typeof window.showPlayer==="function"){const n=window.state&&window.state.name?window.state.name:($("playerName")?.textContent||"");window.showPlayer(encodeURIComponent(n))}}
 };
-document.addEventListener("pointerup",e=>{const b=e.target.closest&&e.target.closest("[data-action]");if(!b)return;const fn=handlers[b.dataset.action];if(!fn)return;e.preventDefault();e.stopImmediatePropagation();fn()},true);
-document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-action]");if(!b)return;e.preventDefault();e.stopImmediatePropagation()},true);
-const close=$("closePanel");if(close)close.addEventListener("pointerup",e=>{e.preventDefault();e.stopImmediatePropagation();const p=$("panel");if(p){p.classList.remove("open");p.style.removeProperty("display");p.style.removeProperty("visibility");p.style.removeProperty("opacity");p.style.removeProperty("z-index")}},true);
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-action]");if(!b)return;const fn=handlers[b.dataset.action];if(!fn)return;e.preventDefault();e.stopImmediatePropagation();fn()},true);
+const close=$("closePanel");if(close)close.addEventListener("click",e=>{e.preventDefault();e.stopImmediatePropagation();const p=$("panel");if(p){p.classList.remove("open");p.style.removeProperty("display");p.style.removeProperty("visibility");p.style.removeProperty("opacity");p.style.removeProperty("z-index")}},true);
 })();
