@@ -1316,3 +1316,17 @@ button{touch-action:manipulation}
  .buildings .building[data-action="missions"]>b{font-size:12px!important}
  .buildings .building[data-action="missions"]>small{font-size:8px!important}
 }
+
+/* MISSIES 2026-09-30: use the new complete cinematic mission artwork */
+.buildings .building[data-action="missions"]{
+ background-image:url('/assets/mafia/file_0000000062e88210b8f1f0fbc21afdbf.png')!important;
+ background-size:cover!important;
+ background-position:center!important;
+ background-repeat:no-repeat!important;
+}
+.buildings .building[data-action="missions"]::after{display:none!important;}
+.buildings .building[data-action="missions"] .mission-icon,
+.buildings .building[data-action="missions"] > b,
+.buildings .building[data-action="missions"] > small{
+ visibility:hidden!important;
+}
