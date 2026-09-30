@@ -95,3 +95,8 @@ html,body{max-width:100%;overflow-x:hidden}
 /* Fix city chat mobile placement + prevent map taps */
 .city-chat{position:absolute;z-index:30;left:10px;right:10px;bottom:10px;pointer-events:none}.city-chat-feed{width:auto;max-width:72%;max-height:42px;margin:0 0 6px;padding:4px 7px;background:#0b0d11d9}.city-chat form{pointer-events:auto;background:#101216f2;border:1px solid #4a4f58;border-radius:14px;padding:5px;box-shadow:0 4px 14px #0009}.city-chat input{height:38px;padding:7px 10px;background:#090b0f;border:0}.city-chat form button{min-width:70px;height:38px;padding:7px 11px}.city-vehicle-toggle{bottom:68px}
 @media(max-width:500px){.city-chat{left:7px;right:7px;bottom:7px}.city-chat-feed{max-width:65%;font-size:8px}.city-chat form{padding:4px}.city-chat input{height:36px;font-size:14px}.city-chat form button{height:36px;min-width:64px}.city-vehicle-toggle{bottom:62px}}
+
+/* Keep city map clear: chat dock below map */
+.city-chat{top:100%;bottom:auto;left:0;right:0;margin-top:10px;pointer-events:none}.city-chat-feed{max-width:100%;margin-bottom:5px}.city-chat form{pointer-events:auto}.city-vehicle-toggle{bottom:12px}
+.city-map{margin-bottom:92px}
+@media(max-width:500px){.city-chat{top:100%;bottom:auto;left:0;right:0;margin-top:8px}.city-map{margin-bottom:88px}.city-vehicle-toggle{bottom:10px}}
