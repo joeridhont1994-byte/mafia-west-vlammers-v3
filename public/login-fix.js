@@ -9,7 +9,7 @@ async function login(){
   const raw=await r.text();let d={};try{d=JSON.parse(raw)}catch{}
   if(!r.ok)throw new Error(d.error||("Serverfout "+r.status));
   if(m)m.textContent="Login gelukt ✓";
-  location.replace(location.origin+"/?logged="+Date.now());
+  const me=await fetch("/api/me",{credentials:"include",cache:"no-store"}); if(!me.ok) throw new Error("Sessie niet actief."); location.reload();
  }catch(e){if(m)m.textContent="Fout: "+(e.message||"Geen verbinding met server");if(b){b.disabled=false;b.textContent="INLOGGEN"}}
 }
 function init(){
