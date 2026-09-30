@@ -100,3 +100,7 @@ html,body{max-width:100%;overflow-x:hidden}
 .city-chat{top:100%;bottom:auto;left:0;right:0;margin-top:10px;pointer-events:none}.city-chat-feed{max-width:100%;margin-bottom:5px}.city-chat form{pointer-events:auto}.city-vehicle-toggle{bottom:12px}
 .city-map{margin-bottom:92px}
 @media(max-width:500px){.city-chat{top:100%;bottom:auto;left:0;right:0;margin-top:8px}.city-map{margin-bottom:88px}.city-vehicle-toggle{bottom:10px}}
+
+/* Chat visible directly under city without being clipped */
+.city-map{overflow:visible;margin-bottom:96px}.city-chat{display:block;visibility:visible;top:calc(100% + 8px);bottom:auto;left:0;right:0;z-index:40}.city-chat-feed{display:none}
+@media(max-width:500px){.city-map{overflow:visible;margin-bottom:82px}.city-chat{top:calc(100% + 6px)}}
