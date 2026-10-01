@@ -443,3 +443,8 @@ radial-gradient(circle at 50% 50%,#1c4735,#0b2118 72%)!important}
 .world-v15 .city-chat input{display:block!important;flex:1!important;min-width:0!important;height:40px!important;font-size:15px!important}
 .world-v15 .city-chat form button{display:block!important;height:40px!important;min-width:68px!important}
 @media(max-width:500px){.world-v15{margin-bottom:195px!important}.world-v15 .city-chat{top:calc(100% + 8px)!important}.world-v15 .city-chat-feed{min-height:58px!important;max-height:92px!important;font-size:12px!important}.world-v15 .city-chat input,.world-v15 .city-chat form button{height:38px!important}}
+
+/* V15.3 - keep enter-building action visible above city chat */
+.world-v15 .city-enter{display:block;position:absolute!important;left:50%!important;transform:translateX(-50%)!important;bottom:14px!important;z-index:120!important}
+.world-v15 .city-enter[hidden]{display:none!important}
+@media(max-width:500px){.world-v15 .city-enter{bottom:12px!important;max-width:72%!important}}
