@@ -791,3 +791,32 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
  .city-graphics-v2 .city-place>b:before,.city-graphics-v2 .city-place>b:after{width:9px;height:14px;top:-31px}
  .city-graphics-v2 .city-place>b:before{left:5px}.city-graphics-v2 .city-place>b:after{right:5px}
 }
+
+
+/* CITY GRAPHICS V6 — mature urban atmosphere */
+.city-graphics-v2{background:linear-gradient(90deg,#071c16 0 39.5%,#171b20 39.5% 60.5%,#071c16 60.5% 100%)!important}
+.city-graphics-v2 .cg2-block{background:linear-gradient(155deg,#0a281e,#071c16 58%,#061812)!important}
+.city-graphics-v2 .cg2-block:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 25%,#d9b75b12 0 2px,transparent 3px),radial-gradient(circle at 75% 70%,#ffffff08 0 1px,transparent 2px);background-size:54px 54px,37px 37px;pointer-events:none}
+.city-graphics-v2 .city-place{background:linear-gradient(90deg,#171c21 0 8%,#3a4249 8% 16%,#20262c 16% 84%,#3a4249 84% 92%,#171c21 92%)!important;border-bottom:2px solid #080a0c!important}
+.city-graphics-v2 .city-place:before{background:linear-gradient(180deg,#4c555d,#272d33 65%,#171b1f)!important;filter:drop-shadow(0 7px 4px #000b)!important}
+.city-graphics-v2 .city-place>b{background:linear-gradient(#11161ae8,#080b0ee8)!important;border-color:#76818a55!important;box-shadow:0 3px 7px #0008!important}
+.city-graphics-v2 .city-place>small{color:#8f989f!important}
+.city-graphics-v2 .place-hq{background:linear-gradient(90deg,#182129,#3c4b57 11% 18%,#222d35 18% 82%,#3c4b57 82% 89%,#182129)!important}
+.city-graphics-v2 .place-bank{background:linear-gradient(90deg,#25292d,#666b6d 13% 20%,#3b4043 20% 80%,#666b6d 80% 87%,#25292d)!important}
+.city-graphics-v2 .place-mc{background:linear-gradient(90deg,#171514,#493b31 13% 20%,#29231f 20% 80%,#493b31 80% 87%,#171514)!important}
+.city-graphics-v2 .place-casino{background:linear-gradient(90deg,#270b0d,#7d2425 13% 20%,#481416 20% 80%,#7d2425 80% 87%,#270b0d)!important}
+.city-graphics-v2 .place-house{background:linear-gradient(90deg,#29221e,#695343 13% 20%,#44362e 20% 80%,#695343 80% 87%,#29221e)!important}
+.city-graphics-v2 .place-garage{background:linear-gradient(90deg,#202529,#555d62 13% 20%,#30363a 20% 80%,#555d62 80% 87%,#202529)!important}
+.city-graphics-v2 .road-v,.city-graphics-v2 .road-h{background-color:#20252a!important;background-image:linear-gradient(90deg,#ffffff04,#0000 20%,#0003 50%,#0000 80%,#ffffff04)!important}
+.city-graphics-v2 .road-v{border-left:2px solid #555b5e!important;border-right:2px solid #555b5e!important}
+.city-graphics-v2 .road-h{border-top:2px solid #555b5e!important;border-bottom:2px solid #555b5e!important}
+.city-graphics-v2 .v8-car,.city-graphics-v2 .v15-car{filter:drop-shadow(0 5px 3px #000c) saturate(.75) contrast(1.12)!important}
+.city-graphics-v2 .v15-person{filter:drop-shadow(0 4px 2px #000c) saturate(.7) brightness(.88)!important}
+.city-graphics-v2 .v11-tree,.city-graphics-v2 .v8-park{filter:drop-shadow(0 7px 4px #000b) saturate(.6) brightness(.78)!important}
+.city-graphics-v2 .v8-plaza{background:radial-gradient(circle,#174e61 0 34%,#9b9b8f 35% 43%,#343a3d 44% 55%,#171c20 56%)!important;box-shadow:0 10px 18px #000c,0 0 0 2px #a5a59a55!important}
+.city-graphics-v2 .city-player{background:linear-gradient(#151a1eea,#090c0fea)!important;border-color:#c6a43e!important}
+@media(max-width:500px){
+ .city-graphics-v2 .city-place{border-radius:2px 2px 5px 5px!important;box-shadow:0 10px 0 #07090b,0 15px 18px #000c,inset 0 0 0 1px #56616a!important}
+ .city-graphics-v2 .city-place>b{font-size:12px!important}
+ .city-graphics-v2 .city-place>small{font-size:8px!important}
+}
