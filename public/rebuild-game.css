@@ -820,3 +820,10 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
  .city-graphics-v2 .city-place>b{font-size:12px!important}
  .city-graphics-v2 .city-place>small{font-size:8px!important}
 }
+
+/* HOUSES V1 */
+#cityPlayerVisitBtn{border-color:#a98337!important;background:linear-gradient(#3b321f,#211b10)!important;color:#f3d77b!important}
+.home-visit-banner{margin:10px 0;padding:10px 12px;border:1px solid #a9853b;border-radius:10px;background:linear-gradient(135deg,#241e12,#12100c);box-shadow:0 5px 14px #0007}
+.home-visit-banner b,.home-visit-banner small{display:block}.home-visit-banner b{color:#f0ce70}.home-visit-banner small{margin-top:3px;color:#b7b1a2;font-size:11px}
+.home-visitors{position:absolute;left:8px;right:8px;bottom:7px;display:flex;justify-content:center;gap:5px;pointer-events:none}
+.home-visitors .visitor{padding:3px 6px;border-radius:8px;background:#101318dd;border:1px solid #5c646d;font-size:10px}
