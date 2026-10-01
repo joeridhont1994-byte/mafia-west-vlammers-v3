@@ -256,3 +256,24 @@ html,body{max-width:100%;overflow-x:hidden}
 
 /* Casino V1 */
 .place-casino{left:50%;top:84%;transform:translate(-50%,-50%);border-color:#d8aa39!important;box-shadow:0 0 24px #d8aa3940!important}.casino-panel{width:min(620px,94%);margin:18px auto;padding:20px;border:1px solid #d8aa39;border-radius:18px;background:linear-gradient(180deg,#21140d,#0c0c10);text-align:center}.casino-title{display:flex;justify-content:center;align-items:center;gap:12px}.casino-title>span{font-size:42px}.casino-title small{display:block;color:#d8aa39;font-weight:900}.casino-title b{font-size:25px}.casino-reels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.casino-reels span{padding:20px 5px;border:2px solid #d8aa39;border-radius:12px;background:#09090c;font-size:46px}.casino-bets{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.casino-bets button{padding:11px 5px;border:1px solid #d8aa39;border-radius:9px;background:#2b1b0c;color:#f5d56c;font-weight:900}.casino-panel>p{font-weight:900;font-size:17px}.casino-panel>small{color:#b9ad91}@media(max-width:600px){.casino-bets{grid-template-columns:repeat(2,1fr)}.casino-reels span{font-size:36px;padding:15px 3px}}
+
+/* City World V7 - ruimere wandelbare stadsindeling */
+.city-map{height:650px!important;background:
+radial-gradient(circle at 50% 58%,#355142 0 10%,transparent 11%),
+linear-gradient(90deg,transparent 0 43%,#34363c 43% 57%,transparent 57%),
+linear-gradient(0deg,transparent 0 43%,#34363c 43% 55%,transparent 55%),
+linear-gradient(135deg,#22372c,#15261f)!important}
+.city-map:before{content:"⛲";position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);width:82px;height:82px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:42px;background:#172c31;border:3px solid #55727b;box-shadow:0 0 25px #55b8d955;z-index:1}
+.city-place{z-index:3!important;width:112px!important;min-height:88px!important;padding:9px 6px!important;backdrop-filter:blur(5px);border-width:2px!important}
+.place-hq{left:4%!important;top:7%!important}.place-bank{right:4%!important;top:7%!important}.place-mc{left:4%!important;top:38%!important;transform:none!important}.place-casino{right:4%!important;left:auto!important;top:38%!important;transform:none!important;border-color:#d8aa39!important;background:#25160ee8!important}.place-home{left:4%!important;bottom:7%!important}.place-garage{right:4%!important;bottom:7%!important}
+.city-player{z-index:7!important}
+.city-enter{z-index:12!important;bottom:12px!important;max-width:230px}
+@media(max-width:500px){
+ .city-map{height:610px!important}
+ .city-place{width:92px!important;min-height:78px!important;padding:7px 4px!important}
+ .city-place span{font-size:24px!important}.city-place b{font-size:12px!important}.city-place small{font-size:8px!important}
+ .place-hq{left:3%!important;top:6%!important}.place-bank{right:3%!important;top:6%!important}
+ .place-mc{left:3%!important;top:35%!important}.place-casino{right:3%!important;top:35%!important}
+ .place-home{left:3%!important;bottom:7%!important}.place-garage{right:3%!important;bottom:7%!important}
+ .city-map:before{width:66px;height:66px;font-size:34px}
+}
