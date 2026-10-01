@@ -524,3 +524,21 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
   .world-v15 .city-place small{font-size:6px!important}
   .world-v15 .city-enter{max-width:76%!important;font-size:10px!important}
 }
+
+/* V15.6 - building-local enter button on iPhone + Android */
+.world-v15 .city-place .city-enter{
+  position:absolute!important;
+  left:50%!important;
+  bottom:-31px!important;
+  transform:translateX(-50%)!important;
+  width:max-content!important;
+  min-width:88px!important;
+  max-width:120px!important;
+  padding:7px 9px!important;
+  border-radius:10px!important;
+  font-size:10px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+  z-index:140!important;
+}
+.world-v15 .city-place .city-enter[hidden]{display:none!important}
