@@ -827,3 +827,10 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
 .home-visit-banner b,.home-visit-banner small{display:block}.home-visit-banner b{color:#f0ce70}.home-visit-banner small{margin-top:3px;color:#b7b1a2;font-size:11px}
 .home-visitors{position:absolute;left:8px;right:8px;bottom:7px;display:flex;justify-content:center;gap:5px;pointer-events:none}
 .home-visitors .visitor{padding:3px 6px;border-radius:8px;background:#101318dd;border:1px solid #5c646d;font-size:10px}
+
+/* HOUSES V2 */
+.home-live{margin-top:12px;padding:10px;border:1px solid #3f4850;border-radius:10px;background:#0d1115dd}
+.home-live-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}.home-live-head small{color:#8f9aa3}
+.home-visitor-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}.home-visitor{display:flex;gap:5px;align-items:center;padding:5px 7px;border:1px solid #414b54;border-radius:8px;background:#171d22;font-size:11px}.home-visitor button{padding:3px 6px;font-size:9px}
+.home-chat-feed{height:110px;overflow:auto;padding:7px;border:1px solid #303940;border-radius:8px;background:#080b0e;font-size:11px}.home-chat-feed div{padding:3px 0;border-bottom:1px solid #ffffff0a}.home-chat-feed b{color:#d7b653}
+#homeChatForm{display:flex;gap:6px;margin-top:7px}#homeChatInput{flex:1;min-width:0}.home-settings button.active{outline:2px solid #d6b34f}
