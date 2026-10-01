@@ -574,3 +574,20 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
   outline-offset:3px!important;
   box-shadow:0 0 20px #f4c94f66!important;
 }
+
+/* V15.8 - enter action below selected building, never overlaps player/title */
+.world-v15 .city-place .city-enter{
+  left:50%!important;
+  top:calc(100% + 7px)!important;
+  bottom:auto!important;
+  transform:translateX(-50%)!important;
+  width:96px!important;
+  height:30px!important;
+  padding:0 6px!important;
+  line-height:26px!important;
+  font-size:10px!important;
+  border-radius:9px!important;
+  z-index:170!important;
+}
+.world-v15 .city-place.selected-building{z-index:30!important}
+.world-v15 .city-place.selected-building .city-enter{display:block!important}
