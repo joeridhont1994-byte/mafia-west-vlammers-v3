@@ -612,3 +612,29 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
   white-space:nowrap!important;
 }
 .world-v15 .city-place .city-enter::before{content:"🚪 "!important;font-size:10px!important}
+
+/* V15.10 - keep lower buildings clear of fixed navigation */
+.world-v15{
+  height:640px!important;
+  margin-bottom:205px!important;
+}
+.world-v15 .place-home,
+.world-v15 .place-garage{
+  bottom:13%!important;
+}
+.world-v15 .parking-a{bottom:25%!important}
+.world-v15 .parked-a{bottom:29%!important}
+.world-v15 .tree-a{bottom:26%!important}
+@media(max-width:500px){
+  .world-v15{height:620px!important}
+  .world-v15 .place-home,
+  .world-v15 .place-garage{bottom:14%!important}
+}
+@supports (-webkit-touch-callout:none){
+  .world-v15{
+    height:630px!important;
+    margin-bottom:calc(205px + var(--app-safe-bottom))!important;
+  }
+  .world-v15 .place-home,
+  .world-v15 .place-garage{bottom:15%!important}
+}
