@@ -11,3 +11,14 @@ $("homeFurnitureRotate")?.addEventListener("click",async()=>{if(!selected||!mine
 function visitors(){const list=$("homeVisitorList"),stage=$("homeVisitors");if(!list||!stage)return;const names=[...list.querySelectorAll(".home-visitor")].map(x=>x.textContent.replace(/×|Buitenzetten/gi,"").trim()).filter(Boolean).slice(0,8);stage.innerHTML=names.map((n,i)=>'<span class="hv4-visitor" style="left:'+(15+(i%4)*20)+'%;top:'+(62+Math.floor(i/4)*12)+'%"><i>🕴️</i><b>'+n.replace(/[<>]/g,"")+'</b></span>').join("")}
 const obs=new MutationObserver(()=>{if($("homePanel")&&!$("homePanel").hidden){setTimeout(load,120);setTimeout(visitors,250)}});if($("homePanel"))obs.observe($("homePanel"),{attributes:true,subtree:true,childList:true});timer=setInterval(()=>{if(!document.hidden&&$("homePanel")&&!$("homePanel").hidden){load();visitors()}},5000);setTimeout(load,300);
 })();
+/* HOME V5 EXTENSIONS - furniture interaction, room ambience, avatar controls */
+(()=>{const $=id=>document.getElementById(id);let edit=false;
+function setup(){const room=$("homeRoomV3");if(!room||$("homeV5Bar"))return;const bar=document.createElement("div");bar.id="homeV5Bar";bar.className="hv5-bar";bar.innerHTML='<button id="hv5Edit" type="button">🛠️ Inrichten</button><button id="hv5Sit" type="button">🪑 Zitten</button><button id="hv5Dance" type="button">🎵 Dansen</button><button id="hv5Lights" type="button">💡 Sfeer</button>';room.parentNode.insertBefore(bar,room.nextSibling);
+$("hv5Edit").onclick=()=>{edit=!edit;room.classList.toggle("edit-mode",edit);$("hv5Edit").classList.toggle("active",edit);$("homeFurnitureControls").hidden=!edit};
+$("hv5Sit").onclick=()=>{const a=$("homeAvatarV4");if(a){a.classList.toggle("sitting");a.classList.remove("dancing")}};
+$("hv5Dance").onclick=()=>{const a=$("homeAvatarV4");if(a){a.classList.toggle("dancing");a.classList.remove("sitting")}};
+$("hv5Lights").onclick=()=>{room.classList.toggle("night-mode")};
+room.addEventListener("dblclick",e=>{const f=e.target.closest(".hv3-item");if(!f)return;const key=[...f.classList].find(x=>x.startsWith("hv3-"))||"";const a=$("homeAvatarV4");if(!a)return;const r=room.getBoundingClientRect(),fr=f.getBoundingClientRect();a.style.left=((fr.left+fr.width/2-r.left)/r.width*100)+"%";a.style.top=Math.min(88,((fr.top+fr.height-r.top)/r.height*100)+5)+"%";if(/sofa|bed|table/.test(key))a.classList.add("sitting");if(/dj|tv/.test(key))a.classList.add("dancing")});
+}
+new MutationObserver(setup).observe(document.body,{childList:true,subtree:true});setup();
+})();
