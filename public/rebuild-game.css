@@ -859,3 +859,11 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
 
 /* HOUSES V3 */
 .home-upgrades{margin:12px 0;padding:12px;border:1px solid #49525b;border-radius:12px;background:#12171c}.home-upgrades>div:first-child b,.home-upgrades>div:first-child small{display:block}.home-upgrades small{color:#9da5ad;margin:3px 0 9px}.home-upgrades>button{width:100%;margin:8px 0}.home-styles{display:grid!important;grid-template-columns:repeat(3,1fr);gap:6px}.home-styles button.active{outline:2px solid #d9b84e}.home-room-preview.style-modern{background:linear-gradient(180deg,#303942 0 58%,#4a4339 58%)}.home-room-preview.style-luxury{background:linear-gradient(180deg,#25242d 0 58%,#5b452b 58%);box-shadow:inset 0 0 30px #d5ad4b22}.home-room-preview.style-basic{background:linear-gradient(180deg,#2b2e34 0 58%,#44392d 58%)}
+
+/* MOBILE PHONE CHAT FIX V2 */
+#phoneAppBody:has(#phoneChatForm){overflow:hidden;display:flex;flex-direction:column;min-height:0}
+#phoneChatFeed{flex:1 1 auto;height:auto!important;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+#phoneChatForm{flex:0 0 auto;display:grid!important;grid-template-columns:minmax(0,1fr) 72px!important;gap:6px!important;margin:6px 0 2px!important;padding:7px 0 max(8px,env(safe-area-inset-bottom))!important;background:#111722;position:sticky;bottom:0;z-index:20}
+#phoneChatInput{min-width:0;height:42px!important;font-size:16px!important}
+#phoneChatSend{display:block!important;visibility:visible!important;opacity:1!important;width:72px!important;min-width:72px!important;height:42px!important;padding:0 8px!important;position:relative!important;inset:auto!important;z-index:21!important}
+@media(max-width:600px){.game-phone{padding:6px}.phone-shell{width:min(94vw,390px);height:min(84dvh,720px)}.phone-wall{padding:12px 12px 10px}.phone-clock{margin:8px 0 16px}.phone-app-body{height:calc(100% - 38px)}}
