@@ -411,3 +411,14 @@ radial-gradient(circle at 50% 50%,#1c4735,#0b2118 72%)!important}
 .world-v14 .lamp-a{left:32%!important;bottom:31%!important}.world-v14 .lamp-b{right:32%!important;top:31%!important}
 .world-v14 .tree-a{left:30%!important;bottom:15%!important}.world-v14 .tree-b{right:30%!important;top:16%!important}
 .world-v14 .city-player{z-index:10!important}
+
+/* WORLD V15 - living city */
+.world-v15 .v15-npc,.world-v15 .v15-bin,.world-v15 .v15-parking,.world-v15 .v15-car{position:absolute;z-index:4;pointer-events:none;filter:drop-shadow(0 3px 3px #0008)}
+.world-v15 .v15-npc{font-size:18px}.world-v15 .npc-a{left:34%;top:20%;animation:v15walkA 12s ease-in-out infinite}.world-v15 .npc-b{right:33%;top:66%;animation:v15walkB 14s ease-in-out infinite}.world-v15 .npc-c{left:30%;top:72%;animation:v15walkC 11s ease-in-out infinite}
+@keyframes v15walkA{0%,100%{top:20%}50%{top:37%}}@keyframes v15walkB{0%,100%{top:66%;right:33%}50%{top:78%;right:28%}}@keyframes v15walkC{0%,100%{left:28%}50%{left:37%}}
+.world-v15 .v15-bin{font-size:14px;opacity:.8}.world-v15 .bin-a{left:27%;top:42%}.world-v15 .bin-b{right:27%;top:60%}
+.world-v15 .v15-parking{width:20px;height:20px;display:flex;align-items:center;justify-content:center;background:#245db7;color:#fff;border:1px solid #d9e7ff;border-radius:3px;font-size:11px;font-weight:900}.world-v15 .parking-a{right:28%;bottom:18%}.world-v15 .parking-b{left:28%;top:15%}
+.world-v15 .v15-car{font-size:18px}.world-v15 .parked-a{right:25%;bottom:22%;transform:rotate(-8deg)}.world-v15 .parked-b{left:25%;top:12%;transform:rotate(8deg)}
+.world-v15 .city-road{box-shadow:inset 0 0 0 2px #444a50,inset 8px 0 0 #24292e,inset -8px 0 0 #24292e!important}.world-v15 .road-h{box-shadow:inset 0 0 0 2px #444a50,inset 0 7px 0 #24292e,inset 0 -7px 0 #24292e!important}
+.world-v15 .city-place{transition:transform .18s ease,box-shadow .18s ease}.world-v15 .city-place:active{transform:translateY(2px)!important;box-shadow:3px 4px 0 #090b0d!important}
+@media(max-width:500px){.world-v15 .v15-npc{font-size:16px}.world-v15 .v15-car{font-size:16px}.world-v15 .v15-bin{font-size:12px}.world-v15 .v15-parking{width:18px;height:18px;font-size:10px}}
