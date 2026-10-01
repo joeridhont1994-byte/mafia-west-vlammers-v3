@@ -434,3 +434,12 @@ radial-gradient(circle at 50% 50%,#1c4735,#0b2118 72%)!important}
 @keyframes v151npcC{0%{transform:translateX(0)}50%{transform:translateX(75px)}100%{transform:translateX(0)}}
 @keyframes v151carA{0%{transform:translateY(0)}50%{transform:translateY(115px)}100%{transform:translateY(0)}}
 @keyframes v151carB{0%{transform:translateX(0)}50%{transform:translateX(115px)}100%{transform:translateX(0)}}
+
+/* V15.2 - restore city chat below the V15 map */
+.world-v15{overflow:visible!important;margin-bottom:205px!important}
+.world-v15 .city-chat{display:block!important;visibility:visible!important;position:absolute!important;top:calc(100% + 10px)!important;bottom:auto!important;left:2px!important;right:2px!important;margin:0!important;z-index:80!important;pointer-events:auto!important}
+.world-v15 .city-chat-feed{display:block!important;width:100%!important;max-width:none!important;min-height:62px!important;max-height:105px!important;overflow-y:auto!important;margin:0 0 7px!important;padding:8px 10px!important;box-sizing:border-box!important;background:#080a0df5!important;border:1px solid #555b66!important;border-radius:10px!important;color:#fff!important;font-size:13px!important;line-height:1.45!important}
+.world-v15 .city-chat form{display:flex!important;width:100%!important;box-sizing:border-box!important;gap:6px!important;padding:5px!important;background:#101216f2!important;border:1px solid #4a4f58!important;border-radius:14px!important}
+.world-v15 .city-chat input{display:block!important;flex:1!important;min-width:0!important;height:40px!important;font-size:15px!important}
+.world-v15 .city-chat form button{display:block!important;height:40px!important;min-width:68px!important}
+@media(max-width:500px){.world-v15{margin-bottom:195px!important}.world-v15 .city-chat{top:calc(100% + 8px)!important}.world-v15 .city-chat-feed{min-height:58px!important;max-height:92px!important;font-size:12px!important}.world-v15 .city-chat input,.world-v15 .city-chat form button{height:38px!important}}
