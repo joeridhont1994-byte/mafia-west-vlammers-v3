@@ -215,3 +215,41 @@ html,body{max-width:100%;overflow-x:hidden}
   .bottom-nav button{min-height:58px}
   .bottom-nav button span{font-size:11px}
 }
+
+
+/* Desktop V3 — large monitor sizing, proportional and centered */
+@media (min-width: 1200px) {
+  .rebuild-game{padding:28px 36px 112px}
+  .rebuild-game header,.stats,.news-ticker,.news-admin,.admin-panel,.player-profile,.missions-panel,.city-v1,.game-view,.app-page{max-width:1600px!important}
+  .rebuild-game header{min-height:78px;padding:18px 28px}
+  .rebuild-game header small{font-size:14px}
+  .rebuild-game header b{font-size:30px}
+  .rebuild-game header button{padding:13px 20px;font-size:16px}
+  .news-ticker{min-height:60px}
+  .news-ticker>b{font-size:16px;padding:0 20px}
+  .news-track{font-size:16px}
+  .stats{gap:14px}
+  .stats span{padding:19px 14px;font-size:20px}
+  .stats span small{font-size:13px}
+  .player-profile,.missions-panel,.admin-panel,.game-view{padding:30px}
+  .profile-main h2,.missions-title h2{font-size:32px}
+  .profile-grid span{padding:16px}
+  .profile-grid small{font-size:12px}
+  .profile-grid b{font-size:20px}
+  .mission-list article{padding:22px}
+  .mission-list b{font-size:21px}
+  .mission-list small,.mission-list em{font-size:13px}
+  .mission-list button{padding:14px 22px;font-size:15px}
+  .city-head h2{font-size:34px}
+  .city-head p{font-size:16px}
+  .city-map{min-height:680px!important}
+  .city-place{min-width:175px!important;min-height:108px!important;padding:14px!important}
+  .city-place span{font-size:36px!important}
+  .city-place b{font-size:17px!important}
+  .city-place small{font-size:12px!important}
+  .city-player span{font-size:34px}
+  .bottom-nav{width:min(900px,calc(100% - 64px))!important;max-width:900px!important}
+  .bottom-nav button{min-height:68px!important;font-size:23px!important}
+  .bottom-nav button span{font-size:13px!important;margin-top:3px}
+  .phone-open{width:58px;height:58px!important;font-size:28px!important;bottom:92px}
+}
