@@ -448,3 +448,28 @@ radial-gradient(circle at 50% 50%,#1c4735,#0b2118 72%)!important}
 .world-v15 .city-enter{display:block;position:absolute!important;left:50%!important;transform:translateX(-50%)!important;bottom:14px!important;z-index:120!important}
 .world-v15 .city-enter[hidden]{display:none!important}
 @media(max-width:500px){.world-v15 .city-enter{bottom:12px!important;max-width:72%!important}}
+
+/* V15.4 - compact enter button, clear of chat/navigation */
+.world-v15 .city-enter{
+  left:50%!important;
+  bottom:54px!important;
+  transform:translateX(-50%)!important;
+  min-width:0!important;
+  width:max-content!important;
+  max-width:68%!important;
+  padding:7px 12px!important;
+  border-radius:11px!important;
+  font-size:11px!important;
+  line-height:1.1!important;
+  white-space:nowrap!important;
+  z-index:125!important;
+  box-shadow:0 4px 10px #0008!important;
+}
+@media(max-width:500px){
+  .world-v15 .city-enter{
+    bottom:50px!important;
+    max-width:70%!important;
+    padding:7px 10px!important;
+    font-size:11px!important;
+  }
+}
