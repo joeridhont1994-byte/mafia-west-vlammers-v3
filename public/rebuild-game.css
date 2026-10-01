@@ -542,3 +542,35 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
   z-index:140!important;
 }
 .world-v15 .city-place .city-enter[hidden]{display:none!important}
+
+/* V15.7 - clear building enter action */
+.world-v15 .city-place{overflow:visible!important}
+.world-v15 .city-place .city-enter{
+  left:50%!important;
+  bottom:8px!important;
+  transform:translateX(-50%)!important;
+  width:calc(100% - 12px)!important;
+  max-width:none!important;
+  min-width:0!important;
+  height:32px!important;
+  padding:0 6px!important;
+  border:2px solid #f4c94f!important;
+  border-radius:9px!important;
+  background:linear-gradient(180deg,#d7ad36,#9d7419)!important;
+  color:#111!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  line-height:28px!important;
+  text-align:center!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  white-space:nowrap!important;
+  box-shadow:0 4px 12px #000b!important;
+  z-index:160!important;
+}
+.world-v15 .city-place .city-enter::before{content:"🚪 ";font-size:12px}
+.world-v15 .city-place.selected-building{
+  outline:3px solid #f4c94f!important;
+  outline-offset:3px!important;
+  box-shadow:0 0 20px #f4c94f66!important;
+}
