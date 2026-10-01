@@ -867,3 +867,10 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
 #phoneChatInput{min-width:0;height:42px!important;font-size:16px!important}
 #phoneChatSend{display:block!important;visibility:visible!important;opacity:1!important;width:72px!important;min-width:72px!important;height:42px!important;padding:0 8px!important;position:relative!important;inset:auto!important;z-index:21!important}
 @media(max-width:600px){.game-phone{padding:6px}.phone-shell{width:min(94vw,390px);height:min(84dvh,720px)}.phone-wall{padding:12px 12px 10px}.phone-clock{margin:8px 0 16px}.phone-app-body{height:calc(100% - 38px)}}
+
+/* MOBILE CHAT HARD FIX V3 */
+#phoneChatScreen{height:100%;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) 58px;overflow:hidden}
+#phoneChatScreen #phoneChatFeed{height:auto!important;min-height:0!important;overflow-y:auto!important;padding:0 0 8px!important}
+#phoneChatComposer{display:grid!important;grid-template-columns:minmax(0,1fr) 76px!important;gap:7px!important;align-items:center!important;height:58px!important;min-height:58px!important;padding:7px 0!important;box-sizing:border-box!important;background:#111722!important;z-index:100!important}
+#phoneChatComposer #phoneChatInput{display:block!important;width:100%!important;height:44px!important;min-height:44px!important;margin:0!important;padding:10px!important;box-sizing:border-box!important}
+#phoneChatComposer #phoneChatSend{display:block!important;width:76px!important;height:44px!important;min-height:44px!important;margin:0!important;padding:0 8px!important;visibility:visible!important;opacity:1!important;position:static!important;transform:none!important}
