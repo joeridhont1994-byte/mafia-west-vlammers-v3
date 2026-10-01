@@ -834,3 +834,25 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
 .home-visitor-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}.home-visitor{display:flex;gap:5px;align-items:center;padding:5px 7px;border:1px solid #414b54;border-radius:8px;background:#171d22;font-size:11px}.home-visitor button{padding:3px 6px;font-size:9px}
 .home-chat-feed{height:110px;overflow:auto;padding:7px;border:1px solid #303940;border-radius:8px;background:#080b0e;font-size:11px}.home-chat-feed div{padding:3px 0;border-bottom:1px solid #ffffff0a}.home-chat-feed b{color:#d7b653}
 #homeChatForm{display:flex;gap:6px;margin-top:7px}#homeChatInput{flex:1;min-width:0}.home-settings button.active{outline:2px solid #d6b34f}
+
+/* MOBILE ANTI-SELECTION FIX
+   Prevent accidental Android/Samsung text selection / search overlays in game UI.
+   Inputs and chat fields remain selectable/editable. */
+@media (hover:none) and (pointer:coarse){
+  body,.app-shell,.app-page,.city-map,.hq-interior,
+  button,a,.card,.city-place,.city-player,.city-other-player,
+  .home-panel,.home-room-preview,.home-title,.home-settings,.home-live,
+  .garage-panel,.casino-panel,.mc-panel{
+    -webkit-user-select:none!important;
+    user-select:none!important;
+    -webkit-touch-callout:none!important;
+  }
+  input,textarea,[contenteditable="true"]{
+    -webkit-user-select:text!important;
+    user-select:text!important;
+    -webkit-touch-callout:default!important;
+  }
+  button,a,.city-place,.city-player,.city-other-player{
+    -webkit-tap-highlight-color:transparent;
+  }
+}
