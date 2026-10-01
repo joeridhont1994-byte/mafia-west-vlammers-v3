@@ -400,3 +400,14 @@ radial-gradient(circle at 50% 50%,#1c4735,#0b2118 72%)!important}
 .world-v14 .city-player{z-index:9!important;width:42px!important;height:42px!important;border:2px solid #d7ae35!important;background:#11151a!important;box-shadow:0 5px 8px #0009!important}.world-v14 .city-player span{font-size:18px!important}.world-v14 .city-player b{font-size:7px!important}.world-v14 .city-other-player{z-index:8!important}
 .world-v14 .city-enter{position:fixed!important;left:50%!important;bottom:82px!important;transform:translateX(-50%)!important;z-index:50!important;width:auto!important;min-width:125px!important;max-width:165px!important;padding:8px 11px!important;border-radius:11px!important;font-size:12px!important;line-height:1.15!important}
 @media(max-width:500px){.world-v14{height:590px!important}.world-v14 .city-place{width:82px!important;min-height:70px!important}.world-v14 .place-hq,.world-v14 .place-mc,.world-v14 .place-home{left:4%!important}.world-v14 .place-bank,.world-v14 .place-casino,.world-v14 .place-garage{right:4%!important}.world-v14 .city-place span{font-size:23px!important}.world-v14 .city-place b{font-size:10px!important}.world-v14 .city-place small{font-size:7px!important}.world-v14 .v8-plaza{width:56px!important;height:56px!important;font-size:27px!important}}
+
+/* WORLD V14.1 - single plaza fountain + clean walk lanes */
+.world-v14:before{content:none!important;display:none!important}
+.world-v14 .v8-plaza{display:flex!important;z-index:7!important}
+.world-v14 .v8-plaza span{display:block!important}
+.world-v14 .v8-plaza + .v8-park{z-index:3!important}
+.world-v14 .park-a{left:32%!important;top:25%!important}.world-v14 .park-b{right:31%!important;bottom:23%!important}
+.world-v14 .bench-a{left:31%!important;top:64%!important}.world-v14 .bench-b{right:31%!important;top:27%!important}
+.world-v14 .lamp-a{left:32%!important;bottom:31%!important}.world-v14 .lamp-b{right:32%!important;top:31%!important}
+.world-v14 .tree-a{left:30%!important;bottom:15%!important}.world-v14 .tree-b{right:30%!important;top:16%!important}
+.world-v14 .city-player{z-index:10!important}
