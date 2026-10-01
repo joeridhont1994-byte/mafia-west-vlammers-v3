@@ -253,3 +253,6 @@ html,body{max-width:100%;overflow-x:hidden}
   .bottom-nav button span{font-size:13px!important;margin-top:3px}
   .phone-open{width:58px;height:58px!important;font-size:28px!important;bottom:92px}
 }
+
+/* Casino V1 */
+.place-casino{left:50%;top:84%;transform:translate(-50%,-50%);border-color:#d8aa39!important;box-shadow:0 0 24px #d8aa3940!important}.casino-panel{width:min(620px,94%);margin:18px auto;padding:20px;border:1px solid #d8aa39;border-radius:18px;background:linear-gradient(180deg,#21140d,#0c0c10);text-align:center}.casino-title{display:flex;justify-content:center;align-items:center;gap:12px}.casino-title>span{font-size:42px}.casino-title small{display:block;color:#d8aa39;font-weight:900}.casino-title b{font-size:25px}.casino-reels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.casino-reels span{padding:20px 5px;border:2px solid #d8aa39;border-radius:12px;background:#09090c;font-size:46px}.casino-bets{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.casino-bets button{padding:11px 5px;border:1px solid #d8aa39;border-radius:9px;background:#2b1b0c;color:#f5d56c;font-weight:900}.casino-panel>p{font-weight:900;font-size:17px}.casino-panel>small{color:#b9ad91}@media(max-width:600px){.casino-bets{grid-template-columns:repeat(2,1fr)}.casino-reels span{font-size:36px;padding:15px 3px}}
