@@ -638,3 +638,10 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
   .world-v15 .place-home,
   .world-v15 .place-garage{bottom:15%!important}
 }
+
+/* Casino V2 - always-visible live wallet */
+.casino-balances{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 14px;position:sticky;top:6px;z-index:20}
+.casino-balances>div{background:#0c0e12;border:1px solid #c99b32;border-radius:12px;padding:8px 10px;text-align:center;box-shadow:0 4px 10px #0008}
+.casino-balances small{display:block;color:#c8aa5a;font-size:9px;font-weight:800;letter-spacing:.6px}
+.casino-balances b{display:block;color:#fff;font-size:16px;margin-top:2px}
+@media(max-width:500px){.casino-balances{gap:6px;margin-bottom:10px}.casino-balances>div{padding:7px 6px}.casino-balances b{font-size:14px}}
