@@ -892,3 +892,6 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
 
 /* Disable removed global floating back UI */
 .game-back-button{display:none!important}body:has(.game-back-button.show) .app-page.active{padding-top:initial!important}
+
+/* GSM contacts */
+.phone-contact-add{width:100%;min-height:48px;margin:4px 0 14px;border:1px solid #8d1515;border-radius:15px;background:#8d151522;color:#fff;font-weight:800;font-size:14px}.phone-contact-search{display:grid;grid-template-columns:1fr auto;gap:8px;margin:5px 0 16px}.phone-contact-search input{min-width:0;padding:13px;border:1px solid #444;border-radius:14px;background:#171717;color:#fff;font-size:16px}.phone-contact-search button{border:0;border-radius:14px;background:#8d1515;color:#fff;font-weight:800;padding:0 16px}
