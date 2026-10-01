@@ -591,3 +591,24 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
 }
 .world-v15 .city-place.selected-building{z-index:30!important}
 .world-v15 .city-place.selected-building .city-enter{display:block!important}
+
+/* V15.9 - final compact local enter button */
+.world-v15 .city-place .city-enter{
+  box-sizing:border-box!important;
+  width:88px!important;
+  min-width:88px!important;
+  max-width:88px!important;
+  height:28px!important;
+  top:calc(100% + 6px)!important;
+  bottom:auto!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  padding:0 4px!important;
+  font-size:9px!important;
+  line-height:24px!important;
+  text-align:center!important;
+  overflow:hidden!important;
+  text-overflow:clip!important;
+  white-space:nowrap!important;
+}
+.world-v15 .city-place .city-enter::before{content:"🚪 "!important;font-size:10px!important}
