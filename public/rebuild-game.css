@@ -315,3 +315,15 @@ linear-gradient(135deg,#183729,#0c2419)!important}
 @keyframes v9vertical{0%{top:12%}45%{top:40%}55%{top:60%}100%{top:88%}}@keyframes v9horizontal{0%{left:10%}45%{left:38%}55%{left:62%}100%{left:88%}}
 .world-v9 .v8-park{z-index:2}.world-v9 .park-a{left:31%!important;top:29%!important}.world-v9 .park-b{right:29%!important;bottom:25%!important}
 @media(max-width:500px){.world-v9{height:700px!important}.world-v9 .city-place{width:96px!important;min-height:96px!important}.world-v9 .city-place span{font-size:30px!important}.world-v9 .v8-plaza{width:72px!important;height:72px!important;font-size:35px!important}.walk-n{top:35%}.walk-s{bottom:33%}}
+
+/* WORLD V9.1 - clean plaza + safer mobile walking */
+.world-v9:before{content:none!important;display:none!important}
+.world-v9 .v8-plaza{z-index:5!important}
+.world-v9 .city-player{width:48px!important;height:48px!important;border-width:2px!important}
+.world-v9 .city-player span{font-size:21px!important;line-height:20px!important}.world-v9 .city-player b{font-size:8px!important}
+.world-v9 .car-a{left:45.5%!important;animation:v91north 9s ease-in-out infinite!important}.world-v9 .car-b{top:46.5%!important;animation:v91west 11s ease-in-out infinite!important}
+@keyframes v91north{0%{top:10%}45%{top:37%}50%{top:37%}55%{top:37%}100%{top:10%}}
+@keyframes v91west{0%{left:8%}45%{left:35%}50%{left:35%}55%{left:35%}100%{left:8%}}
+.world-v9 .v8-plaza:after{content:"";position:absolute;inset:-17px;border:3px solid #9d967755;border-radius:50%;box-shadow:0 0 0 7px #1116;pointer-events:none}
+.world-v9 .v9-sidewalk{z-index:2!important}
+@media(max-width:500px){.world-v9 .city-player{width:46px!important;height:46px!important}.world-v9 .city-player span{font-size:20px!important}.world-v9 .v8-plaza{width:68px!important;height:68px!important;font-size:33px!important}}
