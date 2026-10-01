@@ -761,3 +761,33 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
  .city-graphics-v2 .city-place>span{top:10px!important;width:50px!important;height:31px!important}
  .city-graphics-v2 .city-place>b{font-size:12px!important;margin-top:7px!important}
 }
+
+/* CITY GRAPHICS V5 — richer streetscape and architectural detail */
+.city-graphics-v2{background:linear-gradient(90deg,#09271c 0 39.5%,#15191d 39.5% 60.5%,#09271c 60.5% 100%)!important}
+.city-graphics-v2 .cg2-block{background:linear-gradient(135deg,#0b3022,#061c15)!important;box-shadow:inset 0 0 35px #0008,inset 0 0 0 1px #31534255!important}
+.city-graphics-v2 .cg2-block:after{content:"";position:absolute;inset:10px;border:1px solid #56706424;background:repeating-linear-gradient(90deg,transparent 0 25px,#ffffff05 26px 27px)}
+.city-graphics-v2 .city-place{box-shadow:0 13px 0 #07090b,0 20px 25px #000b,inset 0 0 0 2px #505b65, inset 12px 0 20px #ffffff08!important}
+.city-graphics-v2 .city-place>b:before,.city-graphics-v2 .city-place>b:after{content:"";position:absolute;top:-35px;width:12px;height:17px;background:linear-gradient(#214052,#10232d);border:1px solid #74838a;box-shadow:0 0 7px #70b8d633}
+.city-graphics-v2 .city-place>b:before{left:9px}.city-graphics-v2 .city-place>b:after{right:9px}
+.city-graphics-v2 .place-casino>b:before,.city-graphics-v2 .place-casino>b:after{background:#d19c32;box-shadow:0 0 11px #ffc34f99;border-color:#f0c15a}
+.city-graphics-v2 .place-casino>b{box-shadow:0 0 13px #dba83855,inset 0 0 9px #dba83833}
+.city-graphics-v2 .place-hq{border-top:2px solid #55616d!important}
+.city-graphics-v2 .place-hq>b{letter-spacing:.4px!important}
+.city-graphics-v2 .place-bank:after{background:linear-gradient(90deg,#252b30 0 12%,#b7b9b6 12% 18%,#252b30 18% 38%,#0c1114 38% 62%,#252b30 62% 82%,#b7b9b6 82% 88%,#252b30 88%)!important}
+.city-graphics-v2 .place-house:after{background:linear-gradient(90deg,#34251f 0 22%,#8d6a48 22% 31%,#17110f 31% 69%,#8d6a48 69% 78%,#34251f 78%)!important}
+.city-graphics-v2 .place-garage:after{height:42px!important;background:repeating-linear-gradient(#242b30 0 7px,#586168 7px 9px)!important;border:2px solid #667078!important}
+.city-graphics-v2 .road-v,.city-graphics-v2 .road-h{box-shadow:inset 0 0 0 2px #3f464d,inset 8px 0 12px #0008,inset -8px 0 12px #0008!important}
+.city-graphics-v2 .road-v:before{left:-12px!important;right:-12px!important;border-left:8px solid #4b5052!important;border-right:8px solid #4b5052!important;box-shadow:inset 2px 0 #858a84,inset -2px 0 #858a84}
+.city-graphics-v2 .road-h:before{top:-9px!important;bottom:-9px!important;border-top:7px solid #4b5052!important;border-bottom:7px solid #4b5052!important;box-shadow:inset 0 2px #858a84,inset 0 -2px #858a84}
+.city-graphics-v2 .v8-lamp{opacity:1!important;height:24px!important;background:#1a1f23!important;box-shadow:0 -13px 22px 8px #f0c75b3b!important}
+.city-graphics-v2 .v8-lamp:before{background:#ffe08a!important;box-shadow:0 0 20px 8px #f3c85d70!important}
+.city-graphics-v2 .v11-bench{background:#4c3326!important;border-radius:2px;box-shadow:0 3px 3px #0008;filter:none!important}
+.city-graphics-v2 .v15-bin{background:#343b3f!important;border:1px solid #687176;border-radius:2px;filter:none!important}
+.city-graphics-v2 .v8-plaza{transform:translate(-50%,-50%) scale(.9);border-color:#8a8e88!important}
+.city-graphics-v2 .v8-park{filter:drop-shadow(0 5px 3px #000a) saturate(.65)!important}
+.city-graphics-v2 .city-player{box-shadow:0 7px 12px #000b,0 0 0 4px #d8ad3c25,0 0 18px #d8ad3c33!important}
+@media(max-width:500px){
+ .city-graphics-v2 .city-place{width:25%!important}
+ .city-graphics-v2 .city-place>b:before,.city-graphics-v2 .city-place>b:after{width:9px;height:14px;top:-31px}
+ .city-graphics-v2 .city-place>b:before{left:5px}.city-graphics-v2 .city-place>b:after{right:5px}
+}
