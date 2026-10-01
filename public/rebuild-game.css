@@ -856,3 +856,6 @@ body{padding-left:var(--app-safe-left);padding-right:var(--app-safe-right)}
     -webkit-tap-highlight-color:transparent;
   }
 }
+
+/* HOUSES V3 */
+.home-upgrades{margin:12px 0;padding:12px;border:1px solid #49525b;border-radius:12px;background:#12171c}.home-upgrades>div:first-child b,.home-upgrades>div:first-child small{display:block}.home-upgrades small{color:#9da5ad;margin:3px 0 9px}.home-upgrades>button{width:100%;margin:8px 0}.home-styles{display:grid!important;grid-template-columns:repeat(3,1fr);gap:6px}.home-styles button.active{outline:2px solid #d9b84e}.home-room-preview.style-modern{background:linear-gradient(180deg,#303942 0 58%,#4a4339 58%)}.home-room-preview.style-luxury{background:linear-gradient(180deg,#25242d 0 58%,#5b452b 58%);box-shadow:inset 0 0 30px #d5ad4b22}.home-room-preview.style-basic{background:linear-gradient(180deg,#2b2e34 0 58%,#44392d 58%)}
