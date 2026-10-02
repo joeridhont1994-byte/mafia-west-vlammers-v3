@@ -988,3 +988,14 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
 .market-card-photo .vehpic .vehicle-thumb{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:#edf2f5!important}
 .market-card-photo .market-vehicle-info{min-width:0;padding:10px 0}.market-card-photo .market-vehicle-info b{display:block;font-size:18px}.market-card-photo .market-vehicle-info small{display:block;color:#a9b7c3;margin-top:3px}
 @media(max-width:700px){.market-card-photo{grid-template-columns:105px 1fr auto!important}.market-card-photo .vehpic{width:105px!important;height:86px!important}.market-card-photo .market-vehicle-info b{font-size:16px}.market-card-photo .market-vehicle-info small{font-size:12px}}
+
+/* PARKING CARD POLISH V2 */
+.real-vehicle-grid{gap:18px!important}
+.real-vehicle-grid .parking-card{border:1px solid #294a62!important;border-radius:18px!important;overflow:hidden!important;background:linear-gradient(180deg,#071923,#06131b)!important;box-shadow:0 8px 24px #0008!important}
+.real-vehicle-grid .parking-card .vehicle-art.vehicle-photo{height:220px!important;min-height:220px!important;margin:0!important;padding:10px!important;border:0!important;border-radius:0!important;background:linear-gradient(145deg,#dce4e9,#f7f9fa)!important;box-sizing:border-box!important}
+.real-vehicle-grid .parking-card .vehicle-art.vehicle-photo img{display:block!important;width:100%!important;height:100%!important;padding:0!important;border:0!important;border-radius:12px!important;object-fit:contain!important;object-position:center!important;background:transparent!important}
+.real-vehicle-grid .parking-card .vehicle-info{padding:18px 20px 20px!important;background:linear-gradient(180deg,#061a24,#06131b)!important}
+.real-vehicle-grid .parking-card .vehicle-info h3,.real-vehicle-grid .parking-card .vehicle-info b{margin-top:0!important}
+.real-vehicle-grid .parking-card .vehicle-rarity{border-radius:9px!important}
+.real-vehicle-grid .parking-card .card-steal{border-radius:12px!important;overflow:hidden!important}
+@media(max-width:700px){.real-vehicle-grid .parking-card .vehicle-art.vehicle-photo{height:210px!important;min-height:210px!important;padding:8px!important}.real-vehicle-grid .parking-card .vehicle-art.vehicle-photo img{border-radius:10px!important}.real-vehicle-grid .parking-card .vehicle-info{padding:16px!important}}
