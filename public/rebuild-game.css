@@ -1806,3 +1806,34 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
 .farm-v5-management{margin:12px 0;padding:12px;border:1px solid #365b69;border-radius:14px;background:linear-gradient(145deg,#09161b,#07100b)}
 .farm-v5-management h3{margin:0 0 10px;font-size:13px;color:#9bdff1}.farm-v5-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .farm-v5-cards>div{padding:10px;border:1px solid #294650;border-radius:11px;background:#0b1b20}.farm-v5-cards span{font-size:22px}.farm-v5-cards b,.farm-v5-cards small{display:block;margin-top:4px}.farm-v5-cards b{font-size:11px}.farm-v5-cards small{font-size:9px;color:#86c9d9}.farm-v5-cards button{width:100%;min-height:34px;margin-top:8px;font-size:9px}
+
+/* WEEDFARM COMPACT MOBILE */
+@media(max-width:700px){
+ .farm-panel.farm-v5{padding:10px!important}
+ .farm-v5 .farm-head{margin-bottom:8px!important}
+ .farm-v5 .farm-head p{display:none!important}
+ .farm-v5 .farm-stats{gap:7px!important;margin-bottom:8px!important}
+ .farm-v5 .farm-stats>div{min-height:72px!important;padding:9px!important}
+ .farm-v5 .farm-stats small{font-size:10px!important}.farm-v5 .farm-stats b{font-size:22px!important}
+ .farm-v5 .farm-room{padding:10px!important;margin:8px 0!important}
+ .farm-v5 .farm-room-title{margin-bottom:7px!important}.farm-v5 .farm-room-title b{font-size:12px!important}
+ .farm-v5 .farm-benches{gap:6px!important;padding:7px!important}
+ .farm-v5 .farm-benches span{min-height:48px!important;font-size:27px!important}
+ .farm-v5 .farm-lamps{margin-top:6px!important}
+ .farm-v5 .farm-grow{padding:10px!important;margin:8px 0!important}
+ .farm-v5 .farm-progress-head{margin-bottom:6px!important}.farm-v5 .farm-progress{height:10px!important}
+ .farm-v5 .farm-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important;margin:8px 0!important}
+ .farm-v5 .farm-actions button{min-height:48px!important;padding:8px 5px!important;font-size:11px!important}
+ .farm-v5 .farm-v2-upgrades{margin-top:8px!important;padding:9px!important}
+ .farm-v5 .farm-v2-upgrades h3{margin-bottom:7px!important;font-size:12px!important}
+ .farm-v5 .farm-upgrade-grid{gap:6px!important}
+ .farm-v5 .farm-upgrade-grid button{min-height:52px!important;padding:6px!important;font-size:15px!important}
+ .farm-v5 .farm-upgrade-grid button b{font-size:10px!important}.farm-v5 .farm-upgrade-grid button small{font-size:8px!important}
+ .farm-v5 .farm-v3-dashboard,.farm-v5 .farm-v4-status{gap:5px!important;margin:8px 0!important}
+ .farm-v5 .farm-v3-dashboard>div,.farm-v5 .farm-v4-status>div{padding:7px 3px!important}
+ .farm-v5 .farm-v5-management{margin:8px 0!important;padding:9px!important}
+ .farm-v5 .farm-v5-cards>div{padding:7px!important}.farm-v5 .farm-v5-cards button{min-height:30px!important;margin-top:5px!important}
+ .farm-v5 .farm-v4-orders,.farm-v5 .farm-v3-market{margin:8px 0!important;padding:9px!important}
+ .farm-v5 .farm-v4-orders button,.farm-v5 .farm-v3-market button{min-height:40px!important}
+ .farm-v5 .farm-info-grid{margin-top:8px!important;gap:5px!important}
+}
