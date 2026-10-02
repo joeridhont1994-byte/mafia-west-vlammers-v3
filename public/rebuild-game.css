@@ -1028,3 +1028,16 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
 /* WEEDFARM LOT OVERRIDE */
 .city-map .place-farm{left:15%!important;top:68%!important;width:118px!important;min-height:112px!important;z-index:9!important}
 @media(max-width:700px){.city-map .place-farm{left:15%!important;top:68%!important;width:108px!important;min-height:102px!important}}
+
+/* FINAL WEEDFARM POSITION - separate from all existing buildings */
+.city-map .place-farm{
+ left:85%!important;top:68%!important;
+ transform:translate(-50%,-50%)!important;
+ width:104px!important;min-height:96px!important;
+ z-index:12!important;
+}
+@media(max-width:700px){
+ .city-map .place-farm{left:85%!important;top:68%!important;width:96px!important;min-height:90px!important}
+ .city-map .place-farm b{font-size:13px!important}
+ .city-map .place-farm small{font-size:8px!important;line-height:1.05!important}
+}
