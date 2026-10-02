@@ -1525,3 +1525,45 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
    font-size:11px!important;
  }
 }
+
+/* CITY V14 - definitive building-local enter button; overrides legacy world-v15 fixed rules */
+.city-map.city-reference-v1.world-v15 .city-place.selected-building{overflow:visible!important;z-index:200!important}
+.city-map.city-reference-v1.world-v15 .city-place.selected-building>#cityEnter,
+.city-map.city-reference-v1.world-v15 .city-place.selected-building>.city-enter{
+ position:absolute!important;
+ display:flex!important;
+ left:50%!important;
+ right:auto!important;
+ top:calc(100% + 8px)!important;
+ bottom:auto!important;
+ transform:translateX(-50%)!important;
+ width:max-content!important;
+ min-width:110px!important;
+ max-width:150px!important;
+ height:34px!important;
+ min-height:34px!important;
+ margin:0!important;
+ padding:0 10px!important;
+ box-sizing:border-box!important;
+ align-items:center!important;
+ justify-content:center!important;
+ border:2px solid #4cb0ff!important;
+ border-radius:10px!important;
+ background:linear-gradient(180deg,#178fff,#0869cc)!important;
+ color:#fff!important;
+ font-size:11px!important;
+ font-weight:900!important;
+ line-height:30px!important;
+ white-space:nowrap!important;
+ overflow:visible!important;
+ box-shadow:0 5px 14px #000b,0 0 12px #168cff66!important;
+ z-index:250!important;
+}
+.city-map.city-reference-v1.world-v15 .city-place.selected-building>#cityEnter::before,
+.city-map.city-reference-v1.world-v15 .city-place.selected-building>.city-enter::before{content:""!important}
+@media(max-width:700px){
+ .city-map.city-reference-v1.world-v15 .city-place.selected-building>#cityEnter,
+ .city-map.city-reference-v1.world-v15 .city-place.selected-building>.city-enter{
+   top:calc(100% + 7px)!important;
+ }
+}
