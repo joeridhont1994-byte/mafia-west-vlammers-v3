@@ -1767,3 +1767,16 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
  }
  .city-map.city-reference-v1.world-v15 .v12-building-art{display:none!important}
 }
+
+/* WEEDFARM V2 - immersive virtual production room */
+.farm-panel.farm-v2{position:relative;overflow:hidden;border-color:#3c9b5e!important;background:radial-gradient(circle at 50% -10%,#1d6338 0,#0b2415 35%,#050c08 76%)!important;box-shadow:inset 0 0 55px #000b,0 18px 42px #000c,0 0 28px #28d76b22!important}
+.farm-panel.farm-v2:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 49%,#49ff8a0d 50%,transparent 51%),linear-gradient(0deg,transparent 49%,#49ff8a0a 50%,transparent 51%);background-size:32px 32px}
+.farm-v2 .farm-head,.farm-v2 .farm-stats,.farm-v2 .farm-room,.farm-v2 .farm-grow,.farm-v2 .farm-actions,.farm-v2 .farm-info-grid,.farm-v2 #farmMsg{position:relative;z-index:1}
+.farm-v2 .farm-room{margin:15px 0;padding:14px;border:1px solid #34794b;border-radius:16px;background:linear-gradient(180deg,#10291a,#07110b);box-shadow:inset 0 0 28px #000b}
+.farm-v2 .farm-room-title{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:12px}.farm-v2 .farm-room-title b{font-size:12px;letter-spacing:1.2px;color:#a8ffc1}.farm-v2 .farm-room-title span{font-size:11px;color:#72e995}
+.farm-v2 .farm-benches{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px;border-radius:12px;background:repeating-linear-gradient(90deg,#15261a 0 29%,#263a2b 30% 32%);border:1px solid #294a34}.farm-v2 .farm-benches span{display:grid;place-items:center;min-height:54px;font-size:31px;background:radial-gradient(circle,#2f7444 0,#102117 58%,#07100a 100%);border-radius:10px;filter:drop-shadow(0 0 8px #39e87888)}
+.farm-v2 .farm-lamps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:9px}.farm-v2 .farm-lamps i{height:5px;border-radius:99px;background:#d9ffe5;box-shadow:0 0 12px #80ffa8,0 0 24px #46e878}
+.farm-v2 .farm-progress-head{display:flex;justify-content:space-between;margin-bottom:8px;font-size:12px;color:#9dc7aa}.farm-v2 .farm-progress-head b{color:#7df6a1}
+.farm-v2 .farm-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.farm-v2 #farmHarvest,.farm-v2 #farmUpgrade{margin-top:11px;min-height:52px}
+.farm-v2 .farm-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.farm-v2 .farm-info-grid>div{padding:10px 5px;text-align:center;border:1px solid #244f33;border-radius:11px;background:#08150d}.farm-v2 .farm-info-grid span{display:block;font-size:20px}.farm-v2 .farm-info-grid small{display:block;margin:4px 0 2px;font-size:8px;color:#68b57d}.farm-v2 .farm-info-grid b{font-size:9px;color:#d8f4df}
+@media(max-width:430px){.farm-v2 .farm-actions{grid-template-columns:1fr}.farm-v2 .farm-info-grid{gap:5px}.farm-v2 .farm-benches span{min-height:48px}}
