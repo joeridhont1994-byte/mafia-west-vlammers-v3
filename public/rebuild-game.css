@@ -1340,3 +1340,16 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
  .city-reference-v1 .v8-plaza{width:46px!important;height:46px!important}
  .city-reference-v1 .v8-plaza span{font-size:20px!important}
 }
+
+/* CITY V8 - keep Parking, Weedfarm and Extra Zone clear of bottom navigation */
+@media(max-width:700px){
+ .city-reference-v1{height:820px!important;min-height:820px!important;margin-bottom:112px!important}
+ .city-reference-v1 .place-home{top:52%!important}
+ .city-reference-v1 .place-garage{top:52%!important}
+ .city-reference-v1 .place-parking{top:52%!important}
+ .city-reference-v1 .place-farm{top:75%!important}
+ .city-reference-v1 .place-extra{top:75%!important}
+ .city-reference-v1 .city-road.road-h,.city-reference-v1 .v8-plaza{top:40%!important}
+ .city-reference-v1 .ref-cross.c2{top:40%!important}
+ .city-reference-v1 .ref-cross.c3{top:64%!important}
+}
