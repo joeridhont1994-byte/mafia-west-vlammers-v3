@@ -1011,3 +1011,12 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
 .casino-paytable{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:14px}.casino-paytable span{padding:9px;border-radius:9px;background:#101720;border:1px solid #283847;color:#cbd3db}.casino-paytable b{float:right;color:#55e79b}
 #casinoMsg{min-height:44px;padding:11px;border-radius:10px;background:#08131c;border:1px solid #263b4d;font-weight:800}
 .casino-last{padding:10px 12px;border-radius:10px;background:#111017;border-left:3px solid #c69534}.casino-last small{display:block;color:#9c8c69}.casino-last b{display:block;margin-top:2px}
+
+/* WEEDFARM V1 */
+.place-farm{left:50%!important;top:24%!important;transform:translate(-50%,-50%)!important;border-color:#347d50!important;background:linear-gradient(145deg,#102d1c,#07140d)!important}
+.farm-panel{width:min(100%,520px);padding:18px;border:1px solid #347b4e;border-radius:20px;background:radial-gradient(circle at 50% 0,#174c2b,#07120c 65%);box-shadow:0 12px 30px #0009}
+.farm-head{display:flex;gap:14px;align-items:center}.farm-head>span{font-size:54px}.farm-head h2{margin:2px 0;font-size:28px;color:#75f29c}.farm-head p{margin:4px 0;color:#a7b9ad}
+.farm-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.farm-stats>div{padding:13px;border:1px solid #28583a;border-radius:12px;background:#091710}.farm-stats small{display:block;color:#7fa78c}.farm-stats b{display:block;margin-top:4px;font-size:21px;color:#eaffef}
+.farm-grow{padding:18px;border:1px solid #2d6842;border-radius:15px;background:linear-gradient(#112419,#07110b);text-align:center}.farm-lights{font-size:32px;letter-spacing:5px;margin-bottom:14px}.farm-progress{height:12px;border-radius:999px;background:#17241b;overflow:hidden}.farm-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2cba62,#78f39f);transition:width .3s}.farm-grow small{display:block;margin-top:9px;color:#a9c5b1}
+#farmHarvest,#farmUpgrade{width:100%;min-height:50px;margin-top:11px;border-radius:12px;font-weight:900}#farmHarvest{border:0;background:linear-gradient(#39ee84,#11b85a);color:#03170b}#farmUpgrade{border:1px solid #b99239;background:#2b220d;color:#ffda6d}#farmHarvest:disabled,#farmUpgrade:disabled{opacity:.45}
+#farmMsg{min-height:24px;font-weight:800}
