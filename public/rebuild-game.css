@@ -1045,3 +1045,13 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
 /* WEEDFARM FINAL LOT V2: between Bank and Casino, clear of Garage */
 .city-map .place-farm{left:82%!important;top:54%!important;width:96px!important;min-height:90px!important;z-index:7!important}
 @media(max-width:700px){.city-map .place-farm{left:82%!important;top:54%!important;width:92px!important;min-height:86px!important}}
+
+/* CITY EXPANSION V1 - dedicated Weedfarm lot */
+.city-map{min-height:1180px!important;height:1180px!important;padding-bottom:250px!important;background-size:auto 100%!important}
+.city-map .place-farm{left:15%!important;top:88%!important;width:118px!important;min-height:116px!important;z-index:10!important}
+@media(max-width:700px){
+ .city-map{min-height:1180px!important;height:1180px!important}
+ .city-map .place-farm{left:16%!important;top:88%!important;width:108px!important;min-height:106px!important}
+ .city-map .place-farm b{font-size:15px!important}
+ .city-map .place-farm small{font-size:9px!important}
+}
