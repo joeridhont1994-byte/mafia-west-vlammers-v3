@@ -1068,3 +1068,28 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
  .city-map .place-farm b{font-size:18px!important}
  .city-map .place-farm small{font-size:11px!important}
 }
+
+/* CITY GRID V3 - clean 4-row layout matching approved reference */
+.city-map{height:1640px!important;min-height:1640px!important;overflow:hidden!important;border-radius:26px!important}
+.city-map .city-place{transform:translate(-50%,-50%)!important;width:142px!important;min-height:174px!important;box-sizing:border-box!important;z-index:20!important}
+.city-map .place-hq{left:24%!important;top:12%!important}
+.city-map .place-bank{left:76%!important;top:12%!important}
+.city-map .place-mc{left:24%!important;top:35%!important}
+.city-map .place-casino{left:76%!important;top:35%!important}
+.city-map .place-home{left:24%!important;top:61%!important}
+.city-map .place-garage{left:76%!important;top:61%!important}
+.city-map .place-parking{left:50%!important;top:61%!important;width:108px!important;min-height:150px!important}
+.city-map .place-farm{left:24%!important;top:86%!important;width:142px!important;min-height:174px!important}
+.city-map .place-extra{left:76%!important;top:86%!important;border-color:#4c5663!important;background:linear-gradient(145deg,#202832,#0b1016)!important;opacity:.9}
+.city-map .place-extra>span{font-size:38px!important}.city-map .place-extra b{color:#e6eaf0!important}
+.city-map .city-road.road-v{height:100%!important;top:0!important}
+.city-map .city-road.road-h{top:48%!important}
+.city-map .v8-plaza{top:48%!important}
+.city-map .cg2-block.block-sw,.city-map .cg2-block.block-se{height:52%!important}
+@media(max-width:700px){
+ .city-map{height:1640px!important;min-height:1640px!important}
+ .city-map .city-place{width:132px!important;min-height:162px!important}
+ .city-map .place-hq,.city-map .place-mc,.city-map .place-home,.city-map .place-farm{left:23%!important}
+ .city-map .place-bank,.city-map .place-casino,.city-map .place-garage,.city-map .place-extra{left:77%!important}
+ .city-map .place-parking{left:50%!important;width:102px!important;min-height:142px!important}
+}
