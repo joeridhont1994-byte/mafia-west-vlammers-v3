@@ -1171,3 +1171,35 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
 @keyframes playerBeacon{from{filter:brightness(.95)}to{filter:brightness(1.2) drop-shadow(0 0 8px #ffd45b)}}
 .city-reference-v1 .city-enter{z-index:60!important;box-shadow:0 6px 20px #0009,0 0 18px #ffc83d33!important}
 @media(prefers-reduced-motion:reduce){.city-reference-v1 *{animation:none!important}}
+
+/* CITY V3 MOBILE SCALE FIX */
+@media(max-width:700px){
+ .city-reference-v1{height:1500px!important;min-height:1500px!important}
+ .city-reference-v1 .city-place{
+   width:126px!important;min-height:154px!important;
+   padding:8px!important;border-radius:12px!important;
+ }
+ .city-reference-v1 .city-place:after{left:9px!important;right:9px!important;top:11px!important;height:61px!important}
+ .city-reference-v1 .city-place:before{top:15px!important;font-size:27px!important}
+ .city-reference-v1 .city-place>b{
+   margin-top:68px!important;padding:6px 5px!important;
+   font-size:16px!important;line-height:1.1!important;
+ }
+ .city-reference-v1 .city-place>small{font-size:10px!important;margin-top:4px!important}
+ .city-reference-v1 .place-hq{left:23%!important;top:10%!important}
+ .city-reference-v1 .place-bank{left:77%!important;top:10%!important}
+ .city-reference-v1 .place-mc{left:23%!important;top:32%!important}
+ .city-reference-v1 .place-casino{left:77%!important;top:32%!important}
+ .city-reference-v1 .place-home{left:23%!important;top:56%!important}
+ .city-reference-v1 .place-garage{left:77%!important;top:56%!important}
+ .city-reference-v1 .place-parking{left:50%!important;top:56%!important;width:92px!important;min-height:140px!important}
+ .city-reference-v1 .place-farm{left:23%!important;top:82%!important;width:126px!important;min-height:154px!important}
+ .city-reference-v1 .place-extra{left:77%!important;top:82%!important;width:126px!important;min-height:154px!important}
+ .city-reference-v1 .v8-plaza{
+   top:44%!important;width:76px!important;height:76px!important;
+   box-shadow:0 0 0 5px #222b30,0 0 0 8px #758188,0 0 22px #45b8ff66!important;
+ }
+ .city-reference-v1 .v8-plaza span{font-size:34px!important}
+ .city-reference-v1 .city-road.road-h{top:44%!important;height:58px!important}
+ .city-reference-v1 .ref-cross.c1{top:20%!important}.city-reference-v1 .ref-cross.c2{top:44%!important}.city-reference-v1 .ref-cross.c3{top:69%!important}
+}
