@@ -968,3 +968,16 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
 
 /* GARAGE REAL VEHICLE THUMBS */
 .vehicle-thumb{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#eef2f5}.garage-car>span{width:76px!important;height:58px!important;overflow:hidden;border-radius:10px;background:#eef2f5!important}.garage-car>span .vehicle-thumb{width:76px;height:58px}.my-vehicle-icon{overflow:hidden;padding:0!important}.my-vehicle-icon .vehicle-thumb{width:100%;height:100%;border-radius:12px}
+
+/* GARAGE PARKING STYLE CARDS */
+#garageCars{display:grid!important;gap:18px!important;max-height:none!important;overflow:visible!important}
+.garage-vehicle-card{overflow:hidden;border:1px solid #34536e;border-radius:18px;background:linear-gradient(180deg,#091720,#061019);box-shadow:0 8px 20px #0008}
+.garage-vehicle-card.active{border-color:#e8bd42;box-shadow:0 0 0 1px #e8bd4266,0 8px 20px #0008}
+.garage-vehicle-photo{height:240px;background:#edf2f5;overflow:hidden;border-bottom:1px solid #294158}
+.garage-vehicle-photo .vehicle-thumb{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:#edf2f5!important}
+.garage-vehicle-photo>span{display:grid;width:100%;height:100%;place-items:center;font-size:70px}
+.garage-vehicle-body{padding:18px}
+.garage-vehicle-title{display:flex;align-items:center;justify-content:space-between;gap:10px}.garage-vehicle-title b{font-size:25px}.garage-vehicle-title span{padding:5px 9px;border-radius:999px;background:#3a3012;color:#ffd45d;font-size:12px;font-weight:900}
+.garage-vehicle-stats{display:flex;gap:10px;margin:12px 0 16px}.garage-vehicle-stats span{flex:1;padding:10px;border-radius:10px;background:#122333;color:#a9b7c3}.garage-vehicle-stats strong{display:block;color:#fff;margin-top:2px}
+.garage-vehicle-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.garage-vehicle-actions button{min-height:48px;border-radius:11px;font-weight:900}.garage-choose{border:0;background:linear-gradient(#2ff19a,#08c56f);color:#03140d}.garage-choose:disabled{background:#273746;color:#9dadb9}.garage-sell{border:1px solid #168bdc;background:#092238;color:#d7efff}.garage-sell.listed{border-color:#d4a82c;background:#30270d;color:#ffda68}
+@media(max-width:700px){.garage-vehicle-photo{height:230px}.garage-vehicle-body{padding:15px}.garage-vehicle-title b{font-size:23px}.garage-vehicle-actions{grid-template-columns:1fr}}
