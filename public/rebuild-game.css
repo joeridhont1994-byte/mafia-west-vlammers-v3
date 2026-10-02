@@ -1292,3 +1292,51 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
  .city-reference-v1 .city-road.road-h{top:42%!important}
  .city-reference-v1 .v8-plaza{top:42%!important}
 }
+
+/* CITY V7 - integrated building facades, no floating roof geometry */
+.city-reference-v1 .city-place{
+ overflow:hidden!important;
+ clip-path:none!important;
+ background:#101820!important;
+ border-width:1px!important;
+}
+.city-reference-v1 .city-place:after{
+ content:""!important;position:absolute!important;left:8px!important;right:8px!important;top:8px!important;height:43px!important;
+ border-radius:5px 5px 2px 2px!important;
+ background:
+ linear-gradient(135deg,transparent 0 18%,#2b3943 19% 49%,transparent 50%) left/50% 100% no-repeat,
+ linear-gradient(225deg,transparent 0 18%,#2b3943 19% 49%,transparent 50%) right/50% 100% no-repeat,
+ linear-gradient(#25323b,#172129)!important;
+ box-shadow:inset 0 -3px 0 #080c0f,0 4px 6px #0007!important;
+ z-index:0!important;
+}
+.city-reference-v1 .city-place:before{top:18px!important;font-size:20px!important;z-index:2!important}
+.city-reference-v1 .city-place>b{margin-top:48px!important}
+.city-reference-v1 .place-hq{background:linear-gradient(#243746,#111b23 72%,#091016)!important}
+.city-reference-v1 .place-bank{background:linear-gradient(#443b24,#1e1a10 72%,#0c0a06)!important}
+.city-reference-v1 .place-mc{background:linear-gradient(#3c3226,#1d1812 72%,#0c0a08)!important}
+.city-reference-v1 .place-casino{background:linear-gradient(#702228,#351116 72%,#12080a)!important}
+.city-reference-v1 .place-home{background:linear-gradient(#314754,#17242c 72%,#0b1116)!important}
+.city-reference-v1 .place-garage{background:linear-gradient(#35424b,#182229 72%,#0b1014)!important}
+.city-reference-v1 .place-farm{background:linear-gradient(#24623a,#11331e 72%,#07130b)!important}
+.city-reference-v1 .place-extra{background:linear-gradient(#39444f,#1b242c 72%,#0a0f13)!important}
+.city-reference-v1 .place-farm:after{background:linear-gradient(135deg,#183c25,#296a3e 48%,#102b1a 49%,#1b4b2c)!important}
+.city-reference-v1 .place-casino:after{background:linear-gradient(135deg,#4d1116,#a52e38 48%,#3d0e12 49%,#6e1921)!important}
+.city-reference-v1 .place-bank:after{background:linear-gradient(135deg,#332914,#79602a 48%,#281f0e 49%,#51401d)!important}
+@media(max-width:700px){
+ .city-reference-v1{height:860px!important;min-height:860px!important;margin-bottom:96px!important}
+ .city-reference-v1 .city-place{width:100px!important;height:101px!important;min-height:101px!important;max-height:101px!important}
+ .city-reference-v1 .city-place:after{height:37px!important}
+ .city-reference-v1 .city-place:before{top:14px!important;font-size:17px!important}
+ .city-reference-v1 .city-place>b{margin-top:40px!important;font-size:12.5px!important}
+ .city-reference-v1 .city-place>small{font-size:7px!important}
+ .city-reference-v1 .place-hq{top:9%!important}.city-reference-v1 .place-bank{top:9%!important}
+ .city-reference-v1 .place-mc{top:29%!important}.city-reference-v1 .place-casino{top:29%!important}
+ .city-reference-v1 .place-home{top:54%!important}.city-reference-v1 .place-garage{top:54%!important}
+ .city-reference-v1 .place-parking{top:54%!important;width:70px!important;height:92px!important;min-height:92px!important;max-height:92px!important}
+ .city-reference-v1 .place-farm{top:79%!important;width:100px!important;height:101px!important;min-height:101px!important;max-height:101px!important}
+ .city-reference-v1 .place-extra{top:79%!important;width:100px!important;height:101px!important;min-height:101px!important;max-height:101px!important}
+ .city-reference-v1 .city-road.road-h,.city-reference-v1 .v8-plaza{top:41.5%!important}
+ .city-reference-v1 .v8-plaza{width:46px!important;height:46px!important}
+ .city-reference-v1 .v8-plaza span{font-size:20px!important}
+}
