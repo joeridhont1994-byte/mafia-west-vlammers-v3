@@ -1801,3 +1801,8 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
 .farm-v4-status small,.farm-v4-status b{display:block}.farm-v4-status small{font-size:7px;color:#d6bb63}.farm-v4-status b{margin-top:5px;font-size:11px}
 .farm-v4-orders{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0;padding:13px;border:1px solid #386f4a;border-radius:14px;background:linear-gradient(135deg,#102b19,#08120c)}
 .farm-v4-orders h3{margin:0 0 4px;color:#a5f0b8;font-size:13px}.farm-v4-orders small{font-size:9px;color:#b8c7bc}.farm-v4-orders button{max-width:145px;min-height:48px;font-size:9px}
+
+/* WEEDFARM V5 */
+.farm-v5-management{margin:12px 0;padding:12px;border:1px solid #365b69;border-radius:14px;background:linear-gradient(145deg,#09161b,#07100b)}
+.farm-v5-management h3{margin:0 0 10px;font-size:13px;color:#9bdff1}.farm-v5-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.farm-v5-cards>div{padding:10px;border:1px solid #294650;border-radius:11px;background:#0b1b20}.farm-v5-cards span{font-size:22px}.farm-v5-cards b,.farm-v5-cards small{display:block;margin-top:4px}.farm-v5-cards b{font-size:11px}.farm-v5-cards small{font-size:9px;color:#86c9d9}.farm-v5-cards button{width:100%;min-height:34px;margin-top:8px;font-size:9px}
