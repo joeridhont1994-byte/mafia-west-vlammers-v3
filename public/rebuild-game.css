@@ -1055,3 +1055,16 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
  .city-map .place-farm b{font-size:15px!important}
  .city-map .place-farm small{font-size:9px!important}
 }
+
+/* EXPANDED CITY GRID V2 - four dedicated building rows */
+.city-map{height:1500px!important;min-height:1500px!important;padding-bottom:0!important;background-size:auto 100%!important}
+.city-map .place-farm{left:24%!important;top:88%!important;width:145px!important;min-height:180px!important;z-index:10!important;border-color:#3d8754!important;background:linear-gradient(145deg,#153c22,#09170e)!important}
+.city-map .place-farm:before{content:"🌿";display:grid;place-items:center;height:74px;margin:-4px 6px 8px;border-radius:10px;background:radial-gradient(circle,#39d66b55,#07130b);font-size:42px}
+.city-map .place-farm>span{display:none!important}
+@media(max-width:700px){
+ .city-map{height:1500px!important;min-height:1500px!important}
+ .city-map .place-farm{left:24%!important;top:88%!important;width:132px!important;min-height:166px!important}
+ .city-map .place-farm:before{height:66px!important;font-size:38px!important}
+ .city-map .place-farm b{font-size:18px!important}
+ .city-map .place-farm small{font-size:11px!important}
+}
