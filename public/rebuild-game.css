@@ -1426,3 +1426,57 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
 .city-reference-v1 .city-player .bubble,
 .city-reference-v1 .city-player .chat-bubble{animation:cityBubbleFade 7s forwards}
 @keyframes cityBubbleFade{0%,75%{opacity:1}100%{opacity:0;visibility:hidden}}
+
+/* CITY REBUILD V12 — actual city blocks, streets and integrated buildings */
+@media(max-width:700px){
+ .city-reference-v1{
+   height:1080px!important;min-height:1080px!important;margin-bottom:110px!important;overflow:hidden!important;
+   background:
+    linear-gradient(90deg,transparent 0 44%,#596168 44% 45%,#20262b 45% 55%,#596168 55% 56%,transparent 56%),
+    linear-gradient(90deg,#0b2d20 0 44%,transparent 44% 56%,#0b2d20 56% 100%)!important;
+ }
+ .city-reference-v1:before{
+   content:""!important;position:absolute!important;inset:12px!important;pointer-events:none!important;
+   background:
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/22px 22px,
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/22px 22px!important;
+   border-radius:20px!important;z-index:0!important;
+ }
+ .city-reference-v1 .city-road.road-v{left:45%!important;top:0!important;width:10%!important;height:100%!important;background:#20262b!important;border-left:3px solid #69737a!important;border-right:3px solid #69737a!important}
+ .city-reference-v1 .city-road.road-h{left:0!important;top:47%!important;width:100%!important;height:46px!important;background:#20262b!important;border-top:3px solid #69737a!important;border-bottom:3px solid #69737a!important}
+ .city-reference-v1 .v8-plaza{top:47%!important;left:50%!important;width:62px!important;height:62px!important;z-index:12!important}
+ .city-reference-v1 .v8-plaza span{font-size:27px!important}
+ .city-reference-v1 .city-place{
+   width:112px!important;height:126px!important;min-height:126px!important;max-height:126px!important;
+   border-radius:9px!important;padding:7px!important;overflow:hidden!important;z-index:8!important;
+   box-shadow:0 8px 16px #000b, inset 0 0 0 1px #ffffff10!important;
+ }
+ .city-reference-v1 .city-place:after{
+   left:7px!important;right:7px!important;top:7px!important;height:62px!important;border-radius:5px!important;
+   box-shadow:inset 0 -4px 0 #070a0c,0 4px 7px #0008!important
+ }
+ .city-reference-v1 .city-place:before{top:22px!important;font-size:22px!important}
+ .city-reference-v1 .city-place>b{margin-top:65px!important;font-size:13px!important;padding:6px 2px!important}
+ .city-reference-v1 .city-place>small{font-size:7.5px!important}
+ .city-reference-v1 .place-hq{left:21%!important;top:10%!important}
+ .city-reference-v1 .place-bank{left:79%!important;top:10%!important}
+ .city-reference-v1 .place-mc{left:21%!important;top:31%!important}
+ .city-reference-v1 .place-casino{left:79%!important;top:31%!important}
+ .city-reference-v1 .place-home{left:21%!important;top:61%!important}
+ .city-reference-v1 .place-garage{left:79%!important;top:61%!important}
+ .city-reference-v1 .place-farm{left:19%!important;top:84%!important;width:106px!important;height:116px!important;min-height:116px!important;max-height:116px!important}
+ .city-reference-v1 .place-parking{left:50%!important;top:84%!important;width:78px!important;height:108px!important;min-height:108px!important;max-height:108px!important}
+ .city-reference-v1 .place-extra{left:81%!important;top:84%!important;width:106px!important;height:116px!important;min-height:116px!important;max-height:116px!important}
+ .city-reference-v1 .place-hq:after{background:linear-gradient(145deg,#3d5361 0 30%,#172630 31% 100%)!important}
+ .city-reference-v1 .place-bank:after{background:linear-gradient(145deg,#806629 0 30%,#30250e 31% 100%)!important}
+ .city-reference-v1 .place-mc:after{background:linear-gradient(145deg,#594735 0 30%,#211a13 31% 100%)!important}
+ .city-reference-v1 .place-casino:after{background:linear-gradient(145deg,#b63843 0 30%,#4a1017 31% 100%)!important}
+ .city-reference-v1 .place-home:after{background:linear-gradient(145deg,#4a6575 0 30%,#1a2a34 31% 100%)!important}
+ .city-reference-v1 .place-garage:after{background:repeating-linear-gradient(90deg,#344650 0 20px,#11191e 21px 25px)!important}
+ .city-reference-v1 .place-farm:after{background:repeating-linear-gradient(90deg,#3c8a59 0 13px,#b8e4cc88 14px 19px)!important}
+ .city-reference-v1 .place-parking:after{background:repeating-linear-gradient(90deg,#263039 0 20px,#e8e8e844 21px 23px)!important}
+ .city-reference-v1 .place-extra:after{background:linear-gradient(145deg,#53606a 0 30%,#20282e 31% 100%)!important}
+ .city-reference-v1 .ref-cross.c1{top:20%!important}.city-reference-v1 .ref-cross.c2{top:47%!important}.city-reference-v1 .ref-cross.c3{top:72%!important}
+ .city-reference-v1 .v12-building-art{display:none!important}
+ #cityPhone,.city-phone,.phone-fab{bottom:110px!important;right:14px!important}
+}
