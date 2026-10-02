@@ -1362,3 +1362,39 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
  .city-reference-v1{padding-bottom:120px!important}
  #cityPhone,.city-phone,.phone-fab{bottom:104px!important}
 }
+
+/* CITY V10 - rebuild toward approved detailed reference */
+@media(max-width:700px){
+ .city-reference-v1{height:1180px!important;min-height:1180px!important;margin-bottom:105px!important;
+ background:
+ radial-gradient(circle at 18% 14%,#173a29 0 2px,transparent 3px),
+ linear-gradient(90deg,#0b2b20 0 42%,#20262b 42% 58%,#0b2b20 58% 100%)!important}
+ .city-reference-v1 .city-road.road-v{left:45%!important;width:10%!important;background:#20252a!important;border-left:3px solid #5d666c!important;border-right:3px solid #5d666c!important}
+ .city-reference-v1 .city-road.road-h{top:48%!important;height:48px!important;background:#20252a!important;border-top:3px solid #5d666c!important;border-bottom:3px solid #5d666c!important}
+ .city-reference-v1 .v8-plaza{top:48%!important;width:58px!important;height:58px!important;border-radius:50%!important}
+ .city-reference-v1 .v8-plaza span{font-size:25px!important}
+ .city-reference-v1 .city-place{width:118px!important;height:132px!important;min-height:132px!important;max-height:132px!important;border-radius:10px!important;padding:7px!important;box-shadow:0 8px 14px #000b!important}
+ .city-reference-v1 .city-place:after{left:6px!important;right:6px!important;top:6px!important;height:64px!important;border-radius:6px!important}
+ .city-reference-v1 .city-place:before{top:24px!important;font-size:24px!important}
+ .city-reference-v1 .city-place>b{margin-top:68px!important;font-size:14px!important;padding:6px 3px!important;border-radius:7px!important}
+ .city-reference-v1 .city-place>small{font-size:8px!important}
+ .city-reference-v1 .place-hq{left:22%!important;top:10%!important}
+ .city-reference-v1 .place-bank{left:78%!important;top:10%!important}
+ .city-reference-v1 .place-mc{left:22%!important;top:31%!important}
+ .city-reference-v1 .place-casino{left:78%!important;top:31%!important}
+ .city-reference-v1 .place-home{left:22%!important;top:59%!important}
+ .city-reference-v1 .place-garage{left:78%!important;top:59%!important}
+ .city-reference-v1 .place-farm{left:18%!important;top:84%!important;width:110px!important;height:124px!important;min-height:124px!important;max-height:124px!important}
+ .city-reference-v1 .place-parking{left:50%!important;top:84%!important;width:88px!important;height:124px!important;min-height:124px!important;max-height:124px!important;background:linear-gradient(#26323a,#11181d)!important}
+ .city-reference-v1 .place-extra{left:82%!important;top:84%!important;width:110px!important;height:124px!important;min-height:124px!important;max-height:124px!important}
+ .city-reference-v1 .place-hq:after{background:linear-gradient(180deg,#263642 0 38%,#15222b 39%),repeating-linear-gradient(90deg,#14212a 0 18px,#ffd36a 19px 24px)!important}
+ .city-reference-v1 .place-bank:after{background:linear-gradient(180deg,#70521c,#2b210d)!important}
+ .city-reference-v1 .place-mc:after{background:linear-gradient(180deg,#3c3025,#17120f)!important}
+ .city-reference-v1 .place-casino:after{background:linear-gradient(180deg,#9b2630,#3a0d12)!important;box-shadow:inset 0 0 14px #ff6a45!important}
+ .city-reference-v1 .place-home:after{background:linear-gradient(160deg,#384854,#15212a)!important}
+ .city-reference-v1 .place-garage:after{background:repeating-linear-gradient(90deg,#25333b 0 25px,#11191e 26px 31px)!important}
+ .city-reference-v1 .place-farm:after{background:repeating-linear-gradient(90deg,#b7e6d0aa 0 8px,#256c43 9px 17px)!important}
+ .city-reference-v1 .place-parking:after{background:repeating-linear-gradient(90deg,#222b31 0 24px,#d7d7d755 25px 27px)!important}
+ .city-reference-v1 .place-extra:after{background:linear-gradient(#3a454d,#171e23)!important}
+ .city-reference-v1 .ref-cross.c1{top:20%!important}.city-reference-v1 .ref-cross.c2{top:48%!important}.city-reference-v1 .ref-cross.c3{top:72%!important}
+}
