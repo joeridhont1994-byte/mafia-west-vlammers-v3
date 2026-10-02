@@ -1013,7 +1013,7 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
 .casino-last{padding:10px 12px;border-radius:10px;background:#111017;border-left:3px solid #c69534}.casino-last small{display:block;color:#9c8c69}.casino-last b{display:block;margin-top:2px}
 
 /* WEEDFARM V1 */
-.place-farm{left:50%!important;top:14%!important;transform:translate(-50%,-50%)!important;width:112px!important;min-height:108px!important;border-color:#347d50!important;background:linear-gradient(145deg,#102d1c,#07140d)!important}
+.place-farm{left:15%!important;top:66%!important;transform:translate(-50%,-50%)!important;width:112px!important;min-height:108px!important;border-color:#347d50!important;background:linear-gradient(145deg,#102d1c,#07140d)!important}
 .farm-panel{width:min(100%,520px);padding:18px;border:1px solid #347b4e;border-radius:20px;background:radial-gradient(circle at 50% 0,#174c2b,#07120c 65%);box-shadow:0 12px 30px #0009}
 .farm-head{display:flex;gap:14px;align-items:center}.farm-head>span{font-size:54px}.farm-head h2{margin:2px 0;font-size:28px;color:#75f29c}.farm-head p{margin:4px 0;color:#a7b9ad}
 .farm-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.farm-stats>div{padding:13px;border:1px solid #28583a;border-radius:12px;background:#091710}.farm-stats small{display:block;color:#7fa78c}.farm-stats b{display:block;margin-top:4px;font-size:21px;color:#eaffef}
@@ -1023,4 +1023,4 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
 
 /* CITY FARM POSITION FIX */
 .city-map .place-farm{z-index:8!important}
-@media(max-width:700px){.city-map .place-farm{left:50%!important;top:15%!important;width:104px!important;min-height:96px!important}.city-map .place-farm b{font-size:14px!important}.city-map .place-farm small{font-size:9px!important}}
+@media(max-width:700px){.city-map .place-farm{left:15%!important;top:66%!important;width:104px!important;min-height:96px!important}.city-map .place-farm b{font-size:14px!important}.city-map .place-farm small{font-size:9px!important}}
