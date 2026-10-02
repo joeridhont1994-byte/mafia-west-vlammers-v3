@@ -1605,3 +1605,24 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
   box-shadow:0 4px 10px #000a,0 0 9px #168cff55!important;
   z-index:250!important;
 }
+
+/* CITY V16 - final compact building-local action */
+.city-map.city-reference-v1.world-v15 .city-place.selected-building>#cityEnter{
+ left:50%!important;
+ right:auto!important;
+ top:calc(100% + 5px)!important;
+ bottom:auto!important;
+ transform:translateX(-50%)!important;
+ width:92%!important;
+ max-width:132px!important;
+ min-width:0!important;
+ height:30px!important;
+ min-height:30px!important;
+ padding:0 5px!important;
+ margin:0!important;
+ font-size:10px!important;
+ line-height:1!important;
+ border-radius:8px!important;
+ overflow:hidden!important;
+ text-overflow:clip!important;
+}
