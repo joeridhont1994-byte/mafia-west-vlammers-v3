@@ -981,3 +981,10 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
 .garage-vehicle-stats{display:flex;gap:10px;margin:12px 0 16px}.garage-vehicle-stats span{flex:1;padding:10px;border-radius:10px;background:#122333;color:#a9b7c3}.garage-vehicle-stats strong{display:block;color:#fff;margin-top:2px}
 .garage-vehicle-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.garage-vehicle-actions button{min-height:48px;border-radius:11px;font-weight:900}.garage-choose{border:0;background:linear-gradient(#2ff19a,#08c56f);color:#03140d}.garage-choose:disabled{background:#273746;color:#9dadb9}.garage-sell{border:1px solid #168bdc;background:#092238;color:#d7efff}.garage-sell.listed{border-color:#d4a82c;background:#30270d;color:#ffda68}
 @media(max-width:700px){.garage-vehicle-photo{height:230px}.garage-vehicle-body{padding:15px}.garage-vehicle-title b{font-size:23px}.garage-vehicle-actions{grid-template-columns:1fr}}
+
+/* MARKETPLACE REAL VEHICLE PHOTOS */
+.market-card-photo{display:grid!important;grid-template-columns:120px 1fr auto!important;align-items:center!important;gap:12px!important;overflow:hidden!important;padding:0 12px 0 0!important;min-height:92px!important}
+.market-card-photo .vehpic{width:120px!important;height:92px!important;overflow:hidden!important;background:#edf2f5!important;border-radius:0!important}
+.market-card-photo .vehpic .vehicle-thumb{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:#edf2f5!important}
+.market-card-photo .market-vehicle-info{min-width:0;padding:10px 0}.market-card-photo .market-vehicle-info b{display:block;font-size:18px}.market-card-photo .market-vehicle-info small{display:block;color:#a9b7c3;margin-top:3px}
+@media(max-width:700px){.market-card-photo{grid-template-columns:105px 1fr auto!important}.market-card-photo .vehpic{width:105px!important;height:86px!important}.market-card-photo .market-vehicle-info b{font-size:16px}.market-card-photo .market-vehicle-info small{font-size:12px}}
