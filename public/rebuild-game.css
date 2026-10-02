@@ -1268,3 +1268,27 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
  .city-reference-v1 .place-casino{box-shadow:0 10px 12px #0009,0 0 20px #ff4b4b45!important}
  .city-reference-v1 .place-farm{box-shadow:0 10px 12px #0009,0 0 18px #2ee56b3d!important}
 }
+
+/* CITY V6 CLEANUP - remove legacy floating roofs and conflicting art */
+.city-reference-v1 .v12-building-art{display:none!important}
+.city-reference-v1 .city-place{isolation:isolate!important;overflow:hidden!important}
+.city-reference-v1 .city-place:after{z-index:0!important}
+.city-reference-v1 .city-place:before{z-index:2!important}
+.city-reference-v1 .city-place>b,.city-reference-v1 .city-place>small,.city-reference-v1 .theft-parking-vehicles{position:relative!important;z-index:3!important}
+.city-reference-v1 .city-place>b{display:block!important}
+.city-reference-v1 .city-place>small{display:block!important}
+@media(max-width:700px){
+ .city-reference-v1{height:930px!important;min-height:930px!important}
+ .city-reference-v1 .city-place{width:104px!important;height:108px!important;min-height:108px!important;max-height:108px!important}
+ .city-reference-v1 .place-hq{left:21%!important;top:10%!important}
+ .city-reference-v1 .place-bank{left:79%!important;top:10%!important}
+ .city-reference-v1 .place-mc{left:21%!important;top:30%!important}
+ .city-reference-v1 .place-casino{left:79%!important;top:30%!important}
+ .city-reference-v1 .place-home{left:21%!important;top:55%!important}
+ .city-reference-v1 .place-garage{left:79%!important;top:55%!important}
+ .city-reference-v1 .place-parking{left:50%!important;top:55%!important;width:74px!important;height:98px!important;min-height:98px!important;max-height:98px!important}
+ .city-reference-v1 .place-farm{left:21%!important;top:81%!important;width:104px!important;height:108px!important;min-height:108px!important;max-height:108px!important}
+ .city-reference-v1 .place-extra{left:79%!important;top:81%!important;width:104px!important;height:108px!important;min-height:108px!important;max-height:108px!important}
+ .city-reference-v1 .city-road.road-h{top:42%!important}
+ .city-reference-v1 .v8-plaza{top:42%!important}
+}
