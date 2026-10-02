@@ -1041,3 +1041,7 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
  .city-map .place-farm b{font-size:13px!important}
  .city-map .place-farm small{font-size:8px!important;line-height:1.05!important}
 }
+
+/* WEEDFARM FINAL LOT V2: between Bank and Casino, clear of Garage */
+.city-map .place-farm{left:82%!important;top:54%!important;width:96px!important;min-height:90px!important;z-index:7!important}
+@media(max-width:700px){.city-map .place-farm{left:82%!important;top:54%!important;width:92px!important;min-height:86px!important}}
