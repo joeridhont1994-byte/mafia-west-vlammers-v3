@@ -1794,3 +1794,10 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
 .farm-v3-dashboard small,.farm-v3-dashboard b{display:block}.farm-v3-dashboard small{font-size:8px;color:#77c98e}.farm-v3-dashboard b{margin-top:5px;font-size:11px;color:#fff}
 .farm-v3-market{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;margin:12px 0;border:1px solid #7b6420;border-radius:13px;background:linear-gradient(135deg,#181506,#0b110a)}
 .farm-v3-market h3{margin:0 0 3px;font-size:13px;color:#f4d76a}.farm-v3-market small{font-size:9px;color:#b9b9b9}.farm-v3-market button{max-width:145px;min-height:46px;font-size:10px}
+
+/* WEEDFARM V4 */
+.farm-v4-status{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0}
+.farm-v4-status>div{padding:10px 5px;border:1px solid #6a5520;border-radius:11px;background:linear-gradient(180deg,#211b09,#0b120c);text-align:center}
+.farm-v4-status small,.farm-v4-status b{display:block}.farm-v4-status small{font-size:7px;color:#d6bb63}.farm-v4-status b{margin-top:5px;font-size:11px}
+.farm-v4-orders{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0;padding:13px;border:1px solid #386f4a;border-radius:14px;background:linear-gradient(135deg,#102b19,#08120c)}
+.farm-v4-orders h3{margin:0 0 4px;color:#a5f0b8;font-size:13px}.farm-v4-orders small{font-size:9px;color:#b8c7bc}.farm-v4-orders button{max-width:145px;min-height:48px;font-size:9px}
