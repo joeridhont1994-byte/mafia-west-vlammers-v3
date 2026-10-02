@@ -1353,3 +1353,12 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
  .city-reference-v1 .ref-cross.c2{top:40%!important}
  .city-reference-v1 .ref-cross.c3{top:64%!important}
 }
+
+/* CITY V9 - ONLY lower row/mobile controls fix */
+@media(max-width:700px){
+ .city-reference-v1 .place-farm{top:70%!important}
+ .city-reference-v1 .place-extra{top:70%!important}
+ .city-reference-v1 .place-parking{top:70%!important}
+ .city-reference-v1{padding-bottom:120px!important}
+ #cityPhone,.city-phone,.phone-fab{bottom:104px!important}
+}
