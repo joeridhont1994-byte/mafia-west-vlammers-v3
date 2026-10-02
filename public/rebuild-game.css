@@ -959,3 +959,6 @@ body:has(.game-back-button.show) .app-page.active{padding-top:74px!important}.ga
     box-sizing:border-box!important;
   }
 }
+
+/* CARD STEAL RESULT */
+.card-steal-msg{margin:10px 0 0;padding:10px 12px;border-radius:10px;background:#08131d;border:1px solid #294158;color:#fff;font-size:14px;font-weight:700;line-height:1.35}.card-steal-msg:empty{display:none}
