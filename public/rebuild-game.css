@@ -1151,3 +1151,23 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
 .city-reference-v1 .v8-lamp{filter:drop-shadow(0 0 9px #ffd65a)!important}
 .city-reference-v1 .v15-npc{filter:drop-shadow(0 3px 3px #000)!important}
 .city-reference-v1 .city-player{box-shadow:0 0 0 4px #d6ad36,0 0 22px #ffd34d77!important}
+
+/* CITY V3 - premium living city */
+.city-reference-v1{box-shadow:inset 0 0 100px #000d,0 20px 50px #000c!important}
+.city-reference-v1 .city-place{overflow:visible!important}
+.city-reference-v1 .city-place:before{animation:cityGlow 3.2s ease-in-out infinite alternate}
+@keyframes cityGlow{from{filter:drop-shadow(0 3px 5px #000) brightness(.9)}to{filter:drop-shadow(0 3px 8px #000) brightness(1.18)}}
+.city-reference-v1 .place-casino{animation:casinoPulse 2.4s ease-in-out infinite alternate}
+@keyframes casinoPulse{from{box-shadow:0 18px 16px #0008,0 0 20px #ff4b4b35!important}to{box-shadow:0 18px 16px #0008,0 0 42px #ff4b4b75!important}}
+.city-reference-v1 .place-farm{animation:farmPulse 3s ease-in-out infinite alternate}
+@keyframes farmPulse{from{box-shadow:0 18px 16px #0008,0 0 20px #2ee56b28!important}to{box-shadow:0 18px 16px #0008,0 0 38px #2ee56b60!important}}
+.city-reference-v1 .v8-car.car-a{animation:trafficA 12s linear infinite}.city-reference-v1 .v8-car.car-b{animation:trafficB 15s linear infinite}
+@keyframes trafficA{0%{transform:translateY(-180px)}100%{transform:translateY(720px)}}@keyframes trafficB{0%{transform:translateY(520px)}100%{transform:translateY(-260px)}}
+.city-reference-v1 .v15-npc.npc-a{animation:walkerA 10s ease-in-out infinite alternate}.city-reference-v1 .v15-npc.npc-b{animation:walkerB 13s ease-in-out infinite alternate}.city-reference-v1 .v15-npc.npc-c{animation:walkerC 11s ease-in-out infinite alternate}
+@keyframes walkerA{from{transform:translate(0,0)}to{transform:translate(34px,65px)}}@keyframes walkerB{from{transform:translate(0,0)}to{transform:translate(-42px,54px)}}@keyframes walkerC{from{transform:translate(0,0)}to{transform:translate(28px,-48px)}}
+.city-reference-v1 .v8-plaza{animation:fountainGlow 2.6s ease-in-out infinite alternate}
+@keyframes fountainGlow{from{filter:brightness(.9);box-shadow:0 0 0 8px #222b30,0 0 0 11px #758188,0 0 20px #45b8ff45!important}to{filter:brightness(1.2);box-shadow:0 0 0 8px #222b30,0 0 0 11px #8c9ca5,0 0 38px #45b8ffaa!important}}
+.city-reference-v1 .city-player{z-index:50!important;animation:playerBeacon 1.8s ease-in-out infinite alternate}
+@keyframes playerBeacon{from{filter:brightness(.95)}to{filter:brightness(1.2) drop-shadow(0 0 8px #ffd45b)}}
+.city-reference-v1 .city-enter{z-index:60!important;box-shadow:0 6px 20px #0009,0 0 18px #ffc83d33!important}
+@media(prefers-reduced-motion:reduce){.city-reference-v1 *{animation:none!important}}
