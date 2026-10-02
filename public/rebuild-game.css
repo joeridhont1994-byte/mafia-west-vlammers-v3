@@ -1837,3 +1837,6 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
  .farm-v5 .farm-v4-orders button,.farm-v5 .farm-v3-market button{min-height:40px!important}
  .farm-v5 .farm-info-grid{margin-top:8px!important;gap:5px!important}
 }
+
+/* WEEDFARM V6 */
+.farm-v6-control{margin:8px 0;padding:9px;border:1px solid #4c5965;border-radius:12px;background:#0a1115}.farm-v6-control>div:first-child{display:flex;justify-content:space-between;align-items:center}.farm-v6-control small{font-size:8px;color:#9bb0bb}.farm-v6-control b{font-size:11px}.farm-mode-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:7px}.farm-mode-buttons button{min-height:34px;padding:5px;font-size:9px}.farm-mode-buttons button.active{border-color:#55e88a;box-shadow:0 0 0 1px #55e88a inset;color:#7cff9f}
