@@ -1787,3 +1787,10 @@ linear-gradient(135deg,#0a2d21,#061810)!important}
 .farm-upgrade-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .farm-upgrade-grid button{min-height:70px;padding:9px;border:1px solid #356b47;border-radius:11px;background:linear-gradient(#153520,#0a1b10);color:#effff3;text-align:left;font-size:18px}
 .farm-upgrade-grid button b,.farm-upgrade-grid button small{display:block;margin-top:3px}.farm-upgrade-grid button b{font-size:12px}.farm-upgrade-grid button small{font-size:9px;color:#74dc91}
+
+/* WEEDFARM V3 */
+.farm-v3-dashboard{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0}
+.farm-v3-dashboard>div{padding:10px 6px;border:1px solid #315d3e;border-radius:10px;background:#0a1810;text-align:center}
+.farm-v3-dashboard small,.farm-v3-dashboard b{display:block}.farm-v3-dashboard small{font-size:8px;color:#77c98e}.farm-v3-dashboard b{margin-top:5px;font-size:11px;color:#fff}
+.farm-v3-market{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;margin:12px 0;border:1px solid #7b6420;border-radius:13px;background:linear-gradient(135deg,#181506,#0b110a)}
+.farm-v3-market h3{margin:0 0 3px;font-size:13px;color:#f4d76a}.farm-v3-market small{font-size:9px;color:#b9b9b9}.farm-v3-market button{max-width:145px;min-height:46px;font-size:10px}
