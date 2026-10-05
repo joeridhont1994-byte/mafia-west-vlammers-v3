@@ -22,4 +22,20 @@
 </style>
 <script>
 (()=>{const root=document.getElementById("mafia3dV1"),p=document.getElementById("m3dPlayer"),car=document.getElementById("m3dCar");let x=50,y=58,driving=false;window.openMafia3D=()=>{root.hidden=false};document.getElementById("m3dExit").onclick=()=>root.hidden=true;document.querySelectorAll("[data-m3d]").forEach(b=>{b.onclick=()=>{const d=b.dataset.m3d,s=driving?4:2;if(d==="left")x-=s;if(d==="right")x+=s;if(d==="up")y-=s;if(d==="down")y+=s;x=Math.max(3,Math.min(97,x));y=Math.max(8,Math.min(92,y));(driving?car:p).style.left=x+"%";(driving?car:p).style.top=y+"%"}});document.getElementById("m3dVehicle").onclick=()=>{driving=!driving;p.hidden=driving;car.style.left=x+"%";car.style.top=y+"%";document.getElementById("m3dVehicle").textContent=driving?"🚶 UITSTAPPEN":"🚘 INSTAPPEN"};})();
+</script><style id="m3d-v2-style">
+.mafia3d-v1 .m3d-world{background:linear-gradient(#657a8c 0 28%,#485443 28%);perspective:900px}
+.m3d-v2-label{position:absolute;top:10px;left:50%;transform:translateX(-50%);padding:6px 12px;border-radius:20px;background:#0009;border:1px solid #ffffff33;font-size:11px;z-index:8}
+.m3d-sidewalk{position:absolute;background:#74746e;border:4px solid #aaa;box-shadow:0 8px 18px #0006}.m3d-sw1{left:4%;right:4%;top:48%;height:7%}.m3d-sw2{top:8%;bottom:8%;left:36%;width:7%}
+.m3d-tree{position:absolute;font-size:30px;filter:drop-shadow(0 6px 4px #0008)}.m3d-t1{left:4%;top:39%}.m3d-t2{right:4%;top:39%}.m3d-t3{left:28%;bottom:22%}.m3d-t4{right:27%;bottom:22%}
+.m3d-npc{position:absolute;font-size:26px;filter:drop-shadow(0 5px 3px #0008);animation:m3dWalk 7s ease-in-out infinite alternate}.m3d-n1{left:23%;top:46%}.m3d-n2{right:20%;top:49%;animation-delay:-3s}@keyframes m3dWalk{to{transform:translateX(70px)}}
+.m3d-car.roadcar{animation:m3dTraffic 9s linear infinite}@keyframes m3dTraffic{0%{left:-8%}100%{left:108%}}
+.m3d-mini{position:absolute;right:12px;top:12px;width:92px;height:92px;border:2px solid #fff6;border-radius:50%;background:#071018cc;z-index:9;overflow:hidden}.m3d-mini:before,.m3d-mini:after{content:"";position:absolute;background:#72777a}.m3d-mini:before{left:42px;width:12px;height:100%}.m3d-mini:after{top:42px;height:12px;width:100%}.m3d-mini i{position:absolute;left:45px;top:45px;width:7px;height:7px;border-radius:50%;background:#ff3232;z-index:2}
+.m3d-speed{position:absolute;right:15px;bottom:82px;background:#05080bcc;border:1px solid #fff4;border-radius:12px;padding:8px 12px;z-index:8}.m3d-speed b{font-size:20px}.m3d-speed small{display:block;color:#aaa}
+</style>
+<script id="m3d-v2-script">
+(()=>{const w=document.getElementById("m3dWorld");if(!w||document.getElementById("m3dV2Label"))return;
+w.insertAdjacentHTML("beforeend",'<div id="m3dV2Label" class="m3d-v2-label">3D WORLD V2 · FREE ROAM</div><div class="m3d-sidewalk m3d-sw1"></div><div class="m3d-sidewalk m3d-sw2"></div><span class="m3d-tree m3d-t1">🌳</span><span class="m3d-tree m3d-t2">🌲</span><span class="m3d-tree m3d-t3">🌳</span><span class="m3d-tree m3d-t4">🌲</span><span class="m3d-npc m3d-n1">🚶</span><span class="m3d-npc m3d-n2">🚶‍♂️</span><div class="m3d-mini"><i></i></div><div class="m3d-speed"><b id="m3dSpeed">0</b><small>KM/U</small></div>');
+let keys={};window.addEventListener("keydown",e=>{keys[e.key.toLowerCase()]=true});window.addEventListener("keyup",e=>{keys[e.key.toLowerCase()]=false});
+setInterval(()=>{const root=document.getElementById("mafia3dV1");if(!root||root.hidden)return;const p=document.getElementById("m3dPlayer"),car=document.getElementById("m3dCar");let target=p.hidden?car:p;let x=parseFloat(target.style.left)||50,y=parseFloat(target.style.top)||58;const fast=p.hidden?1.1:.55;if(keys.w||keys.arrowup)y-=fast;if(keys.s||keys.arrowdown)y+=fast;if(keys.a||keys.arrowleft)x-=fast;if(keys.d||keys.arrowright)x+=fast;x=Math.max(2,Math.min(98,x));y=Math.max(7,Math.min(94,y));target.style.left=x+"%";target.style.top=y+"%";const sp=document.getElementById("m3dSpeed");if(sp)sp.textContent=p.hidden&&Object.values(keys).some(Boolean)?"65":"0"},35);
+})();
 </script></body></html>
